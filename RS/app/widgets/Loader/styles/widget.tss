@@ -1,0 +1,64 @@
+".container[platform=ios]":{
+	backgroundColor: 'transparent',
+	statusBarStyle: Titanium.UI.iPhone.StatusBar.LIGHT_CONTENT
+}
+"#ActivityView":{
+
+	backgroundColor: 'black',
+	opacity: 0.8,
+	width: 120,
+	height: 120,
+	borderRadius: 10,
+	// top:"80"
+	//layout: 'vertical'
+}
+// "#activityIndicator":{
+	// color: 'white',
+// 	
+// 	
+	// font: {
+		// fontFamily: 'Helvetica Neue',
+		// fontSize: 50,
+		// fontWeight: 'bold'
+	// },
+// 
+	// height: 'auto',
+	// width: 'auto',
+	// // style:Ti.UI.iPhone.ActivityIndicatorStyle.PLAIN,
+	// //bottom:"10dp",
+	// top:"10dp",
+	// //layout:"vertical",
+	// left: '65dp'
+// }
+
+"#activityIndicator[platform=ios]": {
+	top: 32,
+	style: Ti.UI.iPhone.ActivityIndicatorStyle.BIG,
+	height: 28,
+	width: 28
+}
+
+"#activityIndicatorAnd": {
+	message: 'Please wait...',
+	location: Ti.UI.Android.PROGRESS_INDICATOR_DIALOG,
+	cancelable: false
+}
+
+"#loadingLabel":{
+	text: 'Please wait...',
+	color: 'white',
+
+	// font: {
+		// fontSize: 23,
+		// fontWeight:'bold'
+	// },
+	// bottom: 8,
+	// left:'10dp'
+	bottom: 12,
+	color: 'white',
+	font: {
+		fontSize: 17,
+		fontWeight:'bold'
+	}
+	
+}

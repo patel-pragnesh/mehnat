@@ -1,0 +1,24 @@
+<Alloy>
+	<Window class="container" backgroundColor="transparent" backgroundImage="/images/back_transparent.png" onOpen="animateFun">
+		<View id="view" height="1" width="1">
+			<ImageView id="cancelBtn" platform="ios" image="/images/cancle.png" backgroundImage="none" onSingletap="cancleFun"  backgroundColor="transparent"  right="0" top="0" zIndex="2"></ImageView>
+			<Button id="cancelBtn" platform="android" backgroundImage="/images/cancle.png" onClick="cancleFun" backgroundColor="#2941AE" height="35" borderRadius="17" width="35" right="0" top="0" zIndex="2"></Button>
+			<View height="92%" width="92%" backgroundColor="white" zIndex="1" borderRadius="10">
+				<View top="2" left="2" right="2" borderRadius="10" bottom="2">
+					<View height="40" backgroundColor="#2C529B" top="0">
+						<Label id="lbl" color="#fff" top="0" height="Ti.UI.FILL">Advertisement</Label>
+					</View>
+					<View id="timeView" width="Ti.UI.SIZE" top="50" height="30"  layout="horizontal">
+							<!-- <ImageView image="/images/timer.png"></ImageView> -->
+							<!-- <Label id="hoursLbl">0</Label> -->
+							<!-- <Label id="colon">:</Label> -->
+							<!-- <Label id="minLbl"  >0</Label> -->
+							<!-- <Label id="colon">:</Label> -->
+							<Label id="secLbl">0</Label>
+						</View>
+					<ScrollableView id="scrollabelVW" top="75" bottom="0" onSingletap="openLink"></ScrollableView>
+				</View>
+			</View>
+		</View>
+	</Window>
+</Alloy>

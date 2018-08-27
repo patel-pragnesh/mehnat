@@ -1,0 +1,262 @@
+".container[platform=ios]": {
+	backgroundImage: "/images/background.png",
+	statusBarStyle: Titanium.UI.iPhone.StatusBar.LIGHT_CONTENT,
+	
+}
+".container[platform=android]": {
+	//backgroundImage:"/images/background.png",
+	height: "100%",
+	width: "100%",
+	windowSoftInputMode:Titanium.UI.Android.SOFT_INPUT_ADJUST_PAN
+}
+"#backBtn[platform=ios]":{
+	top:20
+}
+"#backBtn[platform=android]":{
+	top:5
+}
+"#editBtn":{
+	font:{
+		fontSize: 15
+	},
+	color: "white"
+}
+"#nameTF[platform=ios]":{
+	right: "0dp",
+	width: "78%",
+	backgroundColor: "transparent",
+	height:35,
+	font:{
+		fontSize: 15
+	},
+	tintColor: "white",
+	color: "white",
+	//	hintTextColor:"#BBBBBD",
+	//paddingLeft:8,
+	returnKeyType:Titanium.UI.RETURNKEY_NEXT,
+	keyboardType:Titanium.UI.KEYBOARD_EMAIL
+}
+"#nameTF[platform=android]":{
+	right: "0dp",
+	width: "78%",
+	backgroundColor: "transparent",
+	hintText: "Name",
+	font:{
+		fontSize: 15
+	},
+	tintColor: "white",
+	color: "white",
+	hintTextColor: "#BBBBBD",
+	maxLength:50,
+	returnKeyType:Titanium.UI.RETURNKEY_NEXT,
+	keyboardType:Titanium.UI.KEYBOARD_EMAIL
+}
+"#nameLbl":{
+	right: "0dp",
+	width: "78%",
+	textAlign:Titanium.UI.TEXT_ALIGNMENT_LEFT,
+	text: "Name",
+	font:{
+		fontSize: 15
+	},
+height:35,
+	color: "white"
+}
+"#emailTF[platform=ios]":{
+	right: "0dp",
+	width: "78%",
+	backgroundColor: "transparent",
+	height:35,
+	font:{
+		fontSize: 15
+	},
+	tintColor: "white",
+	color: "white",
+	//	hintTextColor:"#BBBBBD",
+	//paddingLeft:8,
+	returnKeyType:Titanium.UI.RETURNKEY_NEXT,
+	keyboardType:Titanium.UI.KEYBOARD_EMAIL
+}
+"#emailTF[platform=android]":{
+	right: "0dp",
+	width: "78%",
+	backgroundColor: "transparent",
+	hintText: "Email",
+	font:{
+		fontSize: 15
+	},
+	tintColor: "white",
+	color: "white",
+	hintTextColor: "#BBBBBD",
+	//paddingLeft:8,
+	returnKeyType:Titanium.UI.RETURNKEY_NEXT,
+	keyboardType:Titanium.UI.KEYBOARD_EMAIL
+}
+"#emailLbl":{
+	right: "0dp",
+	width: "78%",
+	textAlign:Titanium.UI.TEXT_ALIGNMENT_LEFT,
+	text: "Email",
+	height:35,
+	font:{
+		fontSize: 15
+	},
+
+	color: "white"
+}
+"#contactTF[platform=ios]":{
+	right: "0dp",
+	width: "78%",
+	backgroundColor: "transparent",
+	height:35,
+	font:{
+		fontSize: 15
+	},
+	tintColor: "white",
+	color: "white",
+	//	hintTextColor:"#BBBBBD",
+	//paddingLeft:8,
+	returnKeyType:Titanium.UI.RETURNKEY_NEXT,
+	keyboardType:Titanium.UI.KEYBOARD_PHONE_PAD
+}
+"#contactTF[platform=android]":{
+	right: "0dp",
+	width: "78%",
+	
+	backgroundColor: "transparent",
+	hintText: "Contact",
+	font:{
+		fontSize: 15
+	},
+	tintColor: "white",
+	color: "white",
+	hintTextColor: "#BBBBBD",
+	//paddingLeft:8,
+	returnKeyType:Titanium.UI.RETURNKEY_NEXT,
+	keyboardType:Titanium.UI.KEYBOARD_PHONE_PAD
+}
+"#contactLbl":{
+	right: "0dp",
+	width: "78%",
+	textAlign:Titanium.UI.TEXT_ALIGNMENT_LEFT,
+	text: "Contact",
+	height:35,
+	font:{
+		fontSize: 15
+	},
+
+	color: "white"
+}
+"#passwordTF[platform=ios]":{
+	right: "0dp",
+	width: "78%",
+	backgroundColor: "transparent",
+	//height:"40dp",
+	height:35,
+	font:{
+		fontSize: 15
+	},
+	tintColor: "white",
+	color: "white",
+	//hintTextColor:"#BBBBBD",
+	returnKeyType:Titanium.UI.RETURNKEY_NEXT,
+	passwordMask: true,
+	maxLength: 30
+}
+"#passwordTF[platform=android]":{
+	right: "0dp",
+	width: "78%",
+	backgroundColor: "transparent",
+	//height:"40dp",
+	hintText: "Password",
+	font:{
+		fontSize: 15
+	},
+	tintColor: "white",
+	color: "white",
+	hintTextColor: "#BBBBBD",
+	returnKeyType:Titanium.UI.RETURNKEY_NEXT,
+	passwordMask: true,
+	maxLength: 30
+}
+"#passwordLbl":{
+	right: "0dp",
+	width: "78%",
+	height:35,
+	textAlign:Titanium.UI.TEXT_ALIGNMENT_LEFT,
+	text: "Password",
+	font:{
+		fontSize: 15
+	},
+
+	color: "white"
+}
+"#confirmPwdTF[platform=ios]":{
+	right: "0dp",
+	width: "78%",
+	backgroundColor: "transparent",
+	height:35,
+	//hintText:"Password",
+	font:{
+		fontSize: 15
+	},
+	tintColor: "white",
+	color: "white",
+	//hintTextColor:"#BBBBBD",
+	returnKeyType:Titanium.UI.RETURNKEY_DONE,
+	passwordMask: true,
+	maxLength: 30
+}
+"#confirmPwdTF[platform=android]":{
+	right: "0dp",
+	width: "78%",
+	
+	backgroundColor: "transparent",
+	//height:"40dp",
+	hintText: "Confirm Password",
+	font:{
+		fontSize: 15
+	},
+	tintColor: "white",
+	color: "white",
+	hintTextColor: "#BBBBBD",
+	returnKeyType:Titanium.UI.RETURNKEY_DONE,
+	passwordMask: true,
+	maxLength: 30
+}
+"#confirmPwdLbl":{
+	right: "0dp",
+	width: "78%",
+	textAlign:Titanium.UI.TEXT_ALIGNMENT_LEFT,
+	text: "Confirm Password",
+	font:{
+		fontSize: 15
+	},
+height:35,
+	color: "white"
+}
+"#signupBtn[platform=ios]":{
+	title: "Sign Up",
+	font:{
+		fontSize: 18
+	},
+	backgroundColor: "#95ABDB",
+	selectedColor:"black",
+	width: "76%",
+	height: "40dp",
+	borderRadius: 16,
+	color: "white"
+}
+"#signupBtn[platform=android]":{
+	title: "Sign Up",
+	font:{
+		fontSize: 18
+	},
+	backgroundImage: "/images/signin.png",
+	backgroundSelectedImage: "/images/signin_hover.png",
+	width: "76%",
+	height: "40dp",
+	// borderRadius: 16,
+	// borderWidth: 1,
+	color: "white"
+}

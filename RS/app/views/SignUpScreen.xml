@@ -1,0 +1,62 @@
+<Alloy>
+	<Window class="container" onClick="winClickFun">
+		<ImageView image="/images/background.png" left="0" right="0" top="0" bottom="0" platform="android"></ImageView>
+		<Button id="backBtn" image="/images/arrowwhite.png" height="40dp" backgroundImage="none" width="50dp"  left="0" onClick="closeFun"></Button>
+		<ScrollView id="mainView" top="60" bottom="0">
+
+			<!-- <Label id="titleLbl"></Label> -->
+
+			<View layout="vertical" top="20" height="Titanium.UI.SIZE">
+				<View height="80" width="80" borderRadius="40" top="0" borderColor="white" borderWidth="1" onClick="uploadPhoto" focusable="true">
+					<ImageView id="userPic" image="/images/up-img.png" focusable="false" focusable="false" width="Ti.UI.FILL" height="Ti.UI.FILL"></ImageView>
+				</View>
+				<Button id="editBtn" image="/images/edit-img.png" title=" Edit Photo" top="0" backgroundImage="none" onClick="uploadPhoto"></Button>
+				<View height="45dp" top="20">
+					<ImageView image="/images/name.png" left="30"></ImageView>
+					<TextField id="nameTF" name="tf"  onChange="nameChangeFun" platform="ios" zIndex="10" onReturn="nameReturnFun"></TextField>
+					<TextField id="nameTF" name="tf" platform="android"></TextField>
+					<Label id="nameLbl" name="tf"  visible="true"  platform="ios" zIndex="1"></Label>
+					<View backgroundColor="#5f7292" height="1" bottom="0" right="0" width="78%"></View>
+				</View>
+				<View height="45dp" top="10">
+					<ImageView image="/images/email.png" left="30"></ImageView>
+					<TextField id="emailTF" name="tf" onChange="emailChangeFun" platform="ios" zIndex="10" onReturn="emailReturnFun"></TextField>
+					<TextField id="emailTF" name="tf"  platform="android"></TextField>
+					<Label id="emailLbl" name="tf"  platform="ios" zIndex="1"></Label>
+					<View backgroundColor="#5f7292" height="1" bottom="0" right="0" width="78%"></View>
+				</View>
+				<View height="45dp" top="10">
+					<ImageView image="/images/contact.png" left="30"></ImageView>
+					<TextField id="contactTF" name="tf" onChange="contactChangeFun" platform="ios" zIndex="10">
+						<KeyboardToolbar>
+							<Toolbar >
+								<Items >
+									<FlexSpace/>
+									<Button onClick="contactReturnFun">Next</Button>
+								</Items>
+							</Toolbar>
+						</KeyboardToolbar>
+					</TextField>
+					<TextField id="contactTF" name="tf" platform="android"></TextField> 
+					<Label id="contactLbl" class="lbl"  platform="ios" zIndex="1"></Label>
+					<View backgroundColor="#5f7292" height="1" bottom="0" right="0" width="78%"></View>
+				</View>
+				<View height="45dp" top="10">
+					<ImageView image="/images/passwordSign.png" left="30"></ImageView>
+					<TextField id="passwordTF" name="tf"  onChange="pwdChangeFun" platform="ios" zIndex="10" onReturn="pwdReturnFun"></TextField>
+					<TextField id="passwordTF" name="tf" platform="android"></TextField>
+					<Label id="passwordLbl" name="tf"  platform="ios" zIndex="1"></Label>
+					<View backgroundColor="#5f7292" height="1" bottom="0" right="0" width="78%"></View>
+				</View>
+				<View height="45dp" top="10">
+					<ImageView image="/images/passwordSign.png" left="30"></ImageView>
+					<TextField id="confirmPwdTF" name="tf" zIndex="10"  onChange="confirmpwdChangeFun" platform="ios" onReturn="signup_Via_Return_KeypadFun"></TextField>
+					<TextField id="confirmPwdTF" name="tf" platform="android" onReturn="signup_Via_Return_KeypadFun"></TextField>
+					<Label id="confirmPwdLbl" name="tf" zIndex="1" platform="ios" onReturn="signup_Via_Return_KeypadFun"></Label>
+					<View backgroundColor="#5f7292" height="1" bottom="0" right="0" width="78%"></View>
+				</View>
+				<Button id="signupBtn" top="30" onClick="signupFun"></Button>
+			</View>
+		</ScrollView>
+	</Window>
+</Alloy>

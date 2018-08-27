@@ -1,0 +1,49 @@
+<Alloy>
+	<Window class="container" name="profile" title="My Profile"  navBarHidden="true" backgroundColor="black" onOpen="getProfileService">
+		<ImageView height="100%" width="100%" backgroundImage="/images/background.png" platform="android"/>
+		<View id="topBar" height="Ti.UI.SIZE" backgroundColor="transparent">
+			<Button image="/images/arrowwhite.png" height="40dp" width="50dp" backgroundImage="none"  left="0" onClick="closeProfileFun"></Button>
+			<Label id="titleLbl"></Label>
+			<Button id="editBtn" image="/images/edit_icon.png" height="40dp" width="50dp" backgroundImage="none"  right="0" onClick="editFun"></Button>
+		</View>
+		<ScrollView id="mainView" top="60" bottom="0">
+			<View layout="vertical" top="50" height="Titanium.UI.SIZE">
+				<View height="80" width="80" borderRadius="40" top="0" borderColor="white" borderWidth="1" focusable="true">
+					<ImageView id="userPic" width="Ti.UI.FILL" height="Ti.UI.FILL" defaultImage="/images/up-img.png" focusable="false"></ImageView>
+				</View>
+				<View height="45dp" top="20">
+					<ImageView image="/images/name.png" left="30"></ImageView>
+					<TextField id="nameTF"  platform="ios" editable="false"></TextField>
+					<TextField id="nameTF" platform="android" editable="false" touchEnabled="false"></TextField>
+					<Label id="nameLbl" class="lbl" visible="true"  platform="ios"></Label>
+					<View backgroundColor="#5f7292" height="1" bottom="0" right="0" width="78%"></View>
+				</View>
+				<View height="45dp" top="10">
+					<ImageView image="/images/email.png" left="30"></ImageView>
+					<TextField id="emailTF"  platform="ios" editable="false"></TextField>
+					<TextField id="emailTF"  platform="android" editable="false" touchEnabled="false"></TextField>
+					<Label id="emailLbl"  platform="ios"></Label>
+					<View backgroundColor="#5f7292" height="1" bottom="0" right="0" width="78%"></View>
+				</View>
+				<View height="45dp" top="10">
+					<ImageView image="/images/contact.png" left="30"></ImageView>
+					<TextField id="contactTF" platform="ios" editable="false"></TextField>
+					<TextField id="contactTF"  platform="android" editable="false" touchEnabled="false"></TextField>
+					<Label id="contactLbl"   platform="ios"></Label>
+					<View backgroundColor="#5f7292" height="1" bottom="0" right="0" width="78%"></View>
+				</View>
+				
+				<View height="45dp" top="10">
+					<ImageView image="/images/pin.png" left="30"></ImageView>
+					<TextField id="pinTF" name="tf" zIndex="10" platform="ios" editable="false" touchEnabled="false"></TextField>
+					<TextField id="pinTF" touchEnabled="false" passwordMask="true" ></TextField>
+					<Label id="pinLbl" zIndex="1" platform="ios" ></Label>
+					<Button id="showBtn" backgroundImage="none" height="30" color="white" toggle="false" onClick="showFun">Show</Button>
+					<View backgroundColor="#5f7292" height="1" bottom="0" right="0" width="78%"></View>
+				</View>
+				<Button id="changePwdBtn" top="30" onClick="changePasswordFun"></Button>
+			</View>
+		</ScrollView>
+
+	</Window>
+</Alloy>

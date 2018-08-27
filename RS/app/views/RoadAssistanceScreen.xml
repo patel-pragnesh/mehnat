@@ -1,0 +1,37 @@
+<Alloy>
+	<Window class="container" name="roadAssistance"  title="Services" onOpen="getCategoryRulesService" backButtonTitle="">
+		<RightNavButtons platform="ios">
+			<View width="Ti.UI.SIZE" layout="horizontal" right="0">
+				<Button id="sortBtn"  image="/images/filter.png" backgroundImage="none" left="0" width="40dp" onClick="openSortingListPicker"></Button>
+				<Button id="panicBtn" image="/images/traffic_icon.png" backgroundImage="none" left="5"  width="40dp" onClick="openPanic"></Button>
+			</View>
+		</RightNavButtons>
+		<View id="topBar" height="48dp" backgroundColor="#2941AE" platform="android" top="0">
+			<Label class="lbl" color="#ffffff">Services</Label>
+			<Button image="/images/ar-white.png" backgroundImage="none" backgroundColor="transparent" backgroundSelectedColor="#3756B6" left="0" width="45dp" onClick="closeWindowFun"></Button>
+			<Button id="panicBtn" image="/images/traffic_icon.png" backgroundImage="none" width="50dp" right="0" backgroundColor="transparent" backgroundSelectedColor="#3756B6" onClick="openPanic"></Button>
+			<Button image="/images/filter.png" touchEnabled="false" backgroundImage="none" width="50dp" right="50" backgroundColor="transparent" backgroundSelectedColor="#3756B6"></Button>
+			
+				<Picker id="teamPicker" zIndex="10" opacity="0" width="50dp" height="48"  right="50" ></Picker>
+		 
+		</View> 
+		<View id="btnBar" height="Ti.UI.SIZE"  platform="android">
+			<Button id="allBtn"  class="btn" left="10" onClick="allFun">All</Button>
+			<Button id="sponsoredBtn" class="btn" onClick="sponsoredFun">Sponsored</Button>
+			<Button id="freeBtn" class="btn" right="10" onClick="freeFun" >Free Listed</Button>
+		</View>
+		<View id="btnBar" height="Ti.UI.SIZE" platform="ios">
+			<Button id="allBtn"  class="btn" left="10" onClick="allFun">All</Button>
+			<Button id="sponsoredBtn" class="btn" onClick="sponsoredFun">Sponsored</Button>
+			<Button id="freeBtn" class="btn" right="10" onClick="freeFun">Free Listed</Button>
+		</View>
+		<View height="1" backgroundColor="#EDEDED" top="94" platform="android"></View>
+		<View height="1" backgroundColor="#EDEDED" top="46" platform="ios"></View>
+		<View id="mapcontainer" top="95" platform="android" bottom="48"></View>
+		<View id="mapcontainer" top="47" platform="ios" bottom="49" zIndex="5">
+			
+		</View>
+		<View height="1" backgroundColor="#EDEDED" bottom="48"></View>
+		<Button id="listViewBtn"  onClick="changeLayout">List View</Button>
+	</Window>
+</Alloy>

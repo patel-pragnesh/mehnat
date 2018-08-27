@@ -1,0 +1,24 @@
+
+".container" : {
+  
+}
+".lbl":{
+	font:{
+		fontSize:18
+	},
+}
+"#webview[platform=android]":{
+	
+	cacheMode:Titanium.UI.Android.WEBVIEW_LOAD_CACHE_ELSE_NETWORK, 
+	backgroundColor:"transparent",
+	height:Ti.UI.SIZE,
+	enableZoomControls:false,
+}
+"#webview[platform=ios]":{
+	
+	// disableBounce:true,
+	// scalesPageToFit:true,
+	// height:Ti.UI.SIZE,
+	 hideLoadIndicator:true,
+	// horizontalWrap :true,
+}

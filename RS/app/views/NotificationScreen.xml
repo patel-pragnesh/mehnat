@@ -1,0 +1,22 @@
+<Alloy>
+	<Window class="container" backButtonTitle="" name="safetyRule" title="Notifications" layout="vertical" onClose="closeFun" onOpen="getNotificationService">
+		<RightNavButtons platform="ios">
+			
+				<Button id="panicBtn" image="/images/traffic_icon.png" backgroundImage="none"   onClick="openPanic"></Button>
+			
+		</RightNavButtons>
+		<View height="48dp" backgroundColor="#2941AE" platform="android" top="0">
+			<Label class="lbl" color="#ffffff">Notifications</Label>
+			<Button image="/images/ar-white.png" backgroundImage="none" backgroundColor="transparent" backgroundSelectedColor="#3756B6" left="0" width="45dp" onClick="closeNotifcationFun"></Button>
+				<Button id="panicBtn" image="/images/traffic_icon.png" backgroundImage="none" width="50dp" right="0" backgroundColor="transparent" backgroundSelectedColor="#3756B6" onClick="openPanic"></Button>
+				
+		</View>
+		 <View id="separatorLine" height="1" backgroundColor="#EDEDEE" platform="android"></View>
+		<View id="separatorLine" height="1" backgroundColor="#EDEDEE" top="8"></View>
+		<TableView id="notificationTable" top="0" separatorColor="#EDEDEE" onClick="tableClickFun">
+			<FooterView>
+				<View height="1" backgroundColor="transparent"></View>
+			</FooterView>
+		</TableView>
+	</Window>
+</Alloy>

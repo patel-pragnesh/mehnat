@@ -1,0 +1,70 @@
+
+".container[platform=android]" : {
+  backgroundColor:"#ffffff",
+  
+}
+
+"#btnBar[platform=android]":{
+	top:56
+}
+"#btnBar[platform=ios]":{
+	top:8
+}
+"#listView[platform=ios]" : {
+  top:47
+}
+
+"#listView[platform=android]" : {
+  top:95
+  
+}
+
+".container[platform=ios]" : {
+  backgroundColor:"#ffffff",
+}
+".btn":{
+	backgroundImage:"/images/Rectangle.png",
+	// borderColor:"#2941AE",
+	//selectedColor:"#000",
+	// borderRadius:14,
+	font:{
+		fontSize:14
+	},
+	color:"#2941AE",
+	width:"28%",
+	height:"30dp"
+	
+}
+".lbl":{
+	font:{
+		fontSize:18
+	},
+}
+"#listView":{
+	
+}
+"#listTable":{
+	separatorInsets:{
+		left:0,
+		right:0
+	}
+}
+"#layoutBtn[platform=ios]":{
+	bottom: "6",
+	borderRadius: "15",
+	backgroundImage: "#2941AE",
+	height: "35dp",
+	width: "70%",
+	color: "white",
+	zIndex: "20"
+}
+"#layoutBtn[platform=android]":{
+	bottom: "6",
+	//borderRadius: "15",
+	backgroundImage: "/images/ListView.png",
+	backgroundSelectedImage:"/images/ListView_hover.png",
+	height: "35dp",
+	width: "70%",
+	color: "white",
+	zIndex: "20"
+}

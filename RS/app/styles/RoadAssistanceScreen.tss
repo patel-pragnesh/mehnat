@@ -1,0 +1,64 @@
+
+".container[platform=android]": {
+	backgroundColor: "#ffffff",
+	height: "100%",
+	width: "100%"
+}
+
+".container[platform=ios]": {
+	backgroundColor: "#ffffff",
+	height: "100%",
+	width: "100%"
+}
+".btn":{
+	backgroundImage: "/images/Rectangle.png",
+	//borderColor:"#2941AE",
+	//borderWidth:1,
+	//selectedColor:"#000",
+	//borderRadius:14,
+	font:{
+		fontSize: 14
+	},
+	color: "#2941AE",
+	width: "28%",
+	height: "30dp"
+}
+"#btnBar[platform=android]":{
+	top: 56
+}
+"#btnBar[platform=ios]":{
+	top: 8
+}
+".lbl":{
+	font:{
+		fontSize: 18
+	}
+}
+"#listView":{
+	left:Ti.Platform.displayCaps.platformWidth
+}
+"#listTable":{
+	separatorInsets:{
+		left: 0,
+		right: 0
+	}
+}
+"#listViewBtn[platform=ios]":{
+	bottom: "6",
+	borderRadius: "15",
+	backgroundImage: "#2941AE",
+	height: "35dp",
+	width: "70%",
+	color: "white",
+	zIndex: "20"
+}
+"#listViewBtn[platform=android]":{
+	bottom: "6",
+	//borderRadius: "15",
+	backgroundImage: "/images/ListView.png",
+	backgroundSelectedImage:"/images/ListView_hover.png",
+	height: "35dp",
+	width: "70%",
+	color: "white",
+	zIndex: "20"
+}

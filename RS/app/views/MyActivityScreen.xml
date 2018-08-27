@@ -1,0 +1,46 @@
+<Alloy>
+	<Window class="container" name="selectContact"  title="Activity Log" backButtonTitle="" onOpen="getActivityService">
+		<RightNavButtons platform="ios">
+			<!-- <View width="Ti.UI.SIZE" layout="horizontal" right="0"> -->
+				<!-- <Button id="notificationBtn" image="/images/information.png" backgroundImage="none" left="0" width="40dp" onClick="openNotification"></Button> -->
+				<!-- <Button id="panicBtn" image="/images/traffic_icon.png" backgroundImage="none" left="5"  width="40dp" onClick="openPanic"></Button> -->
+			<!-- </View> -->
+			<Button id="panicBtn" image="/images/traffic_icon.png" backgroundImage="none" onClick="openPanic"></Button>
+		</RightNavButtons>
+		<View height="48dp" backgroundColor="#2941AE" platform="android" top="0">
+			<Label id="lbl" color="#ffffff">Acitivity Log</Label>
+			<Button image="/images/ar-white.png" backgroundImage="none" backgroundColor="transparent" backgroundSelectedColor="#3756B6" left="0" width="45dp" onClick="closeWindowFun"></Button>
+				<Button id="panicBtn" image="/images/traffic_icon.png" backgroundImage="none" width="50dp" right="0" backgroundColor="transparent" backgroundSelectedColor="#3756B6" onClick="openPanic"></Button>
+				<!-- <Button id="notificationBtn" image="/images/information.png" backgroundImage="none" width="50dp" right="50" backgroundColor="transparent" backgroundSelectedColor="#3756B6" onClick="openNotification"></Button> -->
+		</View>
+		
+		<View height="1" backgroundColor="#EDEDEE" platform="android" top="56"></View>
+		<View height="1" backgroundColor="#EDEDEE" platform="ios" top="8"></View>
+		<View id="headerView" height="40dp" layout="horizontal" backgroundColor="F8F8F9">
+			<Label width="18%" class="headerlbl" height="Ti.UI.FILL">Date</Label>
+			<View width="1" backgroundColor="#EDEDEE"></View>
+			<Label width="17%" class="headerlbl" height="Ti.UI.FILL">Meter\nReading</Label>
+			<View width="1" backgroundColor="#EDEDEE"></View>
+			<Label width="16%" class="headerlbl" height="Ti.UI.FILL">Fuel</Label>
+			<View width="1" backgroundColor="#EDEDEE"></View>
+			<Label width="15%" class="headerlbl" height="Ti.UI.FILL">Price</Label>
+			<View width="1" backgroundColor="#EDEDEE"></View>
+			<Label width="16%" class="headerlbl"  height="Ti.UI.FILL">Mileage</Label>
+			<View width="1" backgroundColor="#EDEDEE"></View>
+			<Label width="15%" class="headerlbl"  height="Ti.UI.FILL">Price/Km</Label>
+		</View>
+		<View height="1" id="separatorLine" platform="ios" backgroundColor="#EDEDEE" top="49"></View>
+		<View height="1" id="separatorLine" platform="android" backgroundColor="#EDEDEE" top="97"></View>
+		<View height="1" backgroundColor="#EDEDEE" bottom="59"></View>
+		<TableView id="logTable" separatorColor="#EDEDEE" >
+			<FooterView>
+				<View height="Ti.UI.SIZE" backgroundColor="transparent">
+					<Button id="showBtn" onClick="showMoreFun" visible="false">Show More</Button>
+				</View>
+			</FooterView>
+			
+		</TableView>
+		<Button id="addBtn"  bottom="10"  toggle="true" onClick="openAddActivityScreenFun">Add</Button>
+		
+	</Window>
+</Alloy>

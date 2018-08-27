@@ -1,0 +1,192 @@
+<Alloy>
+	<!-- IOS HOME SCREEN -->
+	<Window id="leftWindow"  left="0" class="container" platform="ios">
+		<View width="100%" height="20" backgroundColor="#18265F" top="0"></View>
+		<TableView id="rightTable"  onClick="leftMenuOptionSelected" backgroundColor="transparent"  height="Titanium.UI.SIZE" scrollable="false" top="20" rowHeight="40" separatorColor="#2F4673">
+			<FooterView>
+				<View height="1" backgroundColor="#2F4673"></View>
+			</FooterView>
+			<TableViewRow width="100%" height="50" leftImage="/images/my-profile.png" selectedBackgroundColor="#CED1DB">
+				<Label id="loginLbl" class="leftLable" width="Titanium.UI.SIZE" left="55" color="white" focusable="false" touchEnabled="false">My Profile</Label>
+			</TableViewRow>
+			<TableViewRow width="100%" height="50" leftImage="/images/emr.png" selectedBackgroundColor="#CED1DB">
+				<Label width="Titanium.UI.SIZE" class="leftLable" left="55" color="white" focusable="false" touchEnabled="false">Emergency Contact</Label>
+			</TableViewRow>
+			<TableViewRow width="100%" height="50" leftImage="/images/safty.png" selectedBackgroundColor="#CED1DB">
+				<Label width="Titanium.UI.SIZE" class="leftLable" left="55" color="white" focusable="false" touchEnabled="false">Safety Rules</Label>
+			</TableViewRow>
+			<!-- <TableViewRow width="100%" height="50" leftImage="/images/drive.png" selectedBackgroundColor="#CED1DB">
+			<Label width="Titanium.UI.SIZE" class="leftLable" left="55" color="white" focusable="false" touchEnabled="false">Change Password</Label>
+			</TableViewRow> -->
+			<TableViewRow width="100%" height="50" leftImage="/images/help.png" selectedBackgroundColor="#CED1DB">
+				<Label width="Titanium.UI.SIZE" class="leftLable" left="55" color="white" focusable="false" touchEnabled="false">Help</Label>
+			</TableViewRow>
+			<TableViewRow width="100%" height="50" leftImage="/images/Disclaimer.png" selectedBackgroundColor="#CED1DB">
+				<Label width="Titanium.UI.SIZE" class="leftLable" left="55" color="white" focusable="false" touchEnabled="false">Disclaimer Policy</Label>
+			</TableViewRow>
+			<TableViewRow width="100%" height="50"  leftImage="/images/logout.png" selectedBackgroundColor="#CED1DB" focusable="true" onClick="logoutFun">
+				<Label width="Titanium.UI.SIZE" class="leftLable" left="55" color="white"  focusable="false" touchEnabled="false">Logout</Label>
+			</TableViewRow>
+		</TableView>
+	</Window>
+	<NavigationWindow id="navWindow" platform="ios" >
+		<Window id="win" class="container" name="HomeScreen" navBarHidden="true" title="Home">
+
+			<View height="Ti.UI.SIZE" backgroundColor="transparent" top="20">
+				<Button image="/images/menu_icon.png" height="40dp" width="60dp" backgroundImage="none" onClick="openLeftMenu" left="0"></Button>
+				<Label id="titleLbl"></Label>
+				<View height="Ti.UI.SIZE" width="50dp" focusable="true" right="0dp"  onClick="openNotification" zIndex="1">
+					<Button id="notificationBtn" image="/images/information.png" backgroundImage="none" height="40dp" width="50dp"  right="0"></Button>
+				</View>
+				<View id="notifyVW" visible="false"  onClick="openNotification" focusable="false" top="2" zIndex="2" right="2" width="20dp" height="20dp" backgroundImage="/images/Ellipses.png">
+					<Label id="notifyLbl" text="1"  color="white" focusable="false"></Label>
+				</View>
+			</View>
+			<ImageView id="logoImg" image="/images/logo.png" top="15%"></ImageView>
+			<View id="btnContainer" height="Ti.UI.SIZE" bottom="10" width="100%" layout="vertical">
+
+				<View width="100%" height="Ti.UI.SIZE" top="10dp">
+
+					<View id="emergencyView" layout="vertical" width="33.33%" height="Titanium.UI.SIZE" left="0"  onClick="openEmergency">
+						<Button image="/images/Emergency_ico.png"  backgroundImage="none"></Button>
+						<Label id="emrLbl" top="10" class="type_icon"></Label>
+					</View>
+					<View id="locationView" layout="vertical" width="33.33%" height="Titanium.UI.SIZE" onClick="openLoactionMarkerScreen">
+						<Button top="0" image="/images/location_marker.png" backgroundImage="none" ></Button>
+						<Label top="10" class="type_icon">Location\nMarker</Label>
+					</View>
+					<View id="trackingView" layout="vertical" width="33.33%" height="Titanium.UI.SIZE" right="0" onClick="openTrackingScreen">
+						<Button image="/images/tracing_ico.png"  backgroundImage="none" ></Button>
+						<Label top="10" id="trackLbl" class="type_icon"></Label>
+					</View>
+				</View>
+				<View width="100%" height="Ti.UI.SIZE" top="10">
+					<View id="roadView" layout="vertical" width="33.33%" height="Titanium.UI.SIZE" left="0" onClick="openRoadAssistance">
+						<Button image="/images/Roadside_ico.png" backgroundImage="none"></Button>
+						<Label top="10" class="type_icon">Roadside\nAssistance</Label>
+					</View>
+					<View id="safetyView" layout="vertical" width="33.33%" height="Titanium.UI.SIZE" onClick="openSafetyRule">
+						<Button image="/images/safety_ico.png"  backgroundImage="none" ></Button>
+						<Label top="10" id="safetyLbl" class="type_icon"></Label>
+					</View>
+					<View id="activityView" layout="vertical" width="33.33%" height="Titanium.UI.SIZE" right="0" onClick="openActivityLog">
+						<Button image="/images/activity_ico.png"  backgroundImage="none" ></Button>
+						<Label top="10" class="type_icon">My Activity\nLog</Label>
+					</View>
+
+				</View>
+				<View width="100%" height="Ti.UI.SIZE" top="0">
+					<View id="panicView" layout="vertical" width="33.33%" height="Titanium.UI.SIZE" onClick="openPanic">
+						<Button top="0" image="/images/panic_ico.png"   backgroundImage="/images/panicHover.png"></Button>
+						<Label top="10" class="type_icon">Panic</Label>
+					</View>
+				</View>
+			</View>
+
+		</Window>
+	</NavigationWindow>
+
+	<!-- ANDROID HOME SCREEN -->
+	<View id="rightWindow" platform="android">
+		<View height="100%" width="100%" backgroundImage="/images/background.png">
+			<!-- <ImageView image="/images/background.png" top="0" left="0" right="0" left="0"></ImageView> -->
+			<View height="44dp" top="0">
+				<View width="Ti.UI.SIZE" left="0" height="Ti.UI.SIZE">
+
+					<Button left="0" width="65" image="/images/menu_ico.png" zIndex="1" backgroundImage="none"  onClick="openLeftMenu"></Button>
+					<View id="fenceVW1" visible="false" zIndex="50" touchEnabled="false" focusable="false" top="2" zIndex="2" right="6" width="20dp" height="20dp" backgroundImage="/images/Ellipses.png">
+						<Label id="newLbl" zIndex="50" >1</Label>
+					</View>
+
+				</View>
+				<Label id="titleLbl"></Label>
+				<View height="Ti.UI.SIZE" width="50dp" focusable="true" right="0dp"  onClick="openNotification" zIndex="1">
+					<Button id="notificationBtn" image="/images/information.png" backgroundImage="none" height="40dp" width="50dp"  right="0"></Button>
+				</View>
+				<View id="notifyVW" visible="false"  onClick="openNotification" focusable="true" top="2" zIndex="2" right="2" width="22dp" height="22dp" backgroundImage="/images/Ellipses.png">
+					<Label id="notifyLbl" text="1"  color="white" focusable="false"></Label>
+				</View>
+			</View>
+			<ImageView image="/images/logo.png" top="8%"></ImageView>
+			<View height="Ti.UI.SIZE" bottom="0" width="100%" layout="vertical">
+				<View width="100%" height="Ti.UI.SIZE" top="20dp">
+					<View id="emergencyView" layout="vertical" width="33.33%" height="Titanium.UI.SIZE" left="0"  onClick="openEmergency" focusable="true">
+						<Button image="/images/Emergency_ico.png"  backgroundImage="none" onTouchstart="emergencyTouchStrt" onTouchend="emergencyTouchEnd" onTouchmove="emergencyTouchEnd"></Button>
+						<Label top="0" class="type_icon">Emergency\n</Label>
+					</View>
+					<View id="locationView" layout="vertical" width="33.33%" height="Titanium.UI.SIZE" onClick="openLoactionMarkerScreen" >
+						<Button top="0" image="/images/location_marker.png" backgroundImage="none"  onTouchstart="locationMarkerTouchStrt" onTouchend="locationMarkerTouchEnd" onTouchmove="locationMarkerTouchEnd"></Button>
+						<Label top="0" class="type_icon">Location\nMarker</Label>
+					</View>
+					<View id="trackingView" layout="vertical" width="33.33%" height="Titanium.UI.SIZE" right="0" onClick="openTrackingScreen">
+						<Button image="/images/tracing_ico.png" backgroundImage="none" onTouchstart="trackingTouchStrt" onTouchend="trackingTouchEnd" onTouchmove="trackingTouchEnd"></Button>
+						<Label top="0" class="type_icon">Tracking\n</Label>
+					</View>
+				</View>
+				<View width="100%" height="Ti.UI.SIZE" top="0">
+					<View id="roadView" layout="vertical" width="33.33%" height="Titanium.UI.SIZE" left="0"  onClick="openRoadAssistance" focusable="true">
+						<Button image="/images/Roadside_ico.png"  focusable="false" backgroundImage="none" onTouchstart="roadAssistanceTouchStrt" onTouchend="roadAssistanceTouchEnd" onTouchmove="roadAssistanceTouchEnd"></Button>
+						<Label top="0" class="type_icon" focusable="false">Roadside\nAssistance</Label>
+					</View>
+					<View id="safetyView"  layout="vertical" width="33.33%" height="Titanium.UI.SIZE" left="33.33%" onClick="openSafetyRule" focusable="true">
+						<Button image="/images/safety_ico.png"   backgroundImage="none"  focusable="false" onTouchstart="safetyTouchStrt" onTouchend="safetyTouchEnd" onTouchmove="safetyTouchEnd"></Button>
+						<Label top="0" class="type_icon">Safety Rules\n</Label>
+					</View>
+					<View id="activityView" layout="vertical" width="33.33%" height="Titanium.UI.SIZE" right="0" onClick="openActivityLog"  focusable="true">
+						<Button image="/images/activity_ico.png"  backgroundImage="none" focusable="false" onTouchstart="activityTouchStrt" onTouchend="activityTouchEnd" onTouchmove="activityTouchEnd"></Button>
+						<Label top="0" class="type_icon"  focusable="false">My Activity\nLog</Label>
+					</View>
+				</View>
+				<View width="100%" height="Ti.UI.SIZE" top="0">
+					<View id="panicView" layout="vertical" width="33.33%" height="Titanium.UI.SIZE" onClick="openPanic">
+						<Button top="0" image="/images/panic_ico.png"  backgroundImage="none" onTouchstart="panicTouchStrt" onTouchend="panicTouchEnd" onTouchmove="panicTouchEnd"></Button>
+						<Label top="0" class="type_icon">Panic</Label>
+					</View>
+				</View>
+			</View>
+		</View>
+		<TableView id="rightTable" onClick="leftMenuOptionAndroidSelected" height="Titanium.UI.SIZE" scrollable="true" top="20" rowHeight="50" backgroundImage="/images/background.png" separatorColor="#606870">
+			<FooterView>
+				<View height="1" backgroundColor="#2F4673"></View>
+			</FooterView>
+			<TableViewRow width="100%" height="70" selectedBackgroundColor="#CED1DB">
+				<ImageView image="/images/my-profile.png" left="20"></ImageView>
+				<Label id="loginLbl" width="Titanium.UI.SIZE" left="70" color="white" focusable="false" touchEnabled="false">My Profile</Label>
+			</TableViewRow>
+			<TableViewRow width="100%" height="70"  selectedBackgroundColor="#CED1DB">
+				<ImageView image="/images/emr.png" left="20"></ImageView>
+				<Label  color="white" focusable="false" left="70" touchEnabled="false">Emergency Contacts</Label>
+			</TableViewRow>
+			<TableViewRow width="100%" height="70" selectedBackgroundColor="#CED1DB">
+				<ImageView image="/images/safty.png" left="20"></ImageView>
+				<Label width="Titanium.UI.SIZE" left="70" color="white" focusable="false" touchEnabled="false">Safety Rules</Label>
+			</TableViewRow>
+			<TableViewRow width="100%" height="70" selectedBackgroundColor="#CED1DB">
+				<ImageView image="/images/help.png" left="20"></ImageView>
+				<Label width="Titanium.UI.SIZE" left="70" color="white" focusable="false" touchEnabled="false">Help</Label>
+			</TableViewRow>
+			<TableViewRow width="100%" height="70" selectedBackgroundColor="#CED1DB">
+				<ImageView image="/images/Disclaimer.png" left="20"></ImageView>
+				<Label width="Titanium.UI.SIZE" left="70" color="white" focusable="false" touchEnabled="false">Disclaimer Policy</Label>
+			</TableViewRow>
+			<TableViewRow width="100%" height="70" selectedBackgroundColor="#CED1DB">
+				<ImageView image="/images/drive.png" left="20"></ImageView>
+				<View left="70" width="Ti.UI.SIZE" height="Ti.UI.SIZE" layout="vertical">
+					<View  left="0" layout="horizontal" height="Ti.UI.SIZE">
+						<Label width="Titanium.UI.SIZE" left="0" color="white" focusable="false" touchEnabled="false">Update Fence</Label>
+						<View id="fenceVW" visible="false"  touchEnabled="false" focusable="false" left="5" zIndex="2" width="20dp" height="20dp" backgroundImage="/images/Ellipses.png">
+							<Label id="newLbl1" zIndex="50">1</Label>
+						</View>
+
+					</View>
+					<Label id="dateLbl" zIndex="50" ></Label>
+				</View>
+			</TableViewRow>
+			<TableViewRow width="100%" height="70" title="Logout"  selectedBackgroundColor="#CED1DB" onClick="logoutFun">
+				<ImageView image="/images/logout.png" left="20"></ImageView>
+				<Label width="Titanium.UI.SIZE" left="70" color="white"  focusable="false" touchEnabled="false">Logout</Label>
+
+			</TableViewRow>
+		</TableView>
+	</View>
+</Alloy>

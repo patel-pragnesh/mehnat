@@ -1,0 +1,25 @@
+<Alloy>
+	<Window class="container" name="serviceDetail"  title="Services" backButtonTitle="" onOpen="winOpen">
+		<RightNavButtons platform="ios">
+			<Button id="panicBtn" image="/images/traffic_icon.png" backgroundImage="none" onClick="openPanic"></Button>
+		</RightNavButtons>
+		<View height="48dp" backgroundColor="#2941AE" platform="android" top="0">
+			<Label id="lbl" color="#ffffff">Services</Label>
+			<Button image="/images/ar-white.png" backgroundImage="none" backgroundColor="transparent" backgroundSelectedColor="#3756B6" left="0" width="45dp" onClick="closeWindowFun"></Button>
+			<Button id="panicBtn" image="/images/traffic_icon.png" backgroundImage="none" width="50dp" right="0" backgroundColor="transparent" backgroundSelectedColor="#3756B6" onClick="openPanic"></Button>
+				
+
+		</View>
+		<View height="1" backgroundColor="#EDEDED" top="56" platform="android"></View>
+		<View height="1" backgroundColor="#EDEDED" top="8" platform="ios"></View>
+		
+		
+			<TableView id="listTable" onClick="openCategoryDetail">
+				<FooterView>
+					<View height="1" backgroundColor="#EDEDEE"></View>
+				</FooterView>
+			</TableView>
+		
+
+	</Window>
+</Alloy>

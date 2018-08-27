@@ -1,0 +1,34 @@
+
+".container": {}
+"#contactTable[platform=ios]":{
+	top: 9,
+	separatorInsets:{
+		left: 0,
+		right: 0
+	}
+}
+"#contactTable[platform=android]":{
+	top: 57
+}
+"#lbl":{
+	font:{
+		fontSize:18
+	}
+}
+".btn":{
+
+	backgroundImage: "none",
+	// backgroundColor: "#2941AE",
+	// backgroundSelectedColor: "#93AED9",
+	backgroundImage: "/images/ListView.png",
+	backgroundSelectedImage:"/images/ListView_hover.png",
+	font:{
+		fontSize: 15
+	},
+
+	width: "76%",
+	height: 35,
+	//borderRadius:15,
+	color: "white",
+	selectedColor: "black"
+}

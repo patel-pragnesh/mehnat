@@ -1,0 +1,35 @@
+<Alloy>
+	<Window class="container" name="roadAssistanceList"  title="Services" backButtonTitle="">
+		<RightNavButtons platform="ios">
+			<Button id="panicBtn" image="/images/traffic_icon.png" backgroundImage="none" left="5"  width="40dp" onClick="openPanic"></Button>
+		</RightNavButtons>
+		<View height="48dp" backgroundColor="#2941AE" platform="android" top="0">
+			<Label class="lbl" color="#ffffff">Services</Label>
+			<Button image="/images/ar-white.png" backgroundImage="none" backgroundColor="transparent" backgroundSelectedColor="#3756B6" left="0" width="45dp" onClick="closeWindowFun"></Button>
+			<Button id="panicBtn" image="/images/traffic_icon.png" backgroundImage="none" width="50dp" right="0" backgroundColor="transparent" backgroundSelectedColor="#3756B6" onClick="openPanic"></Button>
+
+		</View>
+		<View id="btnBar" height="Ti.UI.SIZE"  platform="android">
+			<Button id="allBtn"  class="btn" left="10" onClick="allFun">All</Button>
+			<Button id="sponsoredBtn" class="btn" onClick="sponsoredFun">Sponsored</Button>
+			<Button id="freeBtn" class="btn" right="10" onClick="freeFun">Free Listed</Button>
+		</View>
+		<View id="btnBar" height="Ti.UI.SIZE" platform="ios">
+			<Button id="allBtn"  class="btn" left="10" onClick="allFun">All</Button>
+			<Button id="sponsoredBtn" class="btn" onClick="sponsoredFun">Sponsored</Button>
+			<Button id="freeBtn" class="btn" right="10" onClick="freeFun">Free Listed</Button>
+		</View>
+		<View height="1" backgroundColor="#EDEDED" top="94" platform="android"></View>
+		<View height="1" backgroundColor="#EDEDED" top="46" platform="ios"></View>
+		
+		<View id="listView" backgroundColor="white" bottom="49">
+			<TableView id="listTable" onClick="openCategoryDetail" separatorColor="#EDEDEE">
+				<FooterView>
+					<View height="1" backgroundColor="#EDEDEE"></View>
+				</FooterView>
+			</TableView>
+		</View>
+		<View height="1" backgroundColor="#EDEDED" bottom="48"></View>
+		<Button id="layoutBtn" onClick="changeLayout">Map View</Button>
+	</Window>
+</Alloy>

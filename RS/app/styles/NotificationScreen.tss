@@ -1,0 +1,16 @@
+
+".container" : {
+  
+}
+".lbl":{
+	font:{
+		fontSize:18
+	}
+}
+"#notificationTable":{
+	
+	separatorInsets:{
+		left:0,
+		right:0,
+	}
+}

@@ -1,0 +1,66 @@
+<Alloy>
+	<Window class="container" name="driveMode"   navBarHidden="true" backgroundColor="black" backButtonTitle="" onClick="winClickFun">
+		<ImageView height="100%" width="100%" backgroundImage="/images/background.png" platform="android"/>
+		<View id="topBar" height="Ti.UI.SIZE" backgroundColor="transparent" >
+			<Button image="/images/arrowwhite.png" height="40dp" width="50dp" backgroundImage="none"  left="0" onClick="closeAddActivityFun"></Button>
+			<Label id="titleLbl"></Label>
+			<!-- <Button id="editBtn" image="/images/edit_icon.png" height="40dp" width="50dp" backgroundImage="none"  right="0" onClick="editFun"></Button> -->
+		</View>
+		<ScrollView id="mainView" top="60" bottom="0">
+			<View layout="vertical" top="25" height="Titanium.UI.SIZE">
+
+				<ImageView id="userPic" image="/images/logo.png" ></ImageView>
+				<View height="45dp" top="20">
+					<ImageView image="/images/passwordSign.png" left="30"></ImageView>
+					<Label id="nameLbl" class="lbl" visible="true"  platform="ios" zIndex="1"></Label>
+					<TextField name="tf" id="oldPasswordTF"  onChange="nameChangeFun" platform="ios" zIndex="10">
+						<KeyboardToolbar>
+							<Toolbar >
+								<Items >
+									<FlexSpace/>
+									<Button onClick="meterReturnFun">Next</Button>
+								</Items>
+							</Toolbar>
+						</KeyboardToolbar>
+					</TextField>
+					<TextField name="tf" id="oldPasswordTF" platform="android" ></TextField>
+					<View backgroundColor="#5f7292" height="1" bottom="0" right="0" width="78%"></View>
+				</View>
+				<View height="45dp" top="10">
+					<ImageView image="/images/passwordSign.png" left="30"></ImageView>
+					<Label id="emailLbl"  platform="ios" zIndex="1"></Label>
+					<TextField id="newPasswordTF" name="tf" onChange="emailChangeFun" platform="ios" zIndex="10">
+						<KeyboardToolbar>
+							<Toolbar >
+								<Items >
+									<FlexSpace/>
+									<Button onClick="petrolReturnFun">Next</Button>
+								</Items>
+							</Toolbar>
+						</KeyboardToolbar>
+					</TextField>
+					<TextField id="newPasswordTF" name="tf" class="lbl"  platform="android" ></TextField>
+					<View backgroundColor="#5f7292" height="1" bottom="0" right="0" width="78%"></View>
+				</View>
+				<View height="45dp" top="10">
+					<ImageView image="/images/passwordSign.png" left="30"></ImageView>
+					<Label id="contactLbl" class="lbl"  platform="ios" zIndex="1"></Label>
+					<TextField id="confirmPasswordTF" name="tf" onChange="priceChangeFun" platform="ios" zIndex="10" onReturn="changePasswordFun">
+						<KeyboardToolbar>
+							<Toolbar >
+								<Items >
+									<FlexSpace/>
+									<Button onClick="changePasswordFun">Done</Button>
+								</Items>
+							</Toolbar>
+						</KeyboardToolbar>
+					</TextField>
+					<TextField id="confirmPasswordTF" name="tf" platform="android" onReturn="changePasswordFun"></TextField>
+					<View backgroundColor="#5f7292" height="1" bottom="0" right="0" width="78%"></View>
+				</View>
+				<Button id="submitBtn" onClick="changePasswordFun"></Button>
+			</View>
+		</ScrollView>
+
+	</Window>
+</Alloy>

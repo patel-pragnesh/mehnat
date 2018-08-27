@@ -1,0 +1,23 @@
+
+".container" : {
+  
+}
+"#listTable":{
+	separatorInsets:{
+		left:0,
+		right:0
+	}
+}
+"#lbl":{
+	font:{
+		fontSize:18
+	}
+}
+"#listTable[platform=ios]" : {
+  top:9
+}
+
+"#listTable[platform=android]" : {
+  top:57
+  
+}

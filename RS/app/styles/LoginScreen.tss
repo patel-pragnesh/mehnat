@@ -1,0 +1,211 @@
+".container[platform=ios]": {
+	backgroundImage: "/images/background.png",
+	height: "100%",
+	width: "100%",
+	exitOnClose:true,
+	statusBarStyle: Titanium.UI.iPhone.StatusBar.LIGHT_CONTENT
+}
+".container[platform=android]": {
+	//backgroundImage:"/images/background.png",
+	height: "100%",
+	width: "100%",
+	windowSoftInputMode:Titanium.UI.Android.SOFT_INPUT_ADJUST_PAN
+}
+"#emailTF[platform=ios]":{
+	right: "0dp",
+	width: "78%",
+	backgroundColor: "transparent",
+	height: 35,
+	font:{
+		fontSize: 15
+	},
+	tintColor: "white",
+	color: "white",
+	//hintTextColor:"#BBBBBD",
+	//paddingLeft:8,
+	returnKeyType:Titanium.UI.RETURNKEY_NEXT,
+	keyboardType:Titanium.UI.KEYBOARD_EMAIL
+}
+"#emailTF[platform=android]":{
+	right: "0dp",
+	width: "78%",
+	backgroundColor: "transparent",
+	hintText: "Email",
+	font:{
+		fontSize: 15
+	},
+	tintColor: "white",
+	color: "white",
+	hintTextColor: "#BBBBBD",
+	//paddingLeft:8,
+	returnKeyType:Titanium.UI.RETURNKEY_NEXT,
+	keyboardType:Titanium.UI.KEYBOARD_EMAIL
+}
+"#usernameLbl":{
+	right: "0dp",
+	width: "78%",
+	textAlign:Titanium.UI.TEXT_ALIGNMENT_LEFT,
+	text: "Email",
+	font:{
+		fontSize: 15
+	},
+
+	color: "white"
+}
+"#passwordTF[platform=ios]":{
+	right: "0dp",
+	width: "78%",
+	backgroundColor: "transparent",
+	height: 35,
+	//hintText:"Password",
+	font:{
+		fontSize: 15
+	},
+	tintColor: "white",
+	color: "white",
+	//hintTextColor:"#BBBBBD",
+	returnKeyType:Titanium.UI.RETURNKEY_DONE,
+	passwordMask: true,
+	maxLength: 30
+}
+"#passwordTF[platform=android]":{
+	right: "0dp",
+	width: "78%",
+	backgroundColor: "transparent",
+	//height:"40dp",
+	hintText: "Password",
+	font:{
+		fontSize: 15
+	},
+	tintColor: "white",
+	color: "white",
+	hintTextColor: "#BBBBBD",
+	returnKeyType:Titanium.UI.RETURNKEY_DONE,
+	passwordMask: true,
+	maxLength: 30
+}
+"#passwordLbl":{
+	right: "0dp",
+	width: "78%",
+	textAlign:Titanium.UI.TEXT_ALIGNMENT_LEFT,
+	text: "Password",
+	font:{
+		fontSize: 15
+	},
+
+	color: "white"
+}
+"#loginBtn[platform=ios]":{
+	title: "Sign In",
+	font:{
+		fontSize: 18
+	},
+	backgroundColor: "#95ABDB",
+	backgroundSelectedColor: "#4168be",
+	width: "76%",
+	height: "38dp",
+	borderRadius: 16,
+	selectedColor: "black",
+	color: "white"
+}
+"#loginBtn[platform=android]":{
+	title: "Sign In",
+	font:{
+		fontSize: 18
+	},
+	backgroundImage: "/images/signin.png",
+	backgroundSelectedImage: "/images/signin_hover.png",
+	width: "80%",
+	height: "40dp",
+	//borderRadius: 16,
+	//borderWidth: 1,
+	color: "white"
+}
+"#forgotPasswordBtn":{
+	top: 5,
+
+	backgroundColor: "transparent",
+	title: "Forgot Password",
+	font:{
+		fontSize: 15
+	},
+	color: "#BBBBBD",
+	height: "35dp",
+	width:Ti.UI.SIZE,
+	right: "10%",
+	selectedColor: "#f2f2f2"
+}
+"#fbLoginBtn[platform=ios]":{
+	title: "Sign in with Facebook",
+	font:{
+		fontSize: 18
+	},
+	height: "38dp",
+	selectedColor: "black",
+	backgroundColor: "#4B5C97",
+	backgroundSelectedColor: "#3b4977",
+	width: "76%",
+	borderRadius: 16,
+	//focusable: true,
+	color: "white"
+}
+"#fbLoginBtn[platform=android]":{
+	title: "    Sign in with Facebook",
+	font:{
+		fontSize: 18
+	},
+	height: "40dp",
+	//borderWidth:1,
+	backgroundImage: "/images/signinwithfacebooklogo.png",
+	backgroundSelectedImage: "/images/signinwithfacebooklogo_hover.png",
+	width: "80%",
+	///borderRadius: 16,
+	//borderWidth: 1,
+	color: "white",
+	//focusable: true
+}
+"#gmailLoginBtn[platform=ios]":{
+	title: "Sign in with Google",
+	font:{
+		fontSize: 18
+	},
+	height: "38dp",
+	backgroundColor: "#cc0000",
+	backgroundSelectedColor: "#990000",
+	width: "76%",
+	borderRadius: 16,
+	selectedColor: "black",
+	color: "white",
+	focusable: true
+}
+"#gmailLoginBtn[platform=android]":{
+	title: "Sign in with Google",
+	font:{
+		fontSize: 18
+	},
+	height: "40dp",
+	backgroundImage: "/images/signinwithgooglelogo.png",
+	backgroundSelectedImage: "/images/signinwithgooglelogo_hover.png",
+	width: "80%",
+	//borderRadius: 16,
+	//borderWidth: 1,
+	color: "white",
+	focusable: true
+}
+"#signUpBtn":{
+	title: "Sign Up",
+	backgroundImage: "none",
+	font:{
+		fontSize: 15
+	},
+
+	width: "75dp",
+
+	color: "white",
+	selectedColor: "black"
+}
+".lbl":{
+	font:{
+		fontSize: 14
+	}
+}

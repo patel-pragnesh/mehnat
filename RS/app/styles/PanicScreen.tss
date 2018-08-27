@@ -1,0 +1,55 @@
+
+".container" : {
+  backgroundImage:"/images/background.png"
+}
+"#topBar[platform=android]":{
+top:5,	
+}
+"#topBar[platform=ios]":{
+top:20,	
+}
+"#titleLbl":{
+	color: '#fff',
+	text: 'Home',
+	textAlign: 'center',
+	font: {
+		fontSize: 18,
+		fontWeight: 'bold'
+	}
+}
+"#progress": {
+	margin: 1,
+	width: 190,
+	height: 190,
+	//top: 14,
+	backgroundColor: '#1D2E62',
+	
+	progressColor: '#FB9D3F',
+	progressBackgroundColor: '#CED3DD',
+	progressWidth: 12,
+	showText: false,
+	color: '#33b5e5',
+	font: {
+		fontSize: 26,
+		fontFamily: 'Roboto Condensed'
+	}
+},
+"#fixlbl":{
+	
+	font:{
+		fontSize: 25
+	}
+},
+"#lbl":{
+	
+	font:{
+		fontSize: 50
+	}
+},
+"#bottomLbl":{
+	font:{
+		fontSize: 16
+	},
+	color:"#ffffff",
+	
+}

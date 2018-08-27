@@ -1,0 +1,34 @@
+<Alloy>
+	<Window class="container" name="panic" navBarHidden="true" onOpen="startTimerFun" onClose="checkCloseFun">
+
+		<!-- <LeftNavButton>
+		<Button image="/images/menu_icon.png" backgroundImage="none" onClick="openLeftMenu"></Button>
+		</LeftNavButton>
+		<TitleControl>
+		<Label id="titleLbl"></Label>
+		</TitleControl> -->
+		<View id="topBar" height="Ti.UI.SIZE" backgroundColor="transparent">
+			<Button image="/images/arrowwhite.png" height="40dp" width="50dp" backgroundImage="none"  left="0" onClick="closeFun"></Button>
+			<!-- <Label id="titleLbl"></Label> -->
+		</View>
+		<View id="topView" top="25%" height="Titanium.UI.SIZE">
+			<Widget src="de.manumaticx.circularprogress" id="progress"/>
+			<View height="Ti.UI.SIZE" layout="vertical" width="Ti.UI.SIZE">
+				<Label id="fixlbl" color='#ffffff'>Second</Label>
+				<Label id="lbl" top="5" color='#ffffff' >10</Label>
+			</View>
+
+		</View>
+		<View id="touchView" height="65dp"  bottom="0">
+			<View id="callImmedialtBtn" width="50%" left="0" backgroundColor="#008000" backgroundSelectedColor="gray" focusable="true" onClick="callImmediateFun">
+				<ImageView image="/images/phone.png" top="5"></ImageView>
+				<Label id="calllbl" class="bottomLbl" bottom="5" color="white" focusable="false" touchEnabled="false">Call Immediate</Label>
+			</View>
+			<View width="50%" right="0" backgroundColor="red" backgroundSelectedColor="gray" focusable="true" onClick="cancelPanicFun">
+				<ImageView image="/images/panicCancle.png" top="5"></ImageView>
+				<Label id="cancellbl" class="bottomLbl" bottom="5" color="white" focusable="false" touchEnabled="false">Cancel</Label>
+			</View>
+		</View>
+
+	</Window>
+</Alloy>

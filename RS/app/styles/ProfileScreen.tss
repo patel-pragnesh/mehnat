@@ -1,0 +1,236 @@
+
+".container[platform=ios]": {
+	backgroundImage: "/images/background.png",
+	height: "100%",
+	width: "100%"
+}
+"#topBar[platform=ios]":{
+	top: 20
+}
+"#topBar[platform=android]":{
+	top: 5
+}
+".lbl":{
+	font:{
+		fontSize: 18
+	}
+}
+"#titleLbl":{
+	color: '#fff',
+	text: 'My Profile',
+	textAlign: 'center',
+	font: {
+		fontSize: 18,
+		//fontWeight: 'bold'
+	}
+}
+
+"#editBtn":{
+	font:{
+		fontSize: 15
+	},
+	color: "white"
+}
+"#nameTF[platform=ios]":{
+	right: "0dp",
+	width: "78%",
+	backgroundColor: "transparent",
+	//hintText:"Username",
+	font:{
+		fontSize: 15
+	},
+	tintColor: "white",
+	color: "white",
+	maxLength: 50,
+	//paddingLeft:8,
+	returnKeyType:Titanium.UI.RETURNKEY_NEXT,
+	keyboardType:Titanium.UI.KEYBOARD_EMAIL
+}
+"#nameTF[platform=android]":{
+	right: "0dp",
+	width: "78%",
+	backgroundColor: "transparent",
+	hintText: "Name",
+	font:{
+		fontSize: 15
+	},
+	tintColor: "white",
+	color: "white",
+	hintTextColor: "#BBBBBD",
+	maxLength: 50,
+	returnKeyType:Titanium.UI.RETURNKEY_NEXT,
+	keyboardType:Titanium.UI.KEYBOARD_EMAIL
+}
+"#nameLbl":{
+	right: "0dp",
+	width: "78%",
+	textAlign:Titanium.UI.TEXT_ALIGNMENT_LEFT,
+	text: "Name",
+	font:{
+		fontSize: 15
+	},
+
+	color: "white"
+}
+"#emailTF[platform=ios]":{
+	right: "0dp",
+	width: "78%",
+	backgroundColor: "transparent",
+	//hintText:"Username",
+	font:{
+		fontSize: 15
+	},
+	tintColor: "white",
+	color: "white",
+	//	hintTextColor:"#BBBBBD",
+	//paddingLeft:8,
+	returnKeyType:Titanium.UI.RETURNKEY_NEXT,
+	keyboardType:Titanium.UI.KEYBOARD_EMAIL
+}
+"#emailTF[platform=android]":{
+	right: "0dp",
+	width: "78%",
+	backgroundColor: "transparent",
+	hintText: "Email",
+	font:{
+		fontSize: 15
+	},
+	tintColor: "white",
+	color: "white",
+	hintTextColor: "#BBBBBD",
+	//paddingLeft:8,
+	returnKeyType:Titanium.UI.RETURNKEY_NEXT,
+	keyboardType:Titanium.UI.KEYBOARD_EMAIL
+}
+"#emailLbl":{
+	right: "0dp",
+	width: "78%",
+	textAlign:Titanium.UI.TEXT_ALIGNMENT_LEFT,
+	text: "Email",
+	font:{
+		fontSize: 15
+	},
+
+	color: "white"
+}
+"#contactTF[platform=ios]":{
+	right: "0dp",
+	width: "78%",
+	backgroundColor: "transparent",
+	
+	font:{
+		fontSize: 15
+	},
+	tintColor: "white",
+	color: "white",
+	returnKeyType:Titanium.UI.RETURNKEY_NEXT,
+	keyboardType:Titanium.UI.KEYBOARD_PHONE_PAD
+}
+"#contactTF[platform=android]":{
+	right: "0dp",
+	width: "78%",
+	backgroundColor: "transparent",
+	hintText: "Contact",
+	font:{
+		fontSize: 15
+	},
+	tintColor: "white",
+	color: "white",
+	hintTextColor: "#BBBBBD",
+	
+	returnKeyType:Titanium.UI.RETURNKEY_NEXT,
+	keyboardType:Titanium.UI.KEYBOARD_EMAIL
+}
+"#contactLbl":{
+	right: "0dp",
+	width: "78%",
+	textAlign:Titanium.UI.TEXT_ALIGNMENT_LEFT,
+	text: "Contact",
+	font:{
+		fontSize: 15
+	},
+	color: "white"
+}
+
+
+"#pinTF[platform=ios]":{
+	right: "60dp",
+	width: "60%",
+	backgroundColor: "transparent",
+	height:35,
+	//hintText:"Password",
+	font:{
+		fontSize: 15
+	},
+	tintColor: "white",
+	color: "white",
+	//hintTextColor:"#BBBBBD",
+	returnKeyType:Titanium.UI.RETURNKEY_DONE,
+	passwordMask: true,
+	maxLength: 30
+}
+"#pinTF[platform=android]":{
+	right: "60dp",
+	width: "60%",
+	
+	backgroundColor: "transparent",
+	//height:"40dp",
+	hintText: "Pin Number",
+	font:{
+		fontSize: 15
+	},
+	tintColor: "white",
+	color: "white",
+	hintTextColor: "#BBBBBD",
+	passwordMask: true,
+	maxLength: 30
+}
+"#pinLbl":{
+	right: "0dp",
+	width: "78%",
+	textAlign:Titanium.UI.TEXT_ALIGNMENT_LEFT,
+	text: "Pin Number",
+	font:{
+		fontSize: 15
+	},
+
+	color: "white"
+}
+
+"#changePwdBtn[platform=ios]":{
+	title: "Change Password",
+	font:{
+		fontSize: 18
+	},
+	backgroundColor: "#95ABDB",
+	selectedColor: "black",
+	width: "76%",
+	height: "40dp",
+	borderRadius: 16,
+	color: "white"
+}
+"#changePwdBtn[platform=android]":{
+	title: "Change Password",
+	font:{
+		fontSize: 18
+	},
+	backgroundImage: "/images/signin.png",
+	backgroundSelectedImage: "/images/signin_hover.png",
+	width: "76%",
+	height: "40dp",
+	//borderRadius: 16,
+	//borderWidth: 1,
+	color: "white"
+}
+
+"#showBtn":{
+	title: "Show",
+	font:{
+		fontSize: 11
+	},
+	borderColor: "#5f7292",
+	borderRadius: 5,
+	borderWidth: 1,
+	right:5,
+	width:45
+}

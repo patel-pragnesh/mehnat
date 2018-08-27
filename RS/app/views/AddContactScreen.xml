@@ -1,0 +1,56 @@
+<Alloy>
+	<Window class="container" name="addContact"  title="Add Contact"  navBarHidden="true" onClick="winClickFun">
+
+		<ImageView height="100%" width="100%" backgroundImage="/images/background.png" platform="android"/>
+		<View id="topHeader" height="Ti.UI.SIZE" backgroundColor="transparent" >
+			<Button image="/images/arrowwhite.png" height="40dp" width="50dp" backgroundImage="none"  left="0" onClick="closeContactFun" backgroundColor="transparent" backgroundSelectedColor="#3756B6"></Button>
+			<Label id="titleLbl"></Label>
+			<Button id="contactListBtn" image="/images/contact_list_whitecolor.png" height="40dp" width="50dp" backgroundImage="none"  right="0" onClick="openContactListFun" backgroundColor="transparent" backgroundSelectedColor="#3756B6"></Button>
+		</View>
+		<ScrollView id="mainView" top="60" bottom="0">
+			<View layout="vertical" top="0" height="Titanium.UI.SIZE">
+
+				<View height="45dp" top="20">
+					<ImageView image="/images/name.png" left="30"></ImageView>
+					<TextField id="nameTF" name="tf"  onChange="nameChangeFun" platform="ios"  zIndex="10" onReturn="nameReturnFun"></TextField>
+					<TextField id="nameTF" name="tf" platform="android" ></TextField>
+					<Label id="nameLbl" visible="true" name="tf"  platform="ios" zIndex="1"></Label>
+					<View backgroundColor="#5f7292" height="1" bottom="0" right="0" width="78%"></View>
+				</View>
+				<View height="45dp" top="10">
+					<ImageView image="/images/contact.png" left="30"></ImageView>
+					<TextField id="contactTF" name="tf" onChange="contactChangeFun" platform="ios"  zIndex="10">
+						<KeyboardToolbar>
+							<Toolbar >
+								<Items >
+									<FlexSpace/>
+									<Button onClick="contactReturnFun">Next</Button>
+								</Items>
+							</Toolbar>
+						</KeyboardToolbar>
+					</TextField>
+					<TextField id="contactTF" name="tf" platform="android" ></TextField>
+					<Label id="contactLbl" name="tf"  platform="ios" zIndex="1"></Label>
+					<View backgroundColor="#5f7292" height="1" bottom="0" right="0" width="78%"></View>
+				</View>
+				<View height="45dp" top="10">
+					<ImageView image="/images/email.png" left="30"></ImageView>
+					<TextField id="emailTF" name="tf" onChange="emailChangeFun" platform="ios" zIndex="10" onReturn="emailReturnFun"></TextField>
+					<TextField id="emailTF" name="tf" platform="android" ></TextField>
+					<Label id="emailLbl" name="tf" platform="ios" zIndex="1"></Label>
+					<View backgroundColor="#5f7292" height="1" bottom="0" right="0" width="78%"></View>
+				</View>
+				<Label id="setlbl">Set Message</Label>
+				<TextArea id="txtArea" backgroundColor="transparent" onReturn="addContact_via_TextArea_Fun"  name="tf" top="10" height="100" borderColor="#5f7292" color="white" borderWidth="1" left="30" right="30"></TextArea>
+				<!--
+				<View id="remeberView" onClick="rememberMe">
+				<Button id="remeberBtn"></Button>
+				<Label id="checklab"></Label>
+				</View>-->
+				<Button id="submitBtn" top="30" onClick="addContactFun"></Button>
+				<Button id="cancelBtn" top="20" onClick="closeContactFun"></Button>
+			</View>
+		</ScrollView>
+
+	</Window>
+</Alloy>

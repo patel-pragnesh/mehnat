@@ -1,0 +1,196 @@
+
+".container[platform=ios]": {
+	backgroundImage: "/images/background.png",
+	height:"100%",
+	width:"100%",
+	
+}
+".container[platform=android]": {
+
+	height: "100%",
+	width: "100%",
+	windowSoftInputMode:Titanium.UI.Android.SOFT_INPUT_ADJUST_PAN
+}
+"#topBar[platform=ios]":{
+	top:20
+}
+"#topBar[platform=android]":{
+	top:5
+}
+".lbl":{
+	font:{
+		fontSize:18
+	},
+}
+"#titleLbl":{
+	color: '#fff',
+	text: 'Change Password',
+	textAlign: 'center',
+	font: {
+		fontSize: 18,
+		//fontWeight: 'bold'
+	}
+}
+
+"#editBtn":{
+	font:{
+		fontSize: 15
+	},
+	color: "white"
+}
+"#oldPasswordTF[platform=ios]":{
+	right: "0dp",
+	width: "78%",
+	backgroundColor: "transparent",
+	//hintText:"Username",
+	font:{
+		fontSize: 15
+	},
+	tintColor: "white",
+	color: "white",
+	maxLength: 50,
+	passwordMask:true,
+	returnKeyType:Titanium.UI.RETURNKEY_NEXT,
+	//keyboardType:Titanium.UI.KEYBOARD_PHONE_PAD
+}
+"#oldPasswordTF[platform=android]":{
+	right: "0dp",
+	width: "78%",
+	backgroundColor: "transparent",
+	hintText: "Old Password",
+	font:{
+		fontSize: 15
+	},
+	tintColor: "white",
+	color: "white",
+	hintTextColor: "#BBBBBD",
+	maxLength: 30,
+	passwordMask:true,
+	returnKeyType:Titanium.UI.RETURNKEY_NEXT,
+	//keyboardType:Titanium.UI.KEYBOARD_PHONE_PAD
+}
+"#nameLbl":{
+	right: "0dp",
+	width: "78%",
+	textAlign:Titanium.UI.TEXT_ALIGNMENT_LEFT,
+	text: "Old Password",
+	font:{
+		fontSize: 15
+	},
+
+	color: "white"
+}
+"#newPasswordTF[platform=ios]":{
+	right: "0dp",
+	width: "78%",
+	backgroundColor: "transparent",
+	//hintText:"Username",
+	font:{
+		fontSize: 15
+	},
+	tintColor: "white",
+	color: "white",
+	maxLength: 30,
+	passwordMask:true,
+	returnKeyType:Titanium.UI.RETURNKEY_NEXT,
+	//keyboardType:Titanium.UI.KEYBOARD_PHONE_PAD
+}
+"#newPasswordTF[platform=android]":{
+	right: "0dp",
+	width: "78%",
+	backgroundColor: "transparent",
+	hintText: "New Password",
+	font:{
+		fontSize: 15
+	},
+	tintColor: "white",
+	color: "white",
+	hintTextColor: "#BBBBBD",
+	passwordMask:true,
+	maxLength: 30,
+	returnKeyType:Titanium.UI.RETURNKEY_NEXT,
+	//keyboardType:Titanium.UI.KEYBOARD_PHONE_PAD
+}
+"#emailLbl":{
+	right: "0dp",
+	width: "78%",
+	textAlign:Titanium.UI.TEXT_ALIGNMENT_LEFT,
+	text: "New Password",
+	font:{
+		fontSize: 15
+	},
+
+	color: "white"
+}
+"#confirmPasswordTF[platform=ios]":{
+	right: "0dp",
+	width: "78%",
+	backgroundColor: "transparent",
+	//hintText:"Username",
+	font:{
+		fontSize: 15
+	},
+	tintColor: "white",
+	color: "white",
+	maxLength: 30,
+	//	hintTextColor:"#BBBBBD",
+	passwordMask:true,
+	returnKeyType:Titanium.UI.RETURNKEY_DONE,
+	//keyboardType:Titanium.UI.KEYBOARD_PHONE_PAD
+}
+"#confirmPasswordTF[platform=android]":{
+	right: "0dp",
+	width: "78%",
+	backgroundColor: "transparent",
+	hintText: "Confirm Password",
+	font:{
+		fontSize: 15
+	},
+	tintColor: "white",
+	color: "white",
+	hintTextColor: "#BBBBBD",
+	passwordMask:true,
+	maxLength: 30,
+	returnKeyType:Titanium.UI.RETURNKEY_DONE,
+	//keyboardType:Titanium.UI.KEYBOARD_PHONE_PAD
+}
+"#contactLbl":{
+	right: "0dp",
+	width: "78%",
+	textAlign:Titanium.UI.TEXT_ALIGNMENT_LEFT,
+	text: "Confirm Password",
+	font:{
+		fontSize: 15
+	},
+
+	color: "white"
+}
+
+"#submitBtn[platform=ios]":{
+	top:30,
+	title: "Submit",
+	font:{
+		fontSize: 18
+	},
+	backgroundColor: "#95ABDB",
+	selectedColor:"black",
+	width: "76%",
+	height: "40dp",
+	borderRadius: 16,
+	color: "white",
+	focusable:true
+}
+"#submitBtn[platform=android]":{
+	top:30,
+	title: "Submit",
+	font:{
+		fontSize: 18
+	},
+	backgroundImage: "/images/signin.png",
+	backgroundSelectedImage: "/images/signin_hover.png",
+	width: "76%",
+	height: "40dp",
+	//borderRadius: 16,
+	//borderWidth: 1,
+	color: "white"
+}

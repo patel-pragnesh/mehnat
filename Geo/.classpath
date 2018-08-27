@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="android/src"/>
+	<classpathentry kind="src" path="android/build/.apt_generated"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/Volumes/Untitled 2/Hemant/New Software/android-sdk-19/platforms/android-23/android.jar"/>
+	<classpathentry kind="lib" path="/Users/hemantsolanki/Library/Application Support/Titanium/mobilesdk/osx/5.1.2.GA/android/titanium.jar"/>
+	<classpathentry kind="lib" path="/Users/hemantsolanki/Library/Application Support/Titanium/mobilesdk/osx/5.1.2.GA/android/kroll-common.jar"/>
+	<classpathentry kind="lib" path="/Users/hemantsolanki/Library/Application Support/Titanium/mobilesdk/osx/5.1.2.GA/android/kroll-apt.jar"/>
+	<classpathentry kind="src" path=".apt_generated">
+		<attributes>
+			<attribute name="optional" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="android/lib/google-play-services.jar"/>
+	<classpathentry kind="lib" path="android/lib/ormlite-android-4.43.jar"/>
+	<classpathentry kind="lib" path="android/lib/ormlite-core-4.43.jar"/>
+	<classpathentry kind="lib" path="android/lib/disklrucache-2.0.1.jar"/>
+	<classpathentry kind="lib" path="android/lib/map_utill_0.4.3.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

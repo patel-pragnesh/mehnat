@@ -1,0 +1,92 @@
+
+".container": {}
+"#headerView[platform=ios]":{
+	top: 9,
+}
+"#headerView[platform=android]":{
+	top:57
+}
+"#lbl":{
+	font:{
+		fontSize:18
+	}
+}
+"#logTable[platform=ios]":{
+	top: 50,
+	bottom:60,
+	separatorInsets:{
+		left: 0,
+		right: 0
+	}
+}
+"#logTable[platform=android]":{
+	top: 98,bottom:60,
+}
+".headerlbl":{
+	font:{
+		fontSize: 10
+	},
+	color:"#565656",
+	textAlign:Titanium.UI.TEXT_ALIGNMENT_CENTER
+}
+"#activityIndicator":{
+	font:{
+		fontSize: 14
+	},
+	color:"#565656",
+	message:"Loading..."
+}
+".btn":{
+
+	backgroundImage: "none",
+	backgroundColor: "#2941AE",
+	backgroundSelectedColor: "#93AED9",
+	font:{
+		fontSize: 15
+	},
+
+	width: "76%",
+	height: 35,
+	borderRadius:15,
+	color: "white",
+	selectedColor: "black"
+}
+
+"#showBtn[platform=ios]":{
+	bottom: "6",
+	borderRadius: "15",
+	backgroundImage: "#2941AE",
+	width: "76%",
+	height: 35,
+	color: "white",
+	zIndex: "20"
+}
+"#showBtn[platform=android]":{
+	bottom: "6",
+	//borderRadius: "15",
+	backgroundImage: "/images/ListView.png",
+	backgroundSelectedImage:"/images/ListView_hover.png",
+	width: "76%",
+	height: 35,
+	color: "white",
+	zIndex: "20"
+}
+"#addBtn[platform=ios]":{
+	bottom: "10",
+	borderRadius: "15",
+	backgroundImage: "#2941AE",
+	width: "76%",
+	height: 35,
+	color: "white",
+	zIndex: "20"
+}
+"#addBtn[platform=android]":{
+	bottom: "10",
+	//borderRadius: "15",
+	backgroundImage: "/images/ListView.png",
+	backgroundSelectedImage:"/images/ListView_hover.png",
+	width: "76%",
+	height: 35,
+	color: "white",
+	zIndex: "20"
+}

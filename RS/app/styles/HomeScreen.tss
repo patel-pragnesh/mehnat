@@ -1,0 +1,96 @@
+
+".container[platform=ios]": {
+	backgroundImage: "/images/background.png",
+	height: "100%",
+	width: "100%",
+	statusBarStyle: Titanium.UI.iPhone.StatusBar.LIGHT_CONTENT
+}
+"#titleLbl":{
+	color: '#fff',
+	text: 'Home',
+	textAlign: 'center',
+	font: {
+		fontSize: 18,
+		//fontWeight: 'bold'
+	}
+}
+"#newLbl":{
+	color: 'white',
+	//text: 'New',
+	//top:5,
+	//right:0,
+	//width:Ti.UI.SIZE,
+	 
+	//backgroundColor:"white",
+	//borderRadius:2,
+	//width:28,
+	textAlign: 'center',
+	font: {
+		fontSize: 10,
+		//fontWeight: 'bold'
+	}
+}
+"#newLbl1":{
+	color: 'white',
+	//text: 'New',
+	//top:5,
+	//right:0,
+	//width:Ti.UI.SIZE,
+	 
+	//backgroundColor:"white",
+	//borderRadius:2,
+	//width:28,
+	textAlign: 'center',
+	font: {
+		fontSize: 10,
+		//fontWeight: 'bold'
+	}
+}
+"#dateLbl":{
+	color: 'white',
+	text: 'New',
+	top:5,
+	left:0,
+	width:Ti.UI.SIZE,
+	borderRadius:2,
+	
+	text: '',
+	font: {
+		fontSize: 11,
+		//fontWeight: 'bold'
+	}
+}
+"#notifyLbl":{
+	font: {
+		fontSize: 9,
+		
+	}
+}
+".type_icon": {
+	color: "white",
+	font: {
+		fontSize: 13
+	},
+	textAlign: Titanium.UI.TEXT_ALIGNMENT_CENTER
+}
+"#rightTable":{
+	separatorInsets:{
+		left: 0,
+		right: 0
+	}
+}
+".leftLable":{
+	font: {
+		fontSize: 15
+	}
+}
+
+"#emrLbl":{
+	text:"Emergency\n "
+}
+"#trackLbl":{
+	text:"Tracking\n "
+}
+"#safetyLbl":{
+	text:"Safety Rules\n "
+}

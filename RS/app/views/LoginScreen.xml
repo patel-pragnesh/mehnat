@@ -1,0 +1,40 @@
+<Alloy>
+	<Window class="container" onClick="winClickFun" onOpen="autoLoginFun">
+		<ImageView image="/images/background.png" left="0" right="0" top="0" bottom="0" platform="android"></ImageView>
+		<ScrollView id="mainView" top="0">
+
+			<ImageView id="logoImg" image="/images/logo.png" top="8%" platform="ios"></ImageView>
+			<ImageView id="logoImg" image="/images/logo.png" top="5%" platform="android"></ImageView>
+			<View id="containerView" layout="vertical" bottom="5" width="Titanium.UI.SIZE" height="Titanium.UI.SIZE">
+				<View height="45dp" top="10">
+					<ImageView image="/images/user-name.png" left="30"></ImageView>
+					<Label id="usernameLbl" height="35" visible="true"  platform="ios" zIndex="1"></Label>
+					<TextField id="emailTF" name="tf" onFocus="emailfocusFun" zIndex="10" onChange="emailChangeFun" platform="ios" onReturn="returnFun"></TextField>
+					<TextField id="emailTF" name="tf" platform="android"></TextField>
+					
+					<View backgroundColor="#5f7292" height="1" bottom="0" right="0" width="78%"></View>
+				</View>
+				<View height="45dp" top="10">
+					<ImageView image="/images/password.png" left="30"></ImageView>
+					<TextField id="passwordTF" zIndex="10" name="tf" onReturn="login_Via_Return_KeypadFun" onChange="pwdChangeFun"  platform="ios"></TextField>
+					<TextField id="passwordTF" name="tf" onReturn="login_Via_Return_KeypadFun"  platform="android"></TextField>
+					<Label id="passwordLbl" height="35" platform="ios" focusable="false" zIndex="1"></Label>
+					<View backgroundColor="#5f7292" height="1" bottom="0" right="0" width="78%"></View>
+				</View>
+				<Button id="loginBtn" top="30" onClick="loginFun"></Button>
+				<Button id="forgotPasswordBtn" onClick="openForgotPassword" focusable="true"></Button>
+				<View id="separatorView" top="10"  width="79%" height="Ti.UI.SIZE">
+					<View backgroundColor="#BBBBBD" height="1dp" width="41%" left="0"></View>
+					<Label id="orLbl" color="#BBBBBD" textid="or">Or</Label>
+					<View backgroundColor="#BBBBBD" height="1dp" width="41%" right="0"></View>
+				</View>
+				<Button id="fbLoginBtn" top="20" onClick="loginFacebook"></Button>
+				<Button id="gmailLoginBtn" top="10"  onClick="loginGmail" focusable="true"></Button>
+				<View height="Ti.UI.SIZE" width="Ti.UI.SIZE" layout="horizontal" top="10">
+					<Label class="lbl" color="#A7A8AD">Don't have an account?</Label>
+					<Button id="signUpBtn" onClick="signUpFun" focusable="true"></Button>
+				</View>
+			</View>
+		</ScrollView>
+	</Window>
+</Alloy>

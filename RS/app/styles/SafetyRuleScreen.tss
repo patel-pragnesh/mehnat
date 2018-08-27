@@ -1,0 +1,40 @@
+
+".container" : {
+  
+}
+".lbl":{
+	font:{
+		fontSize:18
+	},
+}
+"#safetyTable":{
+	separatorInsets:{
+		left:0,
+		right:0
+	}
+}
+"#notifyLbl":{
+	font:{
+		fontSize:10
+	}
+}
+
+"#showBtn[platform=ios]":{
+	bottom: "6",
+	borderRadius: "15",
+	backgroundColor: "#2941AE",
+	width: "76%",
+	height: 35,
+	color: "white",
+	zIndex: "20"
+}
+"#showBtn[platform=android]":{
+	bottom: "6",
+	//borderRadius: "15",
+	backgroundImage: "/images/ListView.png",
+	backgroundSelectedImage:"/images/ListView_hover.png",
+	width: "76%",
+	height: 35,
+	color: "white",
+	zIndex: "20"
+}

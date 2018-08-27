@@ -1,0 +1,37 @@
+
+".container[platform=android]" : {
+  windowSoftInputMode:Titanium.UI.Android.SOFT_INPUT_ADJUST_PAN
+}
+"#contactTable":{
+	separatorInsets:{
+		left:0,
+		right:0,
+	}
+}
+"#lbl":{
+	font:{
+		fontSize:18
+	}
+}
+"#searchVW":{
+	
+	
+	backgroundImage:"/images/search-box.png"
+}
+"#searchBar":{
+	
+	width:"82%",
+	top:8,
+	hintText: "Search",
+	hintTextColor:"gray",
+	color:'#ACB0C8',
+	backgroundColor:"transparent",
+	returnKeyType :Titanium.UI.RETURNKEY_DONE,
+	font: {
+		fontSize: 15,
+		fontFamily: "Helvetica LT",
+		fontType: "Regular"
+	},
+	
+	
+}

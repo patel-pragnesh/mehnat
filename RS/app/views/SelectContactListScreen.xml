@@ -1,0 +1,26 @@
+<Alloy>
+	<Window class="container" name="selectContact" layout="vertical" title="Select Contact" backButtonTitle="" onOpen="reloadContacts">
+		<RightNavButtons platform="ios">
+			<!-- <View width="Ti.UI.SIZE" layout="horizontal" right="0"> -->
+			<!-- <Button id="notificationBtn" image="/images/information.png" backgroundImage="none" left="0" width="40dp" onClick="openNotification"></Button> -->
+			<!-- <Button id="panicBtn" image="/images/traffic_icon.png" backgroundImage="none" left="5"  width="40dp" onClick="openPanic"></Button>
+			</View> -->
+			<Button id="panicBtn" image="/images/traffic_icon.png" backgroundImage="none" onClick="openPanic"></Button>
+		</RightNavButtons>
+		<View height="48dp" backgroundColor="#2941AE" platform="android" top="0">
+			<Label id="lbl" color="#ffffff">Select Contact</Label>
+			<Button image="/images/ar-white.png" backgroundImage="none" backgroundColor="transparent" backgroundSelectedColor="#3756B6" left="0" width="45dp" onClick="closeWindowFun"></Button>
+			<Button id="panicBtn" image="/images/traffic_icon.png" backgroundImage="none" width="50dp" right="0" backgroundColor="transparent" backgroundSelectedColor="#3756B6" onClick="openPanic"></Button>
+			<!-- <Button id="notificationBtn" image="/images/information.png" backgroundImage="none" width="50dp" right="50" backgroundColor="transparent" backgroundSelectedColor="#3756B6" onClick="openNotification"></Button> -->
+		</View>
+		<SearchBar id="search" hintText="Search" barColor="#ACB0C8" height="43" onChange="searchArticle" platform="ios"></SearchBar>
+		<View id="searchVW" platform="android" height="45" top="0">
+			<TextField id="searchBar" onChange="searchArticle"></TextField>
+		</View>
+		<TableView id="contactTable" top="0" separatorColor="#EDEDEE" onClick="tblClickFun">
+			<FooterView>
+				<View height="1" backgroundColor="transparent"></View>
+			</FooterView>
+		</TableView>
+	</Window>
+</Alloy>

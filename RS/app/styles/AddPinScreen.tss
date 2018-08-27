@@ -1,0 +1,155 @@
+
+".container[platform=ios]": {
+	backgroundImage: "/images/background.png",
+	height: "100%",
+	width: "100%"
+}
+".container[platform=android]": {
+
+	height: "100%",
+	width: "100%",
+	windowSoftInputMode:Titanium.UI.Android.SOFT_INPUT_ADJUST_PAN
+
+}
+".lbl":{
+	font:{
+		fontSize: 18
+	}
+}
+"#topBar[platform=ios]":{
+	top: 20
+}
+"#topBar[platform=android]":{
+	top: 5
+}
+"#titleLbl":{
+	color: '#fff',
+	text: 'Add Pin',
+	textAlign: 'center',
+	font: {
+		fontSize: 18,
+		//fontWeight: 'bold'
+	}
+}
+
+"#editBtn":{
+	font:{
+		fontSize: 15
+	},
+	color: "white"
+}
+"#nameTF[platform=ios]":{
+	right: "0dp",
+	width: "78%",
+	backgroundColor: "transparent",
+	//hintText:"Username",
+	font:{
+		fontSize: 15
+	},
+	tintColor: "white",
+	color: "white",
+	maxLength: 50,
+	//paddingLeft:8,
+	returnKeyType:Titanium.UI.RETURNKEY_NEXT,
+	keyboardType:Titanium.UI.KEYBOARD_EMAIL
+}
+"#nameTF[platform=android]":{
+	right: "0dp",
+	width: "78%",
+	backgroundColor: "transparent",
+	hintText: "Pin Name",
+	font:{
+		fontSize: 15
+	},
+	tintColor: "white",
+	color: "white",
+	hintTextColor: "#BBBBBD",
+	maxLength: 50,
+	returnKeyType:Titanium.UI.RETURNKEY_NEXT,
+	keyboardType:Titanium.UI.KEYBOARD_EMAIL
+}
+"#nameLbl":{
+	right: "0dp",
+	width: "78%",
+	textAlign:Titanium.UI.TEXT_ALIGNMENT_LEFT,
+	text: "Pin Name",
+	font:{
+		fontSize: 15
+	},
+
+	color: "white"
+}
+"#pinTF[platform=ios]":{
+	right: "0dp",
+	width: "78%",
+	backgroundColor: "transparent",
+	//hintText:"Username",
+	font:{
+		fontSize: 15
+	},
+	tintColor: "white",
+	color: "white",
+	//	hintTextColor:"#BBBBBD",
+	//paddingLeft:8,
+	returnKeyType:Titanium.UI.RETURNKEY_DONE,
+	keyboardType:Titanium.UI.KEYBOARD_PHONE_PAD
+}
+"#pinTF[platform=android]":{
+	right: "0dp",
+	width: "78%",
+	backgroundColor: "transparent",
+	hintText: "Pin Number",
+	font:{
+		fontSize: 15
+	},
+	tintColor: "white",
+	color: "white",
+	hintTextColor: "#BBBBBD",
+	//paddingLeft:8,
+	returnKeyType:Titanium.UI.RETURNKEY_DONE,
+	keyboardType:Titanium.UI.KEYBOARD_PHONE_PAD
+}
+"#emailLbl":{
+	right: "0dp",
+	width: "78%",
+	textAlign:Titanium.UI.TEXT_ALIGNMENT_LEFT,
+	text: "Pin Number",
+	font:{
+		fontSize: 15
+	},
+
+	color: "white"
+}
+
+
+"#submitBtn[platform=ios]":{
+	top: 30,
+	title: "Submit",
+	font:{
+		fontSize: 18
+	},
+	backgroundColor: "#95ABDB",
+	selectedColor: "black",
+	width: "76%",
+	height: "40dp",
+	borderRadius: 16,
+	color: "white",
+	focusable:true
+}
+"#submitBtn[platform=android]":{
+	top: 30,
+	title: "Submit",
+	font:{
+		fontSize: 18
+	},
+	// backgroundColor: "#95ABDB",
+	// backgroundSelectedColor: "#4168be",
+	backgroundImage: "/images/signin.png",
+	backgroundSelectedImage: "/images/signin_hover.png",
+	width: "76%",
+	height: "40dp",
+	//borderRadius: 16,
+	//borderWidth: 1,
+	color: "white",
+	focusable:true
+}

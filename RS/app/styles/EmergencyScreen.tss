@@ -1,0 +1,14 @@
+
+".container" : {
+}
+".lbl":{
+	font:{
+		fontSize:18
+	},
+}
+"#emergencyTable":{
+	separatorInsets:{
+		left:0,
+		right:0
+	}
+}
