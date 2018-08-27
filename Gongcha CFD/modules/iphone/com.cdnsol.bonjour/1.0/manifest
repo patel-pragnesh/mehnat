@@ -1,0 +1,18 @@
+#
+# this is your module manifest and used by Titanium
+# during compilation, packaging, distribution, etc.
+#
+version: 1.0
+apiversion: 2
+architectures: armv7 arm64 i386 x86_64
+description: Bonjour
+author: Priyanka Tiwari
+license: Specify your license
+copyright: Copyright (c) 2018 by Your Company
+
+# these should not be edited
+name: Bonjour
+moduleid: com.cdnsol.bonjour
+guid: fec5f45f-2d30-4228-8af2-d3f7b8618992
+platform: iphone
+minsdk: 7.0.2.GA

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ti:app xmlns:ti="http://ti.appcelerator.org">
+    <id>com.cdnsol.gongchacfd</id>
+    <name>Gongcha CFD</name>
+    <version>1.0</version>
+    <publisher>priyankatiwari</publisher>
+    <url>undefined</url>
+    <description>undefined</description>
+    <copyright>2018 by priyankatiwari</copyright>
+    <icon>appicon.png</icon>
+    <fullscreen>false</fullscreen>
+    <navbar-hidden>false</navbar-hidden>
+    <analytics>true</analytics>
+    <!--Hemant Solanki
+	<guid>946a2b41-85b2-4a63-9555-f97d644de671</guid>-->
+    <!--Priyanka
+	<guid>d5945517-0bb2-4949-9ccc-0bd167e208bf</guid>-->
+    <!--Ashish Sebastian -->
+    <guid>2ca82c1b-ec55-44bc-9ddd-1b427a0e868e</guid>
+    <property name="ti.ui.defaultunit" type="string">dp</property>
+    <property name="run-on-main-thread" type="bool">true</property>
+    <ios>
+        <enable-launch-screen-storyboard>true</enable-launch-screen-storyboard>
+        <use-app-thinning>true</use-app-thinning>
+        <plist>
+            <dict>
+                <key>UIBackgroundModes</key>
+                <array>
+                    <string>bluetooth-peripheral</string>
+                </array>
+                <key>NSBluetoothPeripheralUsageDescription</key>
+                <string>Can we connect to Bluetooth devices?</string>
+                <key>UISupportedInterfaceOrientations~iphone</key>
+                <array>
+                    <string>UIInterfaceOrientationPortrait</string>
+                </array>
+                <key>UISupportedInterfaceOrientations~ipad</key>
+                <array>
+                    <string>UIInterfaceOrientationPortrait</string>
+                    <string>UIInterfaceOrientationPortraitUpsideDown</string>
+                    <string>UIInterfaceOrientationLandscapeLeft</string>
+                    <string>UIInterfaceOrientationLandscapeRight</string>
+                </array>
+                <key>UIAppFonts</key>
+                <array>
+                    <string>Montserrat-UltraLight_1.ttf</string>
+                    <string>Montserrat-Black.ttf</string>
+                    <string>Montserrat-Bold_1.ttf</string>
+                    <string>Montserrat-Light_1.ttf</string>
+                    <string>Montserrat-Regular_1.ttf</string>
+                </array>
+                <key>UISupportedInterfaceOrientations~ipad</key>
+                <array>
+                    <string>UIInterfaceOrientationLandscapeLeft</string>
+                    <string>UIInterfaceOrientationLandscapeRight</string>
+                </array>
+                <key>UIRequiresPersistentWiFi</key>
+                <false/>
+                <key>UIPrerenderedIcon</key>
+                <false/>
+                <key>UIStatusBarHidden</key>
+                <false/>
+                <key>UIStatusBarStyle</key>
+                <string>UIStatusBarStyleDefault</string>
+            </dict>
+        </plist>
+    </ios>
+    <android xmlns:android="http://schemas.android.com/apk/res/android"/>
+    <modules>
+        <module platform="commonjs">ti.cloud</module>
+        <module platform="iphone">ti.bluetooth</module>
+        <module platform="iphone">com.cdnsol.bonjour</module>
+    </modules>
+    <deployment-targets>
+        <target device="android">false</target>
+        <target device="ipad">true</target>
+        <target device="iphone">true</target>
+    </deployment-targets>
+    <sdk-version>7.0.2.GA</sdk-version>
+    <plugins>
+        <plugin version="1.0">ti.alloy</plugin>
+    </plugins>
+    <property name="appc-app-id" type="string">5b6a958ed582443dc7227042</property>
+    <property name="acs-authbase-url-development" type="string">https://secure-identity.cloud.appcelerator.com</property>
+    <property name="acs-base-url-development" type="string">https://api.cloud.appcelerator.com</property>
+    <property name="acs-oauth-secret-development" type="string">jN3kbquNo0qa0hwuvXvWMhXOaCYq0K7B</property>
+    <property name="acs-oauth-key-development" type="string">MWCtDy5WiKuxKHp5eO4SoGxaAc8NyIqc</property>
+    <property name="acs-api-key-development" type="string">EdqJQdrTW80mc2vRho6HE1YBQNmPuWsD</property>
+    <property name="acs-username-development" type="string">appc_app_user_dev</property>
+    <property name="acs-password-development" type="string">bEeEhysW3noZLtYSmH</property>
+    <property name="acs-authbase-url-production" type="string">https://secure-identity.cloud.appcelerator.com</property>
+    <property name="acs-base-url-production" type="string">https://api.cloud.appcelerator.com</property>
+    <property name="acs-oauth-secret-production" type="string">OSOmEPAycmFGUAVAdDluO7GXEvp8uOoT</property>
+    <property name="acs-oauth-key-production" type="string">I9BvgGuGycrRj9REwyqdYfTzndrON2Kh</property>
+    <property name="acs-api-key-production" type="string">Ib9xgEJTA957M5XGNJXsesGveDGdmZ1i</property>
+    <property name="acs-username-production" type="string">appc_app_user</property>
+    <property name="acs-password-production" type="string">pjnI8S6hyIwYGx42b2</property>
+    <property name="appc-org-id" type="string">988354635056678</property>
+    <property name="appc-creator-user-id" type="string">833e5291-7a63-4adc-a5f2-ef54a654cee8</property>
+</ti:app>

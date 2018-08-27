@@ -1,0 +1,10 @@
+<Alloy>
+	<Window platform="ios" class="container" backgroundColor="transparent">
+		<View id="ActivityView" >
+			<ActivityIndicator id="activityIndicator"></ActivityIndicator>
+			<Label id="loadingLabel" >Please wait...</Label>
+		</View>
+		<Label id="syncLbl" bottom="60">Data sync in process, it will take some time to finish</Label>
+	</Window>
+	<ProgressIndicator id="activityIndicatorAnd"  ns="Ti.UI.Android" platform="android"></ProgressIndicator>
+</Alloy>        

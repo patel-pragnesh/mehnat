@@ -1,0 +1,45 @@
+".caffeinaToastView":{
+	top: 0,
+	backgroundColor: '#B000',
+	height: 65,
+	touchEnabled: false,
+	layout: 'composite'
+},
+".caffeinaToastIcon":{
+	left: 8,
+	top:20,
+	height: 42,
+	borderRadius: 10
+},
+".caffeinaToastLabel":{
+	touchEnabled: false,
+	left: 10,
+	top:20,
+	right: 10,
+	bottom:0,
+	color: '#fff',
+	textAlign: 'center',
+	font: {
+		fontSize: 16,
+		fontFamily:"Roboto-Regular"
+	}
+},
+
+".caffeinaToastLabelWithoutIcon":{
+	left: 10,
+},
+".caffeinaToastSuccess": {
+	backgroundColor: '#8000df10'
+},
+".caffeinaToastError": {
+	backgroundColor: '#80FF0000'
+},
+".caffeinaToastInfo": {
+	backgroundColor: '#8000c0ff'
+},
+".caffeinaToastWarn": {
+	backgroundColor: '#80ffc000'
+},
+".caffeinaToastDefault": {
+	backgroundColor: '#8000c0ff'
+}

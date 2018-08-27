@@ -1,0 +1,91 @@
+<Alloy>
+	<NavigationWindow platform="ios" id="navWin" name="LoginScreen">
+		<Window title="Cart" id="CustomerDashboard" backgroundColor="white" onOpen="winOpenFun" onClose="finalizePeripheral"  >
+			<RightNavButtons  platform="ios">
+				<Button id="logoutBtn" image="/images/logout.png" onClick="logoutFunc" ></Button>
+			</RightNavButtons>
+			<TitleControl>
+				<View  top="0" width="70%">
+					<View id="locationView" layout="vertical" height="Ti.UI.SIZE">
+
+						<Label textid="STORE_TITLE" top="0" class="winTitleCl" id="winTitleLbl" touchEnabled="false" ></Label>
+						<!-- <ImageView right="5" image="/images/dropDown_arrow_black.png" id="winDropDownArrow" touchEnabled="false"></ImageView> -->
+						<View width="Ti.UI.SIZE" top="4" layout="horizontal" height="Ti.UI.SIZE">
+							<!-- Define the styling properties in the TSS file -->
+							<Label class="storeAddressCl" id="locationAddLbl" ellipsize="Titanium.UI.TEXT_ELLIPSIZE_TRUNCATE_MIDDLE" touchEnabled="false" ></Label>
+							<!-- <ImageView left="5" visible="false" image="/images/store_address_dropDown_arrow.png" id="winDropDownArrow" touchEnabled="false"></ImageView> -->
+						</View>
+					</View>
+				</View>
+			</TitleControl>
+			<View layout="horizontal">
+				<View id="slideimageVW" height="Ti.UI.FILL" width="55%">
+					<ScrollableView id="slideImage"></ScrollableView>
+				</View>
+				<View height="Ti.UI.FILL" width="45%" layout="vertical" borderColor="#ACACAC"  top="-1" bottom="-1">
+					<!-- <View top="0" backgroundColor="trasnparent" width="Ti.UI.FILL" height="Ti.UI.SIZE"> -->
+					<ImageView top="25" image="/images/goncha-logo.png"></ImageView>
+					<!-- <Button top="25" image="/images/logout.png" id="logoutBtn" class="logoutBtnCL" onClick="logoutFunc" titleid="logout_txt"></Button>
+					</View> -->
+					<Label id="wlcmLbl" top="10" color="#c52837">Welcome</Label>
+					<Label id="nameLbl" top="5" visible="false" color="#c52837"></Label>
+					<Label id="loyalityPtsLbl" top="5" visible="false" color="#c52837"></Label>
+					<View layout="horizontal" backgroundColor="transparent" top="5" left="0" width="Ti.UI.FILL" height="30">
+						<View id="connectionStatusView" top="5" height="15" width="15" borderRadius="7.5" backgroundColor="red" left="10"></View>
+						<Label id="connectionStatusLbl" top="2" left="5" color="red">Not Connected</Label>
+					</View>
+					<View height="4%" top="5" backgroundColor="#E9E9E9">
+						<Label id="totalItemLbl"  right="5" width="18%" textAlign="right" class="rowHeaderClass">0 Item</Label>
+					</View>
+					<TableView id="orderListTable" top="0" zIndex="1" width="100%">
+						<HeaderView>
+							<View id="no_data_layout_headerVw" zIndex="30" backgroundColor="transparent" height="42%" width="Ti.UI.FILL">
+								<View height="5" top="0" backgroundColor="#DFDEE4"></View>
+								<View layout="vertical" height="Ti.UI.SIZE">
+									<Label id="got_nothing_Lbl"></Label>
+									<Label id="no_order_Lbl"></Label>
+								</View>
+							</View>
+						</HeaderView>
+						<FooterView id="bottomSection">
+							<View id="mainTotalFooterVw" height="Ti.UI.SIZE"  backgroundColor="white" layout="vertical">
+								<View height="5" top="0" backgroundColor="#DFDEE4"></View>
+								<View height="Ti.UI.SIZE" top="5" right="2.5%" width="Ti.UI.SIZE" layout="horizontal">
+									<View height="Ti.UI.SIZE" top="0" width="Ti.UI.SIZE" layout="vertical">
+										<Label class="totalClassLbl" textAlign="right"  right="0" top="10"  textid="sub_total_txt"></Label>
+										<Label class="totalClassLbl" id="staticLoyaltyPointLbl" height="0" visible="false" textAlign="left" left="0" width="Ti.UI.SIZE" top="0" textid="loyalty_point"></Label>
+										<Label class="totalClassLbl" id="staticLoyaltyValLbl" height="0" visible="false" textAlign="left" left="0" width="Ti.UI.SIZE" top="0" textid="loyalty_value"></Label>
+										<Label class="totalClassLbl"textAlign="right"  right="0" top="10" textid="discount_txt"></Label>
+										<Label class="totalClassLbl" textAlign="right"  right="0" top="10" textid="tax_txt"></Label>
+										<!-- <Label id="staticGrandTotalLbl" class="finalTotalClassLbl" textAlign="right" right="0" top="20" textid="total_dolar_txt"></Label> -->
+
+									</View>
+									<View height="Ti.UI.SIZE" left="20" width="Ti.UI.SIZE" layout="vertical">
+										<Label id="subTotalLbl" class="totalClassLbl" right="0" right="0" textAlign="right" top="10">$0.00</Label>
+										<Label id="loyaltyPointLbl" height="0" visible="false" class="totalClassLbl" right="0" textAlign="right" top="0">-0 pts.</Label>
+										<Label id="loyaltyValueLbl" height="0" visible="false" class="totalClassLbl" right="0" textAlign="right" top="0">-$0.00</Label>
+										<Label id="discountLbl" type="" class="totalClassLbl" right="0" textAlign="right" top="10">-$0.00</Label>
+										<Label id="taxLbl" class="totalClassLbl" right="0"  textAlign="right" top="10">+$0.00</Label>
+										<!-- <Label id="grandTotalLbl" class="finalTotalClassLbl" right="0" textAlign="right" top="20" >$0</Label> -->
+									</View>
+								</View>
+								<View height="2" top="5" backgroundColor="#DFDEE4"></View>
+								<View height="50" top="5" right="2.5%" width="Ti.UI.SIZE" layout="horizontal">
+									<View height="Ti.UI.SIZE" top="0" width="Ti.UI.SIZE">
+										<Label id="staticGrandTotalLbl" class="finalTotalClassLbl" textAlign="right" right="0" top="20" textid="total_dolar_txt"></Label>
+									</View>
+									<View height="Ti.UI.SIZE" left="20" top="0" width="Ti.UI.SIZE">
+										<Label id="grandTotalLbl" class="finalTotalClassLbl" right="0" textAlign="right" top="20" >$0.00</Label>
+									</View>
+								</View>
+								<View height="20" top="0" width="Ti.UI.FILL">
+								</View>
+							</View>
+						</FooterView>
+					</TableView>
+				</View>
+			</View>
+
+		</Window>
+	</NavigationWindow>
+</Alloy>

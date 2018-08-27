@@ -1,0 +1,39 @@
+<Alloy>
+	<Window class="windowCl" id="passCodeWin" backgroundColor="transparent">
+
+		<View id="popoverView" backgroundColor="transparent" height="8%" top="0"></View>
+
+		<!-- BackgroundView -->
+		<View backgroundColor="#000" top="8.5%" opacity="0.7" id="popupBack"></View>
+
+		<!-- Numeric Pad View -->
+		<View id="numericPadView" height="65%" width="42%" top="20%" backgroundColor="#382E2C"  borderRadius="5" layout="vertical">
+			<View left="3.25%" right="3.25%" top="3.25%" layout="vertical">
+				<Button id="cancelPinPadBtn" titleid="cancel_txt" onClick="closeSetupFunc"></Button>
+				<TextField id="pinNoTF" top="2%" maxLength="4" height="16%" editable="false" passwordMask="true" hinttextid="ENTER_PIN_NUMBER"  backgroundColor="white" paddingLeft="14" borderRadius="10" width="Ti.UI.FILL"  hintTextColor="#949292" ></TextField>
+				<View  height="Ti.UI.FILL" width="Ti.UI.FILL" layout="vertical">
+					<View  top="3%" height="20%" width="Ti.UI.FILL" layout="horizontal">
+						<Button height="Ti.UI.FILL" class="btn" width="30%" backgroundColor="white" borderRadius="10" color="#382E2C" name="7" onSingletap="dialpadbtnfun">7</Button>
+						<Button height="Ti.UI.FILL" class="btn" left="4.55%" width="30%" backgroundColor="white" borderRadius="10" color="#382E2C" name="8" onSingletap="dialpadbtnfun">8</Button>
+						<Button height="Ti.UI.FILL" class="btn" left="4.55%"  width="30%" backgroundColor="white" borderRadius="10" color="#382E2C" name="9" onSingletap="dialpadbtnfun">9</Button>
+					</View>
+					<View top="3%" height="20%" width="Ti.UI.FILL" layout="horizontal">
+						<Button height="Ti.UI.FILL" class="btn"  width="30%" backgroundColor="white" borderRadius="10" color="#382E2C" name="4" onSingletap="dialpadbtnfun">4</Button>
+						<Button height="Ti.UI.FILL" class="btn" left="4.55%" width="30%" backgroundColor="white" borderRadius="10" color="#382E2C" name="5" onSingletap="dialpadbtnfun">5</Button>
+						<Button height="Ti.UI.FILL" class="btn" left="4.55%"  width="30%" backgroundColor="white" borderRadius="10" color="#382E2C" name="6" onSingletap="dialpadbtnfun">6</Button>
+					</View>
+					<View  top="3%" height="20%" width="Ti.UI.FILL" layout="horizontal">
+						<Button height="Ti.UI.FILL" class="btn" width="30%" backgroundColor="white" borderRadius="10" color="#382E2C" name="1" onSingletap="dialpadbtnfun">1</Button>
+						<Button height="Ti.UI.FILL" class="btn" left="4.55%" width="30%" backgroundColor="white" borderRadius="10" color="#382E2C" name="2" onSingletap="dialpadbtnfun">2</Button>
+						<Button height="Ti.UI.FILL" class="btn" left="4.55%"  width="30%" backgroundColor="white" borderRadius="10" color="#382E2C" name="3" onSingletap="dialpadbtnfun">3</Button>
+					</View>
+					<View top="3%" height="20%" width="Ti.UI.FILL" layout="horizontal">
+						<Button height="Ti.UI.FILL" class="funcBtn" width="30%" backgroundColor="#BD1B38" borderRadius="10" color="#fff" titleid="clear_txt" onSingletap="cleardailpadfun"></Button>
+						<Button height="Ti.UI.FILL" class="btn" left="4.55%" width="30%" backgroundColor="white" borderRadius="10" color="#382E2C" name="0" onSingletap="dialpadbtnfun">0</Button>
+						<Button height="Ti.UI.FILL" class="funcBtn" left="4.55%"  width="30%" backgroundColor="#6FB49A" borderRadius="10" color="#fff" titleid="logout_txt" onSingletap="validateLoginfun"></Button>
+					</View>
+				</View>
+			</View>
+		</View>		
+	</Window>
+</Alloy>

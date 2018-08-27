@@ -1,0 +1,84 @@
+".container": {
+	backgroundColor: "white"
+}
+
+"Label": {
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	color: "#000"
+}
+
+"#label": {
+	font: {
+		fontSize: 12
+	}
+}
+".finalTotalClassLbl":{
+	font:{
+		fontSize: 22,
+		fontFamily: "Montserrat-Regular"
+	},
+	color: "#C1302F"
+}
+".totalClassLbl":{
+	font:{
+		fontSize: 18,
+		fontFamily: "Montserrat-Regular"
+	},
+
+	color: "black"
+}
+"#got_nothing_Lbl":{
+	font:{
+		fontSize: 30,
+		fontFamily: "Montserrat-Regular"
+	},
+	textid: "got_nothing_txt",
+	color: "#DCA3A7"
+}
+"#no_order_Lbl":{
+	font:{
+		fontSize: 18,
+		fontFamily: "Montserrat-Light"
+	},
+	textid: "no_order_txt",
+	color: "#9C9C9C"
+}
+
+".logoutBtnCL":{
+	font:{
+		fontSize: 14,
+		fontFamily: "Montserrat-Light"
+	},
+	color: "#fff",
+	backgroundColor: "#3B2D2C",
+	width: "20%",
+	height: 40,
+	backgroundImage: "none",
+	right: "2%"
+}
+".winTitleCl": {
+	color: "#fff",
+	font: {
+		fontSize: 15,
+		fontWeight: 'semibold',
+		fontFamily: "Helvetica-bold"
+	},
+	textAlign: Titanium.UI.TEXT_ALIGNMENT_CENTER
+}
+
+".storeAddressCl": {
+	color: "#fff",
+	font: {
+		fontSize: 13,
+		fontFamily: "Helvetica"
+	},
+	textAlign: Titanium.UI.TEXT_ALIGNMENT_CENTER
+}
+
+"#orderListTable":{
+	tableSeparatorInsets:{
+		left: 0,
+		right: 0
+	}
+}

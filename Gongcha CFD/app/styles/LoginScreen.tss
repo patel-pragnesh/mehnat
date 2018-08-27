@@ -1,0 +1,50 @@
+
+".container" : {
+  backgroundColor:"white"
+}
+".textField":{
+	height:Ti.UI.FILL,
+	font:{
+		fontSize:18,
+		fontFamily:"Roboto-Regular"
+	},
+	hintText:"Email",
+	left:15,right:0
+}
+"#emailTF":{
+	hintText:"Email",
+	keyboardType :Titanium.UI.KEYBOARD_TYPE_EMAIL,
+	returnKeyType:Titanium.UI.RETURNKEY_NEXT,
+	autocapitalization:Titanium.UI.TEXT_AUTOCAPITALIZATION_NONE
+}
+"#passwordTF":{
+	hintText:"Password",
+	maxLength:15,
+	returnKeyType:Titanium.UI.RETURNKEY_DONE,
+	passwordMask:true
+}
+"#forgotBtn":{
+	font:{
+		fontSize:18,
+		fontFamily:"Roboto-Regular"
+	},
+	color:"#382E2C",
+	selectedColor:"gray",
+	backgroundImage:"none",
+	backgroundColor:"transparent",
+	height:Ti.UI.FILL,
+	width:Ti.UI.SIZE,
+	right:0
+}
+"#loginBtn":{
+	font:{
+		fontSize:20,
+		fontFamily:"Roboto-Regular"
+	},
+	borderRadius:6,
+	color:"white",
+	width:"45%",
+	height:54,
+	backgroundImage:"none",
+	backgroundColor:"#382E2C",
+}

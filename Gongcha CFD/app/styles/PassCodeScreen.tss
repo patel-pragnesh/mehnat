@@ -1,0 +1,30 @@
+
+".container": {
+	backgroundColor: "transparent"
+}
+
+".btn":{
+	font: {
+		fontSize: 38,
+		fontFamily: "Montserrat-Light",
+	}
+}
+
+".funcBtn":{
+	font: {
+		fontSize: 28,
+		fontFamily: "Montserrat-Light",
+	}
+}
+
+"#cancelPinPadBtn":{
+	font : {
+		fontSize : "20",
+		fontFamily: "Helvetica",
+	},
+	right : "2%",
+	top : 0,
+	color : "#fff",
+	height : "20",
+	backgroundColor : "transparent"
+}
