@@ -1,0 +1,74 @@
+<Alloy>
+	<Window id="checkoutWin" class="container" title="Checkout" onClose="onCloseFunc" onOpen="openFunc" backButtonTitle="" backButtonTitleImage="none">
+		<LeftNavButtons platform="ios">
+			<Button onClick="BackFun" image="/images/back_icon.png"></Button>
+		</LeftNavButtons>
+		
+		<View bottom="15%" top="0" layout="vertical">
+			<View   top="0" height="8%">
+				<View left="15" height="Ti.UI.SIZE" width="Ti.UI.SIZE" layout="horizontal">
+					<Label id="blcDueLbl" textid="checkout_blcdue_txt"></Label>
+					<Label id="blcDuevalue" color="#c32032"></Label>
+				</View>
+				<View right="15" height="Ti.UI.SIZE" width="Ti.UI.SIZE" layout="horizontal">
+					<Label id="changeDueLbl" textid="change_due"></Label>
+					<Label id="changeDuevalue" color="#c32032"></Label>
+				</View>
+			</View>
+			<View height="Ti.UI.FILL" layout="vertical">
+				<View height="33%" width="Ti.UI.FILL" layout="vertical">
+					<View height="5" width="Ti.UI.FILL" backgroundColor="#DFDEE4"></View>
+					<Label height="30%" class="topLblCls" textAlign="center" textid="checkout_quick_case_txt"></Label>
+					<View bottom="12%" top="0">
+						<View width="25%" height="Ti.UI.SIZE" left="0" layout="vertical" onClick="openAddPaymentPopUp">
+							<ImageView image="/images/Add_payment.png" top="0"></ImageView>
+							<Label top="5">Add Payment</Label>
+							<Label id="addPaymentLbl" top="5" color="#c32032">$0.00</Label>							
+						</View>
+						<View left="25%" width="1" backgroundColor="#DFDEE4" right="0"></View>
+						<View left="30%" right="10%" height="80%" >
+							<Button id="exactBtn" class="quickPaymentBtnCls" top="0" left="0" textData="0" onClick="selectPaymentFunc">Exact</Button>
+							<Button class="quickPaymentBtnCls" bottom="0" left="0" textData="20.00" onClick="selectPaymentFunc">$20</Button>
+							<Button class="quickPaymentBtnCls" top="0" textData="5.00" onClick="selectPaymentFunc">$5</Button>
+							<Button class="quickPaymentBtnCls" bottom="0" textData="50.00" onClick="selectPaymentFunc">$50</Button>
+							<Button class="quickPaymentBtnCls" top="0" right="0" textData="10.00" onClick="selectPaymentFunc">$10</Button>
+							<Button class="quickPaymentBtnCls" bottom="0" right="0" textData="100.00" onClick="selectPaymentFunc">$100</Button>
+						</View>
+					</View>
+				</View>
+				<View height="33%" width="Ti.UI.FILL" layout="vertical">
+					<View height="5" width="Ti.UI.FILL" backgroundColor="#DFDEE4"></View>
+					<Label height="30%" textAlign="center" class="topLblCls" textid="checkout_payment_method_txt"></Label>
+					<View bottom="5%" top="0">
+						<View left="8%" right="8%" height="85%" >
+							<Button id="cashBtn" paymentMethod="cash"  class="paymentmethodBtnCls" top="0" left="17.20%" titleid="cash_txt" onClick="cashMethodClick"></Button>
+							<Button id="housingBtn"  paymentMethod="housing_management" class="paymentmethodBtnCls" disabledColor="lightgray" bottom="0" left="17.20%" titleid="housing_txt" onClick="HousincAccMethodClick"></Button>
+							<Button id="creditCrdBtn" paymentMethod="credit_card" disabledColor="lightgray" class="paymentmethodBtnCls" top="0" titleid="credit_crd_txt" onClick="creditCardMethodClick" right="17.20%"></Button>
+							<!-- <Button id="loyaltyPointBtn" enabled="false" paymentMethod="loyalty" disabledColor="lightgray" class="paymentmethodBtnCls" top="0" right="0" titleid="loyalty_point_txt" onClick="loyaltyPointMethodClick"></Button> -->
+							<Button id="giftCardBtn"  paymentMethod="gift_card" disabledColor="lightgray" class="paymentmethodBtnCls" bottom="0" right="17.20%" titleid="gift_card_txt" onClick="giftCartBtnClick"></Button>
+						</View>
+					</View>
+				</View>
+				<View height="33%" width="Ti.UI.FILL" layout="vertical">
+					<View height="5" width="Ti.UI.FILL" backgroundColor="#DFDEE4"></View>
+					<Label top="5" textAlign="center" class="topLblCls" textid="split_payment"></Label>
+					<View  height="Ti.UI.SIZE" top="6">   
+						<Label class="topLblCls" left="10%" textid="method_txt"></Label>
+						<Label class="topLblCls" textid="status_txt"></Label>
+						<Label class="topLblCls" right="10%" textid="amount_txt"></Label>
+					</View>
+					<TableView id="paymentTable" width="100%" onClick="splitTableClick">
+						<FooterView>
+							<View height="1" backgroundColor="transparent"></View>
+						</FooterView>
+					</TableView>
+				</View>
+			</View>
+		</View>
+		<View height="15%" bottom="0">
+			<View height="5" top="0" width="Ti.UI.FILL" backgroundColor="#DFDEE4"></View>
+			<Button id="doneBtn" right="8%" width="35%" height="45%" color="white" backgroundImage="none" image="/images/done.png" backgroundColor="#c32032"  titleid="checkout_done_txt" onClick="doneFunc"></Button>
+			<Button id="resetBtn" left="8%" width="35%" height="45%" color="white" backgroundImage="none"  backgroundColor="#c32032"  title="RESET" onClick="resetFunc"></Button>
+		</View>
+	</Window>
+</Alloy>   

@@ -1,0 +1,59 @@
+
+".container" : {
+  
+}
+".btn":{
+	font: {
+		fontSize: 22,
+		fontFamily: "Montserrat-Regular"
+	}
+}
+".headerlbl":{
+	font: {
+		fontSize: 16,
+		fontFamily: "Montserrat-Regular"
+	}
+}
+"#calculateTF": {
+	font:{
+		fontSize: 18,
+		fontFamily: "Montserrat-Regular"
+	},
+	padding:{
+		left:10,
+		
+	}, 
+	
+}
+
+"#canclebtn": {
+	font:{
+		fontSize: 28,
+	},
+	right: 10,
+	color:"fff",
+	width: 150
+}
+"#payTf": {
+	font:{
+		fontSize: 18,
+		fontFamily: "Montserrat-Regular"
+	},
+	padding:{
+		left:10
+	},
+	returnKeyType :Titanium.UI.RETURNKEY_NEXT
+}
+
+"#noteTf": {
+	font:{
+		fontSize: 18,
+		fontFamily: "Montserrat-Regular"
+	},
+	padding:{
+		left:10,
+		top:10
+	}, 
+	returnKeyType: Titanium.UI.RETURNKEY_CONTINUE,
+	suppressReturn: false
+}

@@ -1,0 +1,186 @@
+
+".container": {
+	landscapeSplit: 0.39,
+	navBarHidden: true,
+	//statusBarStyle: Titanium.UI.iOS.StatusBar.LIGHT_CONTENT
+}
+
+"#userNameLbl":{
+	font:{
+		fontSize: 18,
+		fontFamily: "Montserrat-Light",
+		
+	},
+	textAlign: "left"
+}
+"#contactLbl":{
+	font:{
+		fontSize: 13,
+		fontFamily: "Montserrat-UltraLight",
+	},
+	textAlign: "left"
+}
+"#loyaltyLbl":{
+	font:{
+		fontSize: 13,
+		fontFamily: "Montserrat-UltraLight",
+	},
+	textAlign: "left"
+}
+"#notificationCountLbl":{
+	font:{
+		fontSize: 12,
+		fontFamily: "Montserrat-Regular",
+	},
+	textAlign: "center"
+}
+"#loyaltyBtn":{
+	backgroundColor: '#C1302F',
+	borderRadius: 5,
+	right: 10
+}
+".orderClass":{
+	font:{
+		fontSize: 14,
+		fontFamily: "Montserrat-Regular",
+	}, 
+	textAlign: "left",
+	color: "white"
+}
+".rowHeaderClass":{
+	font:{
+		fontSize: 14,
+		fontFamily: "Montserrat-Regular",
+	},
+
+	color: "black",
+	height:Ti.UI.FILL
+}
+".totalClassLbl":{
+	font:{
+		fontSize: 14,
+		fontFamily: "Montserrat-Regular",
+		
+	},
+
+	color: "black"
+}
+"#syncingLbl":{
+	font:{
+		fontSize: 15,
+	},
+	color:"white",
+	left:0,
+	height:14
+}
+"#lasSyncDateLbl":{
+	font:{
+		fontSize: 11,
+	},
+	color:"white",
+	left:0,
+	height:12
+}
+"#checkoutBtn":{
+	font:{
+		fontSize: 18,
+		fontFamily: "Montserrat-Bold",
+		
+	},
+	backgroundColor: "#c32032",
+	color:"white",
+	backgroundImage: "none"
+}
+"#bottomMenuVW":{
+	backgroundColor: "#c32032",
+	bottom:0,
+}
+"#bottomLoyaltyBtn":{
+	backgroundColor: 'white',
+	borderRadius: 5,
+	left: 0,
+	color:"white",
+	
+}
+"#removeLoyaltyBtn":{
+	backgroundColor: 'white',
+	borderRadius: 5,
+	left: 0,
+	color:"white",
+	
+}
+"#removeProductBtn":{
+	backgroundColor: 'white',
+	borderRadius: 5,
+	left: 0,
+	color:"white",
+	
+}
+"#orderListTable":{
+	tableSeparatorInsets:{
+		left: 0,
+		right: 0
+	},
+	backgroundColor: "#fff"
+}
+".finalTotalClassLbl":{
+	font:{
+		fontSize: 20,
+		fontFamily: "Montserrat-Regular",
+		
+	},
+	color: "#C1302F"
+}
+".rightHeaderLblClass":{
+	font:{
+		fontSize: 22,
+		fontWeight: "semibold"
+	},
+	color: "#000000"
+}
+"#got_nothing_Lbl":{
+	font:{
+		fontSize: 30,
+		fontFamily: "Montserrat-Regular",
+		
+	},
+	textid:"got_nothing_txt",
+	 color:"#DCA3A7"
+}
+"#no_order_Lbl":{
+	font:{
+		fontSize: 18,
+		fontFamily: "Montserrat-Light",
+	},
+	textid:"no_order_txt",
+	color:"#9C9C9C"
+}
+"#drinkTitleLbl":{
+	font:{
+		fontSize: 22, 
+		fontFamily: "Roboto-Light",
+	},
+	textid:"no_order_txt",
+	color:"#29150F"
+}
+"#pointsTitleLbl":{
+	font:{
+		fontSize: 25,
+		fontFamily: "Roboto-Medium",
+	},
+	textid:"no_order_txt",
+	color:"#29150F"
+}
+".drinkQtyValueLbl":{
+	font:{
+		fontSize: 16,
+		fontFamily: "Roboto-Regular",
+	},
+	color:"#807979"
+}
+".btn":{
+	font:{
+		fontSize: 20,
+		fontFamily: "Roboto-Medium",
+	},
+}

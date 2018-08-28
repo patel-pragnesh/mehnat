@@ -1,0 +1,16 @@
+<Alloy>
+	<Popover id="popover" backgroundColor='#382b20' >
+		<ContentView >
+			<NavigationWindow width='450' height="400">
+				<Window title='Add Customer' barColor="#382b20"    layout="vertical">
+					<TextField onChange="changeFunc" focusable="true" id="hiddenTF" top="20" focusable="true" height="40" width="90%" borderColor="black"></TextField>
+					<Label id="listenLbl" visible="false" top="5" color="black">Listening...</Label>
+					<View top="40" height="60" width="90%">
+						<Button class="btn" id="scanQRCodeButton" onSingletap="scanFunc" left="0"  ></Button>
+						<Button class="btn" id="addCustomerButton" onSingletap="addCustomerFunc" right="0"></Button>
+					</View>
+				</Window>
+			</NavigationWindow>
+		</ContentView>
+	</Popover>
+</Alloy>

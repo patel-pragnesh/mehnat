@@ -1,0 +1,78 @@
+
+".container": {}
+".quickPaymentBtnCls":{
+	font: {
+		fontSize: 18
+	},
+	borderColor: "#5A514F",
+	width: "32.10%",
+	color: "#6F7071",
+	height: "47.50%"
+}
+".paymentmethodBtnCls":{
+	font: {
+		fontSize: 20
+	},
+	backgroundColor: "#ECECF3",
+	borderColor: "#5A514F",
+	width: "32.10%",
+	color: "#6F7071",
+	height: "47.40%",
+	disabledColor: "#6F7071",
+	backgroundSelectedColor: "#c32032",
+	selectedColor: "white"
+}
+
+"#paymentTable":{
+	tableSeparatorInsets:{
+		left: 0,
+		right: 0
+	}
+}
+
+"#blcDueLbl":{
+	font:{
+		fontSize: 22,
+		fontWeight: "semibold"
+	},
+	color: "#000"
+}
+"#blcDuevalue":{
+	font:{
+		fontSize: 22,
+		fontWeight: "semibold"
+	}
+}
+"#changeDueLbl":{
+	font:{
+		fontSize: 22,
+		fontWeight: "semibold"
+	},
+	color: "#000"
+}
+"#changeDuevalue":{
+	font:{
+		fontSize: 22,
+		fontWeight: "semibold"
+	}
+}
+".topLblCls":{
+	font: {
+		fontSize: 16,
+		fontWeight: "semibold"
+	}
+}
+"#doneBtn":{
+	font:{
+		fontSize: 22,
+		fontWeight: "semibold"
+	},
+	color: "#000"
+}
+"#resetBtn":{
+	font:{
+		fontSize: 22,
+		fontWeight: "semibold"
+	},
+	color: "#000"
+}

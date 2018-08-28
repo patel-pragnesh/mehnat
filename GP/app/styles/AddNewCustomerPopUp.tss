@@ -1,0 +1,33 @@
+
+".container" : {
+  
+}
+
+"#addcustomerLbl": {
+	font:{
+		fontSize: 24,
+	},
+	color:"#fff",
+	textid : "add_customer_txt"
+}
+".txtfield":{
+	font: {
+		fontSize: 18,
+	},
+	padding:{
+		left:15
+	}
+}
+"#fullNameTf":{
+	returnKeyType :Titanium.UI.RETURNKEY_NEXT,
+}
+"#emailTf":{
+	returnKeyType :Titanium.UI.RETURNKEY_NEXT,
+	keyboardType:Titanium.UI.KEYBOARD_EMAIL,
+	autocapitalization:Titanium.UI.TEXT_AUTOCAPITALIZATION_NONE
+}
+"#mobNoTf":{
+	returnKeyType :Titanium.UI.RETURNKEY_DONE,
+	keyboardType:Ti.UI.KEYBOARD_TYPE_PHONE_PAD,
+	width:Ti.UI.FILL
+}

@@ -1,0 +1,42 @@
+<Alloy>
+	<Window class="container" id="addDiscountWin" opacity="0" name="homewin" backgroundImage="/images/blacktrans.png" backgroundColor="transparent" bubbleParent="false" accessibilityHidden="true" onOpen="openFunc">
+		<ScrollView  disableBounce="true">
+			<View  width="60%" height="78%" backgroundColor="#ECEDF1"  borderRadius="5" >
+				<View width="Ti.UI.FILL" top="0" height="10%" backgroundColor="#382E2C">
+					<Label id="adddiscountLbl" textAlign="center" zIndex="1"></Label>
+					<Button image="/images/cross.png" width="70"  zIndex="0"  height="45" right="5" onClick="closewinFun" backgroundImage="none"></Button>
+				</View>
+				<TabbedBar top="12%" id="tabbedBar" height="7%"  backgroundColor="#c32032" platform="ios" index="0" onClick="selectTabFunc">
+					<Labels>
+						<Label class="tabLbl">L("Add Manual")</Label>
+						<Label class="tabLbl">L("applycoupon_txt")</Label>
+					</Labels>
+				</TabbedBar>
+				<View id="manualVW" width="100%" top="22%" left="0" layout="vertical" visible="true">
+					<!-- <Label top="5%" class="lbl" color="#000" textid="applycoupon_txt"></Label> -->
+					<View id="radiobtnVw" width="60%" height="10%" top="10%">
+						<!-- <View  height="Ti.UI.FILL" width="46%" left="0">
+							<Button id="pecentBtn" image="/images/radio_btn_check.png" backgroundImage="none" width="100" height="Ti.UI.FILL" onClick="percentBtnselectionFun"></Button>
+						</View>
+						<View height="Ti.UI.FILL" width="46%" right="0">
+							<Button id="dollerBtn" image="/images/radio_btn.png" backgroundImage="none"  width="100" height="Ti.UI.FILL" onClick="dollerBtnselectionFun"></Button>
+						</View> -->
+					</View>
+					<TextField id="discountamntvalueTf" class="tf" top="10%" width="80%"  backgroundColor="white" height="12%" hinttextid="discount_amount_txt" hintTextColor="#CFCFCF">
+						<RightButton>
+							<Button id="pecentBtn" title="%" backgroundImage="none" width="50" color="#CFCFCF"  height="Ti.UI.FILL" ></Button>
+						</RightButton> 
+					</TextField>
+				</View>
+				<View id="couponVW" width="100%" top="22%" right="0" layout="vertical" visible="false">
+					<!-- <Label  top="5%" class="lbl" color="#000" textid="add_manual_txt"></Label> -->
+					<TextField id="couponTf" editable="false" class="tf" top="6%" width="80%"  backgroundColor="white" height="12%" hinttextid="coupon_code_txt" hintTextColor="#CFCFCF"></TextField>
+					<ScrollView id="scrollGridVW" top="10" borderColor="lightgray" borderWidth="1"  width="80%">
+						<Require type="widget" src="com.prodz.tiflexigrid" id="coupGrid"/>
+					</ScrollView>
+				</View>
+				<Button id="donebtn" bottom="15" height="10%" width="20%" zIndex="10" backgroundColor="#c32032" titleid="done" onClick="doneFunc"></Button>
+			</View>
+		</ScrollView>
+	</Window>
+</Alloy>

@@ -1,0 +1,15 @@
+<Alloy>
+	<NavigationWindow id="navwin">
+		<Window id="win" title="EMV Reader" layout="vertical" onOpen="onWindowOpen" onClick="onWindowClick">
+			<ScrollView id="paxView">
+				<View width="Ti.UI.SIZE" height="Ti.UI.SIZE" layout="vertical">
+					<View id="paxIPVW" borderColor="#382E2C" name="tf"  width="75%" height="56" borderRadius="6" top="0" layout="horizontal">
+						<ImageView image="/images/paxIcon.png" name="tf"  left="15"></ImageView>
+						<TextField id="paxTF" name="tf" class="textField"></TextField>
+					</View>
+					<Button id="submitBtn" title="L('save_txt')" selectedColor="gray" top="40" onClick="saveEMVReader"></Button>
+				</View>
+			</ScrollView>
+		</Window>
+	</NavigationWindow>
+</Alloy>

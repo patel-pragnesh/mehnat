@@ -1,0 +1,10 @@
+<Alloy>
+	<NavigationWindow  id="RedeemLoyaltyScreen" name="RedeemLoyaltyScreen" >
+	<Window titleid="redeem_txt" >
+		<LeftNavButtons  platform="ios">
+			<Button  id="menuBtn"  backgroundColor="none" image="/images/menu.png" onClick="toggleLeftView"></Button>
+		</LeftNavButtons>
+		
+	</Window>
+	</NavigationWindow>
+</Alloy>

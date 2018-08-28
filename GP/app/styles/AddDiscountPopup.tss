@@ -1,0 +1,70 @@
+
+".container" : {
+  
+}
+"#addmanualBtn": {
+	font:{
+		fontSize: 20,
+	},
+	color:"#000",
+}
+"#applycouponBtn": {
+	font:{
+		fontSize: 20,
+	},
+	color:"#000",
+}
+"#donebtn": {
+	font:{
+		fontSize: 25,
+	},
+	color:"#fff",
+}
+".tf": {
+	font:{
+		fontSize: 22,
+	},
+	color:"#000",
+	padding:{
+		left:25
+	},
+	borderColor:"#CFCFCF",
+	borderWidth:1.5,
+	//borderStyle:Ti.UI.INPUT_BORDERSTYLE_BEZEL 
+}
+"#adddiscountLbl": {
+	font:{
+		fontSize: 24,
+	},
+	color:"#fff",
+	textid : "add_discount_txt"
+}
+"#pecentBtn": {
+	font:{
+		fontSize: 25,
+		fontWeight:"semibold"
+	},
+	color:"grey",
+	titleid : "pecent_txt"
+}
+"#dollerBtn": {
+	font:{
+		fontSize: 25,
+		fontWeight:"semibold"
+	},
+	color:"#000",
+	titleid : "dollar_txt"
+}
+".lbl":{
+	font:{
+		fontSize: 20,
+	}
+}
+".tabLbl":{
+	font:{
+		fontSize: 16,
+	}
+}
+"#discountamntvalueTf":{
+	keyboardType:Titanium.UI.KEYBOARD_TYPE_NUMBER_PAD
+}

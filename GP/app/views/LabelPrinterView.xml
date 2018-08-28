@@ -1,0 +1,25 @@
+<Alloy>
+	<NavigationWindow id="navwin">
+		<Window id="win" title="Label Printer" layout="vertical" onOpen="onWindowOpen" onClick="onWindowClick">
+			<ImageView id="printerImg" top="25" image="/images/label-printer_img.png"></ImageView>
+			<View top="25" backgroundColor="#D9D9D9" width="Ti.UI.FILL" height="40">
+				<Label left="15" color="#000" id="connectedDeviceLbl">Selected Device: N/A</Label>
+				<Button id="testConnectionBtn" onClick="testNetworkPrinterConnection" right="15" borderRadius="5" borderColor="#c32032" visible="false" color="#c32032" width="130" borderWidth="1" titleid="test_connection"></Button>
+			</View>
+			<View width="Ti.UI.FILL" height="Ti.UI.FILL">
+
+				<!-- Network printer setting view -->
+				<ScrollView id="labelNetworkPrinterView">
+					<View width="Ti.UI.SIZE" height="Ti.UI.SIZE" layout="vertical">
+						<View id="printerIPVW" borderColor="#382E2C" name="tf"  width="75%" height="56" borderRadius="6" top="0" layout="horizontal">
+							<ImageView image="/images/printerIcon.png" name="tf"  left="15"></ImageView>
+							<TextField id="printerTF" name="tf" class="textField"></TextField>
+						</View>
+						<Button id="submitBtn" title="L('save_txt')" selectedColor="gray" top="40" onClick="saveNetworkPrinter"></Button>
+					</View>
+				</ScrollView>
+
+			</View>
+		</Window>
+	</NavigationWindow>
+</Alloy>

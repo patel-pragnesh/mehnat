@@ -1,0 +1,24 @@
+<Alloy>
+	<NavigationWindow id="navWindow" backgroundColor="white" name="loginScreen" platform="ios">
+		<Window class="container" id="loginWin" titleid="signIn_text" opacity="0" onOpen="openFunc" onClick="winClickFunc">
+			<ScrollView>
+				<ImageView image="/images/goncha-logo.png" top="10%"></ImageView>
+				<View id="centerVW" height="Ti.UI.SIZE" layout="vertical">
+
+					<View id="emailVW" borderColor="#382E2C" width="45%" height="54" borderRadius="6" top="0" layout="horizontal">
+						<ImageView image="/images/mail.png" left="15"></ImageView>
+						<TextField id="emailTF" class="textField" hinttextid="email_text"  onReturn="emailReturnFunc"></TextField>
+					</View>
+					<View id="passwordVW" borderColor="#382E2C" width="45%" height="54" borderRadius="6" top="30" layout="horizontal">
+						<ImageView image="/images/pwd.png" left="15"></ImageView>
+						<TextField id="passwordTF" class="textField"  hinttextid="pwd_text" ></TextField>
+					</View>
+					<View id="forgotPasswordVW"  width="45%" height="54" top="0">
+						<Button id="forgotBtn" titleid="forgot_pwd_text"  onClick="openForgotWindow"></Button>
+					</View>
+					<Button id="loginBtn" titleid="signIn_text" top="0" onClick="loginFunc"></Button>
+				</View>
+			</ScrollView>
+		</Window>
+	</NavigationWindow>
+</Alloy>

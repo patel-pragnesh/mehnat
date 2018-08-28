@@ -1,0 +1,156 @@
+
+".container" : {
+  landscapeSplit: 0.39,
+	navBarHidden: true
+}
+".orderListLabels": {
+	left: 110,
+	color : '#3A322E'
+}
+"#customerPic": {
+	//width: 72,
+	//height: 72,
+	//borderRadius: 36,
+	left: 20,
+	defaultImage: "/images/user_img.png"
+}
+".headerClassLbl":{
+	font:{
+		fontSize: 16,
+		fontFamily: "Montserrat-Bold"
+	},
+
+	color: "black"
+}
+"#customerName": {
+	top: 15,
+	height: 14,
+	font: {
+		fontSize: 16,
+		fontFamily: "Montserrat-Regular",
+	},
+	
+}
+
+"#pickupDate": {
+	top: 36,
+	height: 12,
+	font: {
+		fontSize: 12,
+		fontFamily: "Montserrat-Light"
+	},
+	
+}
+
+"#totalAmount": {
+	top: 53,
+	height: 12,
+	font: {
+		fontSize: 12,
+		fontFamily: "Montserrat-Light"
+	},
+	
+}
+
+"#orderId": {
+	top: 70,
+	height: 12,
+	font: {
+		fontSize: 12,
+		fontFamily: "Montserrat-Light"
+	},
+	bottom: 15,
+	color: "#c32032"
+}
+
+"#order_no_txt_lbl":{
+	font:{
+		fontSize: 16,
+		fontFamily: "Montserrat-Bold"
+	},
+	color :"#000"
+}
+".totalClassLbl":{
+	font:{
+		fontSize: 16,
+		fontFamily: "Montserrat-Regular"
+	},  
+
+	color: "black"
+}
+"#date_tim_lbl":{
+	font:{
+		fontSize: 16,
+		fontFamily: "Montserrat-Bold"
+	},
+	color :"#000"
+}
+
+"#staticGrandTotalLbl":{
+	font:{
+		fontSize: 24,
+		fontFamily: "Montserrat-Bold"
+	},
+	color :"#c32032"
+}
+"#grandTotalLbl":{
+	font:{
+		fontSize: 24,
+		fontFamily: "Montserrat-Bold"
+	},
+	color :"#c32032"
+}
+"#order_no_value_lbl":{
+	font:{
+		fontSize: 16,
+		fontFamily: "Montserrat-Bold"
+	},
+	color :"#c32032"
+}
+"#newOrdersListView":{
+	listSeparatorInsets:{
+		left: 20,
+		right: 0
+	}
+}
+"#orderListTable":{
+	tableSeparatorInsets:{
+		left: 0,
+		right: 0
+	}
+}
+"#orderStatusLbl":{
+	font:{
+		fontSize: 14,
+		fontFamily: "Montserrat-Bold"
+	},
+	color :"#c32032"
+}
+"#reasonLbl":{
+	font:{
+		fontSize: 14,
+		fontFamily: "Montserrat-Bold"
+	},
+	color :"#c32032"
+}
+"#paymentDetailLbl":{
+	font:{
+		fontSize: 15,
+		fontFamily: "Montserrat-Regular"
+	},
+	color :"black"
+}
+"#token_no_txt_lbl":{
+	font:{
+		fontSize: 16,
+		fontFamily: "Montserrat-Bold"
+	},
+	color :"#000"
+}
+"#token_no_value_lbl":{
+	font:{
+		fontSize: 16,
+		fontFamily: "Montserrat-Bold"
+	},
+	color :"#c32032"
+}

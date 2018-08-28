@@ -1,0 +1,20 @@
+ <Alloy>
+
+        <TabGroup id="tabgroup" name="tabgroup"  onOpen="openFunc" backgroundColor="white" tabsBackgroundColor="#382b20"  tintColor="white" tabsTranslucent="false" onClick="clickFun" onFocus="Alloy.Globals.focusFun">
+            <Tab id="posTab" title="POS"  icon="/images/POS.png"  >
+                <Require type="view" src="POSDashboard" id="posTab"/>	
+            </Tab>
+            <Tab id="orderHistoryTab" title="Order History" icon="/images/order_history_tabbar.png">
+              <Require type="view" src="OrderHistoryTabScreen" id="orderHistoryTab"/>	
+               
+            </Tab>
+            <Tab id="newOrderTab" title="Mobile/Web Orders" icon="/images/New_order_icon.png">
+                <Require type="view" src="NewOrdersScreen" id="newOrderTab"/>	
+            </Tab>
+            <Tab id="parkedOrderTab" title="Parked Orders" icon="/images/parked_order.png" >
+                <Require type="view" src="ParkedOrderTabScreen" id="parkedOrderTab"/>	
+                
+            </Tab>
+            <!-- Use the Require tag to include external Ti.UI.Tab views -->
+        </TabGroup>
+    </Alloy>

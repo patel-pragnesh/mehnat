@@ -1,0 +1,16 @@
+<Alloy>
+	<NavigationWindow  id="viewNotification" name="viewNotification" >
+	<Window titleid="notification_txt" backgroundColor="#EFEFF4" onOpen="openFunc">
+		<LeftNavButtons  platform="ios">
+			<Button  id="menuBtn"  backgroundColor="none" image="/images/menu.png" onClick="toggleLeftView"></Button>
+		</LeftNavButtons>
+		<View width="60%" top="25" bottom="25" borderRadius="5" backgroundColor="white" viewShadowColor="#acacac">
+			<TableView id="notificationTable" top="5"> 
+				<FooterView>
+					<View height="1" backgroundColor="transparent"></View>
+				</FooterView>
+			</TableView>
+		</View>
+	</Window>
+	</NavigationWindow>
+</Alloy>

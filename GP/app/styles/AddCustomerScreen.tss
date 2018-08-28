@@ -1,0 +1,17 @@
+
+".container" : {
+  
+}
+"#scanQRCodeButton":{
+	title:"Scan QR Code",
+}
+"#addCustomerButton":{
+	title:"Add Customer Manually",
+}
+".btn":{
+	backgroundColor:"#c32032",
+	color:"white",
+	width:'45%',
+	height:55,
+	borderRadius:6,
+}

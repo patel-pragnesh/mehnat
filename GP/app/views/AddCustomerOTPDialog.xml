@@ -1,0 +1,18 @@
+<Alloy>
+	<Window class="container" id="otpWin" opacity="0" name="homewin" backgroundImage="/images/blacktrans.png" backgroundColor="transparent" bubbleParent="false" accessibilityHidden="true" onOpen="openFunc" onClick="winClickFunc">
+		<ScrollView  disableBounce="true">
+			<View  width="40%" height="40%" backgroundColor="#fff"   borderRadius="5" layout="vertical">
+				<View width="Ti.UI.FILL" height="17%" backgroundColor="#382E2C">
+					<Label id="addcustomerLbl" textAlign="center" zIndex="1"></Label>
+					<Button image="/images/cross.png" width="70"  zIndex="0"  height="45" right="5" onClick="closewinFun" backgroundImage="none"></Button>
+				</View>
+				<Label id="otptxtLbl"  top="10%" right="10%" left="10%" textid="opt_txt" textAlign="center"></Label>
+				<TextField id="otpTf" name="tf" borderColor="#bfbfbf" top="8%" class="txtfield" right="10%" height="15%" left="10%"  width="Ti.UI.FILL" borderRadius="5" hintText="Please enter OTP" keyboardType="Titanium.UI.KEYBOARD_TYPE_NUMBER_PAD"></TextField>
+				<View height="Ti.UI.FILL"  left="10%" right="10%"  width="Ti.UI.FILL">
+					<Button id="resendbtn"  height="35%" width="45%" left="0" color="white"  backgroundColor=" #c32032" titleid="resend_txt" backgroundImage="nome" onClick="resendOTPFunc"></Button>
+					<Button id="okbtn" height="35%"  width="45%" right="0" color="white"   backgroundColor=" #c32032" titleid="done_txt" backgroundImage="nome" onClick="validateOTPDetails"></Button>
+				</View>
+			</View>
+		</ScrollView>
+	</Window>
+</Alloy>

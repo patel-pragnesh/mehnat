@@ -1,0 +1,58 @@
+
+".container": {}
+".tf": {
+	font:{
+		fontSize: 18,
+		fontFamily: "Montserrat-Regular"
+	}
+}
+"#hintLbl": {
+	font:{
+		fontSize: 18,
+		fontFamily: "Montserrat-Regular"
+	}
+}
+".headerLbl": {
+	font:{
+		fontSize: 20,
+		fontFamily: "Montserrat-Regular"
+	},
+	color: "#000"
+}
+".gridHeaderLbl": {
+	font:{
+		fontSize: 18,
+		fontFamily: "Montserrat-Regular"
+	},
+	color: "#000"
+}
+".gridLbl": {
+	font:{
+		fontSize: 16,
+		fontFamily: "Montserrat-Light"
+	},
+	color: "#5E5E5E"
+}
+"#clousernoteTF": {
+	font:{
+		fontSize: 16,
+		fontFamily: "Montserrat-Light"
+	},
+	color: "#5E5E5E",
+	returnKeyType: Ti.UI.RETURNKEY_DEFAULT,
+	suppressReturn: false
+}
+"#saleStaticLbl":{
+	font:{
+		fontSize: 20,
+		fontFamily: "Montserrat-Light"
+	},
+	color: "#000",
+}
+"#saleLbl":{
+	font:{
+		fontSize: 24,
+		fontFamily: "Montserrat-Regular"
+	},
+	color: "#c32032",
+}

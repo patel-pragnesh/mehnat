@@ -1,0 +1,86 @@
+<Alloy>
+	<NavigationWindow  id="closeRegister" name="closeRegister" >
+		<Window  class="container" titleid="close_register_txt" onClick="winFun">
+			<LeftNavButtons  platform="ios">
+				<Button  id="menuBtn"  backgroundColor="none" image="/images/menu.png" onClick="toggleLeftView"></Button>
+			</LeftNavButtons>
+			<ScrollView layout="vertical" left="30" right="30">
+
+				 <Label class="headerLbl" id="registerDetailsLbl" top="15" color="#000" left="10" textid="register_details_txt"></Label> 
+				<View height="Ti.UI.SIZE" top="15" borderColor="#E7E7E7" borderWidth="1" borderRadius="6">
+					<View height="100" width="75%" borderColor="#E7E7E7" borderWidth="1" left="0" top="0" layout="vertical">
+						<View height="50" left="0"  backgroundColor="#EBEBED" top="0"  layout="horizontal">
+							<Label class="gridHeaderLbl" left="2.5%" width="35%"  height="Ti.UI.FILL" textid="opening_amnt_txt"></Label>
+							<Label id="openingNote" class="gridHeaderLbl" width="30%" height="Ti.UI.FILL" textid="opening_note" ></Label>
+							<Label class="gridHeaderLbl" width="30%" height="Ti.UI.FILL" textid="opening_time_txt"></Label>
+						</View>
+						<View height="50" left="0"  top="0" layout="horizontal">
+							<Label id="openingAmntLbl" class="gridLbl" left="2.5%" width="35%" height="Ti.UI.FILL"></Label>
+							<Label id="openingNoteLbl"  maxLines="1" class="gridLbl" width="30%" height="Ti.UI.FILL" onClick="openNotePopOver"></Label>
+							<Label id="openingDateLbl" class="gridLbl" width="30%" height="Ti.UI.FILL"></Label>
+						</View>
+					</View>
+					
+					
+					<View right="10" top="0" height="100" width="Ti.UI.SIZE" layout="horizontal">
+						<View  height="Ti.UI.FILL" width="Ti.UI.SIZE">
+							<View layout="vertical" height="Ti.UI.SIZE" width="Ti.UI.SIZE">
+								<Label id="saleStaticLbl">Total Sale</Label>
+								<Label id="saleLbl" top="10">$1555.00</Label>
+							</View>
+						</View>
+						<ImageView left="10" image="/images/coins-icon.png"></ImageView>
+					</View>
+				</View>
+				<Label class="headerLbl" id="registerDetailsLbl" top="20" color="#000" left="10" textid="cash_summary_txt"></Label>
+				<View height="100" top="15" borderColor="#E7E7E7" borderWidth="1" borderRadius="6" layout="vertical">
+					<View height="50" backgroundColor="#EBEBED" top="0" width="Ti.UI.FILL" layout="horizontal">
+						<Label class="gridHeaderLbl" left="2%" width="42%" height="Ti.UI.FILL" textid="expected_txt"></Label>
+						<Label class="gridHeaderLbl" width="27%" height="Ti.UI.FILL" textid="counted_txt"></Label>
+						<Label class="gridHeaderLbl" width="25%" height="Ti.UI.FILL" textid="difference_txt"></Label>
+					</View>
+					<View height="50" backgroundColor="#fff" top="0" width="Ti.UI.FILL">
+						<Label id="cashExpecterLbl" class="gridLbl" left="2%" width="42%" height="Ti.UI.FILL"></Label>
+						<TextField id="cashsummryCountedTf" editable="false" onClick="openPinPadForCountedFunc" name="tf" class="gridLbl" width="12%" top="8" keyboardType ="Titanium.UI.KEYBOARD_TYPE_PHONE_PAD" bottom="8" paddingLeft="15" borderColor="#E7E7E7" borderWidth="1" borderRadius="6" onChange="calculateCashDifferenceFun"></TextField>
+						<Label id="cashDiffLbl" class="gridLbl" width="25%" left="71%" height="Ti.UI.FILL"></Label>
+					</View>
+				</View>
+				<Label class="headerLbl" id="registerDetailsLbl" top="20" color="#000" left="10" textid="other_payment_summary_txt"></Label>
+				<View height="200" top="15" borderColor="#E7E7E7" borderWidth="1" borderRadius="6" layout="vertical">
+					<View height="49" backgroundColor="#EBEBED" top="0" width="Ti.UI.FILL" layout="horizontal">
+						<Label class="gridHeaderLbl" left="2%" width="21%" height="Ti.UI.FILL" textid="payment_typ_txt"></Label>
+						<Label class="gridHeaderLbl" visible="false" width="21%" height="Ti.UI.FILL" textid="difference_txt"></Label>
+						<Label class="gridHeaderLbl" visible="false" width="27%" height="Ti.UI.FILL" textid="counted_txt"></Label>
+						<Label class="gridHeaderLbl"  width="25%" height="Ti.UI.FILL" textid="sales_txt"></Label>
+					</View>
+					<View height="49" backgroundColor="#fff" top="0" width="Ti.UI.FILL">
+						<Label class="gridLbl" left="2%" width="21%" height="Ti.UI.FILL">Credit Card</Label>
+						<Label id="creditCrdDiffLbl" visible="false" class="gridLbl" left="23%" width="21%" height="Ti.UI.FILL"></Label>
+						<TextField id="creditCountedTf" visible="false" name="tf" class="gridLbl" width="12%" top="8" bottom="8" keyboardType ="Titanium.UI.KEYBOARD_TYPE_PHONE_PAD" paddingLeft="15" borderColor="#E7E7E7" borderWidth="1" borderRadius="6" onChange="calculateCardDifferenceFun"></TextField>
+						<Label id="creditCardExpectdLbl" class="gridLbl" width="25%" left="71%"  height="Ti.UI.FILL"></Label>
+					</View>
+					<View height="1" borderColor="#E7E7E7" width="Ti.UI.FILL"></View>
+					<View height="49" backgroundColor="#fff" top="0" width="Ti.UI.FILL">
+						<Label class="gridLbl" left="2%" width="21%" height="Ti.UI.FILL">Housing Account</Label>
+						<Label class="gridLbl"  visible="false" left="23%" width="21%" height="Ti.UI.FILL"></Label>
+						<TextField id="hounsingAccountTf" name="tf" class="gridLbl" visible="false" width="12%" top="8" bottom="8" paddingLeft="15" borderColor="#E7E7E7" borderWidth="1" borderRadius="6"></TextField>
+						<Label id="housingAccountExcepted" class="gridLbl" left="71%" width="25%" height="Ti.UI.FILL"></Label>
+					</View>
+					<View height="1" borderColor="#E7E7E7" width="Ti.UI.FILL"></View>
+					<View height="49" backgroundColor="#fff" top="0" width="Ti.UI.FILL">
+						<Label class="gridLbl" left="2%" width="21%" height="Ti.UI.FILL">Gift Card</Label>
+						<Label class="gridLbl" left="23%" width="21%" visible="false"  height="Ti.UI.FILL">0.00</Label>
+						<TextField id="giftCountedTf" visible="false" name="tf" class="gridLbl" width="12%" top="8" bottom="8" paddingLeft="15" borderColor="#E7E7E7" borderWidth="1" borderRadius="6"></TextField>
+						<Label id="giftCardExcepted" class="gridLbl" left="71%" width="25%" height="Ti.UI.FILL">0</Label>
+					</View>
+
+				</View>
+				<View top="20" width="Ti.UI.FILL"  borderColor="#E7E7E7" borderWidth="1" borderRadius="6"  height="150">
+					<TextArea id="clousernoteTF" class="tf" width="Ti.UI.Fill" left="15" right="15" top="15" height="Ti.UI.FILL" backgroundColor="white" onChange="textAreaChangeFun"></TextArea>
+					<Label class="gridLbl" id="hintLbl" left="18" top="20" color="#5E5E5E" textid="clouser_note_hint_lbl"></Label>
+				</View>
+				<Button id="closeRegisterBtn" width="40%" bottom="20" height="50" titleid="close_register_txt" backgroundColor="#c32032" backgroundImage="none"  top="25"  borderRadius="6" onClick="validateCloseRegisterDetails"></Button>
+			</ScrollView>
+		</Window>
+	</NavigationWindow>
+</Alloy>

@@ -1,0 +1,78 @@
+<Alloy>
+	<SplitWindow class="container" id="GiftCardScreen" name="GiftCardScreen"  onOpen="openFunc" onClick="winClick">
+		<!-- First window is the masterView -->
+		<NavigationWindow borderColor="#ACACAC" left="-1"  bottom="-1">
+			<Window  id="leftWindow" title="Options" >
+				<LeftNavButtons  >
+					<Button  id="menuBtn"  backgroundColor="none" image="/images/menu.png" onClick="toggleLeftView"></Button>
+				</LeftNavButtons>
+				<TableView id="CardOptionTable" rowHeight="80" top="0"  width="100%" onClick="cardOptionTableClickFun">
+					<FooterView>
+						<View height="1" backgroundColor="transparent"></View>
+					</FooterView>
+					<TableViewRow  id="row1" class="row" backgroundColor="#E0E0E0" hasChild="true">
+						<View height="60" width="Ti.UI.FILL">
+							<ImageView left="15" image="/images/activated.png" ></ImageView>
+							<Label left="80" text="Activate Card"></Label>
+						</View>
+					</TableViewRow>
+					<TableViewRow id="row2" class="row"   hasChild="true" visible="false">
+						<View height="60" width="Ti.UI.FILL">
+							<ImageView left="15" image="/images/recharge-gift-card.png" ></ImageView>
+							<Label left="80" text="Recharge Card"></Label>
+						</View>
+					</TableViewRow>
+				</TableView>
+			</Window>
+		</NavigationWindow>
+		<!-- Second window is the detailView -->
+		<NavigationWindow id="navwin">
+			<Window id="win" title="Activate Card">
+				<View top="3%" bottom="3%" left="10%" right="10%" layout="vertical">
+					<Label id="cardNoLbl" class="headerlbl" left="6%" height="5%">Card no.</Label>
+					<TextField id="cardNoTf" name="tf" left="6%" right="6%"  width="Ti.UI.FILL" backgroundColor="white" borderColor="#E7E7E7" borderWidth="1" borderRadius="6" height="50" top="2%" ></TextField>
+					<Label id="amountLbl" class="headerlbl" left="6%" top="2%">Activation amount</Label>
+					<View left="6%" top="2%" right="6%" backgroundColor="#382E2C">
+						<View left="6%" top="2%" right="6%" layout="vertical">
+							<View  height="50" top="2%"  borderColor="#E7E7E7"  backgroundColor="white"  borderRadius="6" width="Ti.UI.FILL">
+								<TextField id="calculateTF" maxLength="8" height="Ti.UI.FILL" editable="false" left="0" right="30"  hintTextColor="#949292" ></TextField>
+								<Button right="0" height="Ti.UI.FILL"  backgroundImage="none" image="/images/popup_cross.png" width="30" onClick="cleardailpadfun"></Button>
+							</View>
+							<View  top="5%" height="17%" width="Ti.UI.FILL" layout="horizontal">
+								<Button height="Ti.UI.FILL" class="btn" width="30%" backgroundColor="white" borderRadius="10" color="black" name="7"  borderColor="#E7E7E7" onSingletap="dialpadbtnfun">7</Button>
+								<Button height="Ti.UI.FILL" class="btn" left="4.55%" width="30%" backgroundColor="white" borderRadius="10" color="black" name="8"  borderColor="#E7E7E7" onSingletap="dialpadbtnfun">8</Button>
+								<Button height="Ti.UI.FILL" class="btn" left="4.55%"  width="30%" backgroundColor="white" borderRadius="10" color="black" name="9"  borderColor="#E7E7E7" onSingletap="dialpadbtnfun">9</Button>
+							</View>
+							<View top="3%" height="17%" width="Ti.UI.FILL" layout="horizontal">
+								<Button height="Ti.UI.FILL" class="btn"  width="30%" backgroundColor="white" borderRadius="10" color="black" name="4"  borderColor="#E7E7E7" onSingletap="dialpadbtnfun">4</Button>
+								<Button height="Ti.UI.FILL" class="btn" left="4.55%" width="30%" backgroundColor="white" borderRadius="10" color="black" name="5"  borderColor="#E7E7E7" onSingletap="dialpadbtnfun">5</Button>
+								<Button height="Ti.UI.FILL" class="btn" left="4.55%"  width="30%" backgroundColor="white" borderRadius="10" color="black" name="6"  borderColor="#E7E7E7" onSingletap="dialpadbtnfun">6</Button>
+							</View>
+							<View  top="3%" height="17%" width="Ti.UI.FILL" layout="horizontal">
+								<Button height="Ti.UI.FILL" class="btn" width="30%" backgroundColor="white" borderRadius="10" color="black" name="1"  borderColor="#E7E7E7" onSingletap="dialpadbtnfun">1</Button>
+								<Button height="Ti.UI.FILL" class="btn" left="4.55%" width="30%" backgroundColor="white" borderRadius="10" color="black" name="2"  borderColor="#E7E7E7" onSingletap="dialpadbtnfun">2</Button>
+								<Button height="Ti.UI.FILL" class="btn" left="4.55%"  width="30%" backgroundColor="white" borderRadius="10" color="black" name="3"  borderColor="#E7E7E7" onSingletap="dialpadbtnfun">3</Button>
+							</View>
+							<View top="3%" height="17%" width="Ti.UI.FILL" layout="horizontal">
+								<Button height="Ti.UI.FILL" class="btn"  width="30%" backgroundColor="white" borderRadius="10" color="black" name="0"  borderColor="#E7E7E7" onSingletap="dialpadbtnfun">0</Button>
+								<Button height="Ti.UI.FILL" class="btn" left="4.55%" width="30%" backgroundColor="white" borderRadius="10" color="black" name="."  borderColor="#E7E7E7" onSingletap="dialpadbtnfun">.</Button>
+								<!-- <View height="Ti.UI.FILL" left="4.55%" width="30%" backgroundColor="#BD1B38" borderRadius="10" color="#fff" onClick="cleardailpadfun">
+								<View height="Ti.UI.SIZE" layout="vertical">
+								<ImageView image="/images/clear_icon.png"></ImageView>
+								<Label class="btn" color="white" textid="clear_txt"></Label>
+								</View>
+								</View> -->
+								<View height="Ti.UI.FILL" class="btn" left="4.55%"  width="30%" backgroundColor="#6FB49A" borderRadius="10" onClick="validateCard">
+									<View height="Ti.UI.SIZE" layout="vertical">
+										<ImageView image="/images/enter.png"></ImageView>
+										<Label class="btn" color="white" textid="continue_txt"></Label>
+									</View>
+								</View>
+							</View>
+						</View>
+					</View>
+				</View>
+			</Window>
+		</NavigationWindow>
+	</SplitWindow>
+</Alloy>

@@ -1,0 +1,33 @@
+
+".container" : {
+  
+}
+
+"#printerTF":{
+	hintText :"Enter IP Address",
+	keyboardType :Titanium.UI.KEYBOARD_TYPE_NUMBER_PAD,
+	returnKeyType:Titanium.UI.RETURNKEY_DONE,
+}
+
+".textField":{
+	height:Ti.UI.FILL,
+	font:{
+		fontSize:18,
+		fontFamily:"Roboto-Regular"
+	},
+	hintText:"Email",
+	left:15,right:0
+}
+
+"#submitBtn":{
+	font:{
+		fontSize:20,
+		fontFamily:"Roboto-Regular"
+	},
+	borderRadius:6,
+	color:"white",
+	width:"75%",
+	height:56,
+	backgroundImage:"none",
+	backgroundColor:"#382E2C",
+}

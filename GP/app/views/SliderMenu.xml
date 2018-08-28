@@ -1,0 +1,85 @@
+<Alloy>
+	<Window id="slidermenu" class="container" opacity="0" onOpen="openFunc" backgroundColor="white">
+		<View height="20" top="0" backgroundColor="#c32032"></View>
+		<TableView id="sliderTable"  focusable="true" top="20" bottom="25"  onClick="leftMenuOptionSelected" left="0" backgroundColor="transparent"   rowHeight="100" separatorColor="#E4E3E5">
+			<HeaderView>
+				<View id="headerVw" height="44" backgroundColor="#c32032" layout="horizontal">
+					<View height="Ti.UI.FILL" width="45%"  left="0">
+						<Label id="storeNameStaticTxt" width="Ti.UI.FILL" maxLines="1" ellipsize="Titanium.UI.TEXT_ELLIPSIZE_TRUNCATE_END" textid="store_name"></Label>
+						<Label id="storeNameTxt" width="Ti.UI.FILL" ellipsize="Titanium.UI.TEXT_ELLIPSIZE_TRUNCATE_END" bottom="5"></Label>
+					</View>
+					<View height="Ti.UI.FILL" width="50%" right="0" >
+						<Label id="nameStaticTxt" top="0" width="Ti.UI.FILL" maxLines="1" ellipsize="true" textAlign="right" left="5" right="0" textid="store_name">Welcome,</Label>
+						<Label id="employname" bottom="5" width="Ti.UI.FILL" maxLines="1" ellipsize="Titanium.UI.TEXT_ELLIPSIZE_TRUNCATE_END" textAlign="right" right="0"></Label>
+					</View>
+				</View>
+			</HeaderView>
+			<FooterView>
+				<View height="1" backgroundColor="transparent"></View>
+			</FooterView>
+			<TableViewRow id="opencloseRegisterRow" width="100%" selectedBackgroundColor="#c32032">
+				<ImageView id="opencloseRegisterimge" class="sliderImg"  image="/images/open_close_icons.png"></ImageView>
+				<Label id="opencloseRegister" textid="open_registertxt" class="sliderLbl" width="Titanium.UI.SIZE"  focusable="false" touchEnabled="false"></Label>
+			</TableViewRow>
+			<TableViewRow id="clockInOutRow" width="100%" selectedBackgroundColor="#c32032">
+			<ImageView id="clockInOutimge" class="sliderImg" image="/images/clock_in_out.png"></ImageView>
+			<Label id="clockInOutLbl"  textid="clock_in_txt"   width="Titanium.UI.SIZE" class="sliderLbl" focusable="false"touchEnabled="false"></Label>
+			</TableViewRow>
+			<TableViewRow id="clockInOutRow" width="100%" selectedBackgroundColor="#c32032">
+				<ImageView id="clockInOutimge" class="sliderImg" image="/images/clock_in.png"></ImageView>
+				<Label id="clockInOutLbl"  textid="clock_out_txt"   width="Titanium.UI.SIZE" class="sliderLbl" focusable="false"touchEnabled="false"></Label>
+			</TableViewRow>
+			<TableViewRow id="TillManagementRow" width="100%" selectedBackgroundColor="#c32032">
+				<ImageView id="TillManagementimge" class="sliderImg" image="/images/Till_management.png"></ImageView>
+				<Label id="TillManagementLbl"  textid="till_management_txt"  width="Titanium.UI.SIZE" class="sliderLbl" focusable="false"  touchEnabled="false"></Label>
+			</TableViewRow>
+			<TableViewRow id="orderHistoryRow" width="100%" selectedBackgroundColor="#c32032">
+				<ImageView id="orderHistoryimge" class="sliderImg" image="/images/order_history.png"></ImageView>
+				<Label id="orderHistoryLbl"  textid="order_history_txt"  width="Titanium.UI.SIZE" class="sliderLbl"  focusable="false"  touchEnabled="false"></Label>
+			</TableViewRow>
+			<TableViewRow id="settingRow" width="100%" selectedBackgroundColor="#c32032">
+				<ImageView id="settingimge" class="sliderImg" image="/images/settings.png"></ImageView>
+				<Label id="settingLbl"  textid="setting_txt" width="Titanium.UI.SIZE" class="sliderLbl" focusable="false"  touchEnabled="false"></Label>
+			</TableViewRow>
+			<TableViewRow id="profileRow" width="100%" selectedBackgroundColor="#c32032">
+				<ImageView id="profileimge" class="sliderImg" image="/images/Profile_icons_slider.png"></ImageView>
+				<Label id="profileLbl"  textid="profile_txt" width="Titanium.UI.SIZE" class="sliderLbl" focusable="false"  touchEnabled="false"></Label>
+			</TableViewRow>
+			<TableViewRow id="giftcardRow" width="100%" selectedBackgroundColor="#c32032">
+				<ImageView id="giftcardimge" class="sliderImg" image="/images/gift_icon.png"></ImageView>
+				<Label id="giftcardLbl"  textid="gift_card_slider_text" width="Titanium.UI.SIZE" class="sliderLbl" focusable="false"  touchEnabled="false"></Label>
+			</TableViewRow>
+			<TableViewRow id="parkedorderRow" width="100%" selectedBackgroundColor="#c32032">
+				<ImageView id="parkedorderimge" class="sliderImg" image="/images/parked_order_icon.png"></ImageView>
+				<Label id="parkedorderLbl"  textid="parked_order_txt" width="Titanium.UI.SIZE" class="sliderLbl" focusable="false"  touchEnabled="false"></Label>
+			</TableViewRow>
+			<TableViewRow id="posRow" width="100%" selectedBackgroundColor="#c32032">
+				<ImageView id="posimge" class="sliderImg" image="/images/POS_icon.png"></ImageView>
+				<Label id="posLbl"  textid="pos_txt" width="Titanium.UI.SIZE" class="sliderLbl" focusable="false"  touchEnabled="false"></Label>
+			</TableViewRow>
+			<TableViewRow id="neworderRow" width="100%" selectedBackgroundColor="#c32032">
+				<ImageView id="neworderimge" class="sliderImg" image="/images/new_order.png"></ImageView>
+				<Label id="neworderLbl"  textid="mobile_order_txt" width="Titanium.UI.SIZE" class="sliderLbl" focusable="false"  touchEnabled="false"></Label>
+			</TableViewRow>
+			<TableViewRow id="notificationRow" width="100%" selectedBackgroundColor="#c32032">
+				<ImageView id="notificationImg" class="sliderImg" image="/images/notification.png"></ImageView>
+				<Label id="notificationLbl"  textid="notification_txt" width="Titanium.UI.SIZE" class="sliderLbl" focusable="false"  touchEnabled="false"></Label>
+			</TableViewRow>
+			<TableViewRow id="backOffRow" width="100%" selectedBackgroundColor="#c32032">
+				<ImageView id="redeemLoyaltyImg" class="sliderImg" image="/images/backOffice.png"></ImageView>
+				<Label id="backOfLbl"  textid="back_off" width="Titanium.UI.SIZE" class="sliderLbl" focusable="false"  touchEnabled="false"></Label>
+			</TableViewRow>
+			<TableViewRow id="logoutRow" width="100%" selectedBackgroundColor="#c32032">
+				<ImageView id="logoutImg" class="sliderImg" image="/images/logout.png"></ImageView>
+				<Label id="logoutLbl"  textid="logout_txt" width="Titanium.UI.SIZE" class="sliderLbl" focusable="false"  touchEnabled="false"></Label>
+			</TableViewRow>
+			<!-- <TableViewRow id="redeemLoyaltyRow" width="100%" selectedBackgroundColor="#c32032">
+			<ImageView id="redeemLoyaltyImg" class="sliderImg" image="/images/new_order.png"></ImageView>
+			<Label id="redeemLoyaltyLbl"  textid="redeem_txt" width="Titanium.UI.SIZE" class="sliderLbl" focusable="false"  touchEnabled="false"></Label>
+			</TableViewRow> -->
+		</TableView>
+		<View height="25" bottom="0"  backgroundColor="#c32032">
+			<Label id="versionLbl" color="white" width="35%" textAlign="center" left="0" text="version:1.3.0"></Label>
+		</View>
+	</Window>
+</Alloy>

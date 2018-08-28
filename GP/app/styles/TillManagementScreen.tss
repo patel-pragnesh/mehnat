@@ -1,0 +1,32 @@
+
+".container" : {
+  
+}
+".headerLbl": {
+		font:{
+		fontSize: 12,
+		fontFamily: "Montserrat-Regular"
+	},
+	color:"#000"
+}
+
+".cashLbl": {
+		font:{
+		fontSize: 16,
+		fontFamily: "Montserrat-Light"
+	},
+	color:"#000"  
+}
+"#totalcashLbl": {
+		font:{
+		fontSize: 45,
+		fontFamily: "Montserrat-Bold"
+	},
+	color:"#000"
+}
+"#tillManagementTbl":{
+	tableSeparatorInsets:{
+		left: 0,
+		right: 0
+	}
+}

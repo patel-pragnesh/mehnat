@@ -1,0 +1,40 @@
+<Alloy>
+	<Window class="container" id="addNwCustomerWin" opacity="0" name="homewin" backgroundImage="/images/blacktrans.png" backgroundColor="transparent" bubbleParent="false" accessibilityHidden="true" onOpen="openFunc" onClick="winClickFunc">
+		<!-- <ScrollView  disableBounce="true">
+			<View  width="52.25%" height="50%" backgroundColor="#fff"   borderRadius="5" layout="vertical">
+				<View width="Ti.UI.FILL" height="17%" backgroundColor="#382E2C">
+					<Label id="addcustomerLbl" textAlign="center" zIndex="1"></Label>
+					<Button image="/images/cross.png" width="70"  zIndex="0"  height="45" right="5" onClick="closewinFun" backgroundImage="none"></Button>
+				</View>
+				<Label id="fullnameLbl"  top="2%" right="10%" height="10%" left="10%" textid="full_name_txt"></Label>
+				<TextField id="fullNameTf" name="tf" onReturn="nameReturnFunc" borderColor="#bfbfbf" class="txtfield" ingLeft="15" right="10%" height="10%" left="10%"  width="Ti.UI.FILL" borderRadius="5" hintText="Enter customer fullname"></TextField>
+				<Label id="emailLbl"  right="10%" height="10%" left="10%" textid="email_txt"></Label>
+				<TextField id="emailTf" name="tf" onReturn="emailReturnFunc" borderColor="#bfbfbf" class="txtfield" ingLeft="15" right="10%" height="10%" left="10%" width="Ti.UI.FILL" borderRadius="5" hintText="Enter customer email id"></TextField>
+				<Label id="mob_no_Lbl" right="10%" height="10%" left="10%" textid="mob_no_txt"></Label>
+				<TextField id="mobNoTf" name="tf" borderColor="#bfbfbf" keyboardType ="Titanium.UI.KEYBOARD_TYPE_PHONE_PAD" class="txtfield" ingLeft="15" height="10%" right="10%" left="10%" width="Ti.UI.FILL" borderRadius="5" hintText="Enter customer mobile no." maxLength="12" onChange="formateMobNoFun"></TextField>
+				<View height="Ti.UI.FILL"  width="Ti.UI.FILL">
+					<Button id="donebtn" height="45%" width="30%"  backgroundColor=" #c32032" titleid="done_txt" backgroundImage="nome" onClick="validateCustomerDetails"></Button>
+				</View>
+			</View>
+		</ScrollView> -->
+		 <ScrollView  disableBounce="true">
+			<View  width="40%" height="30%" backgroundColor="#fff"   borderRadius="5" layout="vertical">
+				<View width="Ti.UI.FILL" height="17%" backgroundColor="#382E2C">
+					<Label id="addcustomerLbl" textAlign="center" zIndex="1"></Label>
+					<Button image="/images/cross.png" width="70"  zIndex="0"  height="45" right="5" onClick="closewinFun" backgroundImage="none"></Button>
+				</View>
+				<!-- <Label id="fullnameLbl"  top="2%" right="10%" height="10%" left="10%" textid="full_name_txt"></Label>
+				<TextField id="fullNameTf" name="tf" onReturn="nameReturnFunc" borderColor="#bfbfbf" class="txtfield" ingLeft="15" right="10%" height="10%" left="10%"  width="Ti.UI.FILL" borderRadius="5" hintText="Enter customer fullname"></TextField>
+				<Label id="emailLbl"  right="10%" height="10%" left="10%" textid="email_txt"></Label>
+				<TextField id="emailTf" name="tf" onReturn="emailReturnFunc" borderColor="#bfbfbf" class="txtfield" ingLeft="15" right="10%" height="10%" left="10%" width="Ti.UI.FILL" borderRadius="5" hintText="Enter customer email id"></TextField> -->
+				<View top="0">
+				<View height="Ti.UI.SIZE"  layout="vertical"  width="80%">
+					<Label id="mob_no_Lbl" top="0" textid="mob_no_txt" width="Ti.UI.FILL" textAlign="left"></Label>
+					<TextField id="mobNoTf" top="10" name="tf" borderColor="#bfbfbf" class="txtfield" ingLeft="15" height="30%"   borderRadius="5" hintText="Enter customer mobile no." width="Ti.UI.FILL"  maxLength="12" onChange="formateMobNoFun"></TextField>
+					<Button id="donebtn" top="15" height="30%" width="30%"  backgroundColor=" #c32032" titleid="done_txt" backgroundImage="nome" onClick="validateCustomerDetails"></Button>
+				</View>
+				</View>
+			</View>
+		</ScrollView>
+	</Window>
+</Alloy>

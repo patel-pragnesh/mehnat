@@ -1,0 +1,5 @@
+<Alloy>
+	<Window  id="tillManagemntCentreWindow" name="tillManagemntWindow" zIndex="1" onOpen="openWin">
+		
+	</Window>
+</Alloy>

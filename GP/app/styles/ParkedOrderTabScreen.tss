@@ -1,0 +1,15 @@
+
+".container": {}
+"#parkedOrderTable":{
+	tableSeparatorInsets:{
+		left: 0,
+		right: 0
+	}
+}
+".headerLbl": {
+	font:{
+		fontSize: 20,
+		fontFamily: "Montserrat-Regular"
+	},
+	color: "#000"
+}

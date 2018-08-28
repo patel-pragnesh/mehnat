@@ -1,0 +1,67 @@
+
+".container" : {
+  
+}
+
+"#storeNameStaticTxt":{
+	left:15,
+	top:0,
+	font: {
+		fontSize: 16,
+		fontWeight:"semibold"
+	},
+	color:"white"
+}
+"#storeNameTxt":{
+	left:15,
+	width:"30%",
+	height:16,
+	ellipsize:Titanium.UI.TEXT_ELLIPSIZE_TRUNCATE_END,
+	bottom:1,
+	font: {
+		fontSize: 14,
+	},
+	color:"white"
+}
+".sliderLbl":{
+	font: {
+		fontSize: 22,
+		fontFamily: "Montserrat-Light"
+		
+	},
+	left:100,
+	color:"#3A322E"
+}
+".sliderImg":{
+	left:35,
+	
+}
+"#sliderTable":{
+	tableSeparatorInsets:{
+		left: 0,
+		right: 0
+	}
+}
+"#employname":{
+	height:16,
+	ellipsize:Titanium.UI.TEXT_ELLIPSIZE_TRUNCATE_END,
+	bottom:1,
+	font: {
+		fontSize: 14,
+	},
+	color:"white"
+}
+"#nameStaticTxt":{
+	top:0,
+	font: {
+		fontSize: 16,
+		fontWeight:"semibold"
+	},
+	color:"white"
+}
+"#versionLbl":{
+	font: {
+		fontSize: 12,
+	}
+	
+}

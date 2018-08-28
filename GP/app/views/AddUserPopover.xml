@@ -1,0 +1,35 @@
+<Alloy>
+	<Popover id="popover" backgroundColor='#382b20' >
+		<ContentView >
+			<NavigationWindow width='400'>
+				<Window title='Add Customer' barColor="#382b20"   onOpen="openFunc">
+					<RightNavButton color="white" image="/images/plus.png" onClick="openAddCustomerDialog"/>
+					<View id="scanVW" height="Ti.UI.SIZE" visible="false" layout="vertical" >
+						<Label id="scanLbl" color="black" top="30" >Please scan QR code</Label>
+						<TextField id="hiddenTF" visible="false" height="50" backgroundColor="transparent" color="white" onChange="changeFunc" top="20"></TextField>
+						<View height="Ti.UI.SIZE" top="40">
+							<Button id="cancelBtn" class="btn" onClick="cancelFunc" width="40%" borderRadius="6" height="50" left="10" title="Cancel" color="#fff" backgroundColor="#c32032"></Button>
+							<Button id="stopBtn" class="btn" onClick="stopFunc" width="40%" borderRadius="6" height="50" right="10" title="Stop" color="#fff" backgroundColor="#c32032"></Button>
+						</View>
+					</View>
+					<View  id="mainContainer" visible="true">
+						<View height="Ti.UI.SIZE" top="0">
+							<SearchBar id="customer_search_bar" height="50" left="0" right="70" color="black" hintText="Search" />
+							<Button id="scanBtn" onClick="scanFunc" width="70" height="50" right="0" title="Scan"  backgroundColor="#C9C9CE"></Button>
+						</View>
+						<TableView id="userTable" top="50" backgroundColor="white" onClick="tableClickFunc" onScroll="lazyload">
+							<FooterView>
+								<View  id="footerVw" height="60">
+									<ActivityIndicator id="actInd"></ActivityIndicator>
+									<Label id="msgLbl" top="3"></Label>
+									<!-- <Button id="loadBtn" onClick="loadMore" color="white"  backgroundColor="#01437D"  borderRadius="3"  width="85%"/> -->
+								</View>
+							</FooterView>
+						</TableView>
+					</View>
+
+				</Window>
+			</NavigationWindow>
+		</ContentView>
+	</Popover>
+</Alloy>

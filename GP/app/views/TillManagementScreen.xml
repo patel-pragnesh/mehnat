@@ -1,0 +1,43 @@
+<Alloy>
+	<NavigationWindow  id="tillManagemntWindow" name="tillManagemntWindow" zIndex="1" >
+		<Window id="tillManagemntWindow"  title="Till Management" layout="vertical">
+			<LeftNavButtons  platform="ios">
+				<Button  id="menuBtn"  backgroundColor="none" image="/images/menu.png" onClick="toggleLeftView"></Button>
+			</LeftNavButtons>
+			<!-- <RightNavButtons  platform="ios">
+				<Button id="searchBtn"   backgroundColor="none" image="/images/Seacrh_icon.png" onClick="addSearchBarFun"></Button>
+			</RightNavButtons> -->
+			<View height="25%" left="8%" right="8%">
+				<View left="0" width="33%" onClick="openDrawer" name="1">
+					<Label class="cashLbl" color="black" top="14%" name="1">Add Cash</Label>
+					<ImageView image="/images/Add_cash.png" name="1"></ImageView>
+				</View>
+				<View height="65" left="33%" width="1" backgroundColor="#8F898B" ></View>
+				<View width="33%" backgroundColor="white">
+					<Label class="cashLbl" color="black" top="14%">Cash Balance</Label>
+					<Label id="totalcashLbl" color="black"></Label>
+				</View>
+				<View height="65" right="33%" width="1" backgroundColor="#8F898B"></View>
+				<View right="0" width="33%" onClick="openDrawer" name="2">
+					<Label class="cashLbl" color="black" top="14%" name="2">Remove Cash</Label>
+					<ImageView image="/images/Remove_cash.png" name="2"></ImageView>
+				</View>
+			</View>
+			<View  borderColor="#ACACAC" height="40" layout="horizontal">
+						<Label class="headerLbl" left="2%" width="22%" height="Ti.UI.FILL">EMPLOYEE NAME</Label>
+						<Label class="headerLbl" width="17%" height="Ti.UI.FILL" >DATE/TIME</Label>
+						<Label class="headerLbl" width="32%" height="Ti.UI.FILL" >DESCRIPTION</Label>
+						<Label class="headerLbl" width="15%" height="Ti.UI.FILL" >Pay-In/Pay-Out</Label>
+						<Label class="headerLbl" width="10%" height="Ti.UI.FILL" textAlign="right" >AMOUNT</Label>
+					</View>
+			<TableView id="tillManagementTbl">
+				<!-- <HeaderView>
+					
+				</HeaderView> -->
+				<FooterView>
+					<View height="1" backgroundColor="transparent"></View>
+				</FooterView>
+			</TableView>
+		</Window>
+	</NavigationWindow>
+</Alloy>

@@ -1,0 +1,39 @@
+
+".container" : {
+  
+}
+
+"#addcustomerLbl": {
+	font:{
+		fontSize: 24,
+	},
+	color:"#fff",
+	textid : "enter_opt"
+}
+".txtfield":{
+	font: {
+		fontSize: 18,
+	},
+	padding:{
+		left:15
+	}
+}
+"#otptxtLbl":{
+	font:{
+		fontSize: 20,
+	},
+	keyboardType:Titanium.UI.KEYBOARD_TYPE_NUMBER_PAD,
+	
+}
+"#resendbtn": {
+	font:{
+		fontSize: 20,
+	},
+	
+}
+"#okbtn": {
+	font:{
+		fontSize: 20,
+	},
+	
+}

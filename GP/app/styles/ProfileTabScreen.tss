@@ -1,0 +1,42 @@
+
+".container": {}
+".profilelbl":{
+	font:{
+		fontSize: 16,
+		fontFamily: "Montserrat-Regular"
+	},
+
+	color: "black"
+}
+".profiletf":{
+	font:{
+		fontSize: 18,
+		fontFamily: "Montserrat-Regular"
+	},
+
+	color: "black",
+	padding:{
+		left: 15
+	},
+
+	hintTextColor: "#C9C7D2",
+	width: "48%",
+	height: "10%",
+	ellipsize:Titanium.UI.TEXT_ELLIPSIZE_TRUNCATE_END,
+	returnKeyType:Titanium.UI.RETURNKEY_NEXT
+}
+
+"#statetf":{
+
+	returnKeyType:Titanium.UI.RETURNKEY_DONE
+}
+"#editPicLbl":{
+font:{
+		fontSize: 12,
+		fontFamily: "Montserrat-Light"
+	},
+}
+"#addresstf": {
+	returnKeyType: Ti.UI.RETURNKEY_DEFAULT,
+	suppressReturn: false
+}

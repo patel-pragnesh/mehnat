@@ -1,0 +1,61 @@
+
+".container" : {}
+"#timeLbl": {
+	font:{
+		fontSize: 68,
+		fontFamily: "Montserrat-Light",
+		
+	},
+	textAlign:Titanium.UI.TEXT_ALIGNMENT_CENTER,
+}
+"#dateLbl": {
+	font:{
+		fontSize: 21,
+		fontFamily: "Montserrat-Light",
+		
+	},
+	textAlign:Titanium.UI.TEXT_ALIGNMENT_CENTER,
+	top:6,
+}
+"#checkInBtn": {
+	font:{
+		fontSize: 28,
+		fontFamily: "Montserrat-Light",
+		fontType: "Light",
+	},
+	paddingLeft: 10
+}
+"#checkOutBtn": {
+	font:{
+		fontSize: 28,
+		fontFamily: "Montserrat-Light",
+		fontType: "Light",
+	},
+	paddingLeft: 10
+}
+
+".btn":{
+	font: {
+		fontSize: 38,
+		fontFamily: "Montserrat-Light",
+	}
+}
+"#pinNoTF": {
+	font:{
+		fontSize: 28,
+		fontFamily: "Montserrat-Light",  
+		fontType: "Light",
+	},
+	paddingLeft: 10,
+	passwordMask: true,
+}
+"#storeNameLbl": {
+	font:{
+		fontSize: 20,
+		fontFamily: "Montserrat-Regular",  
+		fontType: "Light",
+	},
+	color: "#c32032",
+	
+}
+

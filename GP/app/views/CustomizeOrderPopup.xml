@@ -1,0 +1,35 @@
+<Alloy>
+	<Window class="container" id="customOrderdialogWin" onOpen="openFunc"  backgroundImage="/images/blacktrans.png" backgroundColor="transparent" >
+		<View width="95%" height="78%" backgroundColor="white" borderRadius="5" layout="vertical">
+			<View height="24%" backgroundColor="#F7F8F9" top="0">
+				<View borderColor="#E3E3E3" borderWidth="0.8" borderRadius="5" height="75%" width="12.5%"  left="20">
+					<ImageView id="menuImg" defaultImage="/images/defaultImg.png" ></ImageView>
+				</View>
+				<View left="18%"  height="Ti.UI.SIZE" width="55%" layout="vertical">
+					<Label id="itemNameLbl">Milk Tea</Label>
+					<Label id="itemVarientLbl"></Label>
+				</View>
+				<View id="qtyVW" top="15"  height="58"  right="20" layout="horizontal" width="Ti.UI.SIZE">
+					<Label id="qtyStaticLbl">Qty</Label>
+					<View left="10" borderColor="#E3E3E3" height="55" borderWidth="1" borderRadius="5" layout="horizontal" width="175">
+						<Button color="black" class="btn" image="/images/Minus.png" onSingletap="minusBtnFunc"></Button>
+						<Label id="qtyLbl">1</Label>
+						<Button color="black"   class="btn" image="/images/Add_icon.png" onSingletap="plusBtnFunc"></Button>
+					</View>
+				</View>
+				<Button id="addToCartBtn"  titleid="add_to_cart" onClick="addToCartFunc"></Button>
+				<Button id="startOverBtn" titleid="start_over" onClick="startOverFunc"></Button>
+			</View>
+			<View  height="11.5%" top="0" >
+				<View id="selectedModifierVW" height="75%" left="10" right="10" layout="horizontal"></View>
+			</View>
+			<View height="9%" top="0" backgroundColor="#EEEEEE">
+				<ScrollView id="scrollBar" layout="horizontal" scrollType="horizontal" height="Ti.UI.FILL" width="Ti.UI.FILL"></ScrollView>
+			</View>
+			<View layout="vertical" top="0" height="52%">
+				<Require type="widget" src="com.prodz.tiflexigrid" id="optionGrid"/>
+			</View>
+		</View>
+		<Button id="closeBtn" top="8%" right="1.2%"  backgroundImage="none" image="/images/cancelIcon.png" onSingletap="cancelFunc"></Button>
+	</Window>
+</Alloy>

@@ -1,0 +1,79 @@
+
+".container" : {
+  landscapeSplit: 0.39,
+	
+	navBarHidden: true,
+	statusBarStyle: Titanium.UI.iOS.StatusBar.LIGHT_CONTENT
+}
+"#neworderListTable":{
+	tableSeparatorInsets:{
+		left: 0,
+		right: 0
+	}
+}
+"#order_no_txt_lbl":{
+	font:{
+		fontSize: 22
+	},
+	color :"#000"
+}
+"#order_no_value_lbl":{
+	font:{
+		fontSize: 22
+	},
+	color :"#c32032"
+}
+"#date_tim_lbl":{
+	font:{
+		fontSize: 16
+	},
+	color :"#000"
+}
+"#staticGrandTotalLbl":{
+	font:{
+		fontSize: 26
+	},
+	color :"#c32032"
+}
+"#grandTotalLbl":{
+	font:{
+		fontSize: 26
+	},
+	color :"#c32032"
+}
+".totalClassLbl":{
+	font:{
+		fontSize: 16,
+		fontWeight: "semibold"
+	},  
+
+	color: "black"
+}
+".headerClassLbl":{
+	font:{
+		fontSize: 16,
+		fontWeight: "semibold"
+	},
+
+	color: "black"
+}
+
+".btmBtnClassLbl":{
+	font:{
+		fontSize: 22,
+		fontWeight: "semibold"
+	},
+
+	color: "black"
+}
+"#orderListTable":{
+	tableSeparatorInsets:{
+		left: 0,
+		right: 0
+	}
+}
+"#timeLbl":{
+	font:{
+		fontSize: 20
+	},
+}

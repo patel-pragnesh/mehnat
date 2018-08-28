@@ -1,0 +1,24 @@
+<Alloy>
+	<SplitWindow class="container" id="settingScreen" name="settingScreen"  >
+		<!-- First window is the masterView -->
+		<NavigationWindow borderColor="#ACACAC" left="-1" bottom="-1">
+			<Window  id="leftWindow" title="Settings" onOpen="onWindowOpen">
+				<LeftNavButtons  >
+					<Button  id="menuBtn"  backgroundColor="none" image="/images/menu.png" onClick="toggleLeftView"></Button>
+				</LeftNavButtons>
+				<ListView id="settingOptionTable" height="Ti.UI.SIZE" top="0" canScroll="false" onItemclick="settingOptionTableClickFun">
+					<ListSection>
+						<ListItem height="80" title="Receipt Printer" image="/images/Reciept-printer.png" />
+						<ListItem height="80" title="Label Printer" image="/images/label-printer.png" />
+						<ListItem height="80" title="EMV Reader" image="/images/Pos-printer.png" />
+						<ListItem height="80" title="Customer Display" image="/images/cfd_icon.png" />
+					</ListSection>
+				</ListView>
+			</Window>
+		</NavigationWindow>
+
+		<!-- Second window is the detailView -->
+		<Window></Window>
+
+	</SplitWindow>
+</Alloy>

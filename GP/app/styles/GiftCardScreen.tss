@@ -1,0 +1,62 @@
+".container": {
+	landscapeSplit: 0.39,
+	navBarHidden: true
+}
+
+".row":{
+	selectionStyle:Titanium.UI.iOS.TableViewCellSelectionStyle.NONE
+}
+".btn":{
+	font: {
+		fontSize: 22,
+		fontFamily: "Montserrat-Regular"
+	}
+}
+".headerlbl":{
+	font: {
+		fontSize: 20,
+		fontFamily: "Montserrat-Regular"
+	}
+}
+"#calculateTF": {
+	font:{
+		fontSize: 18,
+		fontFamily: "Montserrat-Regular"
+	},
+	padding:{
+		left:10,
+		
+	}, 
+	
+}
+
+"#canclebtn": {
+	font:{
+		fontSize: 28,
+	},
+	right: 10,
+	color:"fff",
+	width: 150
+}
+"#cardNoTf": {
+	font:{
+		fontSize: 18,
+		fontFamily: "Montserrat-Regular"
+	},
+	padding:{
+		left:10
+	},
+	returnKeyType :Titanium.UI.RETURNKEY_NEXT,
+	keyboardType:Titanium.UI.KEYBOARD_TYPE_PHONE_PAD
+}
+
+"#noteTf": {
+	font:{
+		fontSize: 18,
+		fontFamily: "Montserrat-Regular"
+	},
+	padding:{
+		left:10
+	},
+	returnKeyType :Titanium.UI.RETURNKEY_NEXT
+}

@@ -1,0 +1,45 @@
+
+".container": {
+	title: 'Customer Details',
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	barColor: "#382b20",
+	translucent: false,
+	navTintColor: "white",
+	titleAttributes: {
+		color: '#ffffff',
+		font: {
+			fontSize: 20,
+			fontWeight: "semibold"
+		}
+	}
+}
+"#userTable":{
+	tableSeparatorInsets:{
+		left: 0,
+		right: 0
+	},
+	backgroundColor: "white",
+	filterAttribute: "filter",
+	top: "0",
+	bottom: "0",
+	width: Ti.UI.FILL
+}
+"#actInd":{
+	style:Titanium.UI.ActivityIndicatorStyle.DARK,
+	indicatorColor:"A8A9AB"
+}
+"#msgLbl":{
+	font:{
+		fontSize: 12,
+		
+	},
+	text:"Loading..."
+	
+}
+".btn":{
+	font: {
+			fontSize: 20,
+			fontWeight: "semibold"
+		}
+}

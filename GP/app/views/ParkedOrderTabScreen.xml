@@ -1,0 +1,20 @@
+<Alloy>
+	<Window title="Parked Orders" id="parkedOrderWindow" class="container">
+		<LeftNavButtons  platform="ios">
+			<Button  id="menuBtn"  backgroundColor="none" image="/images/menu.png" onClick="toggleLeftView"></Button>
+		</LeftNavButtons>
+		<View id="topHeaderVw" visible="false"  borderColor="#acacac"  top="0" height="50" layout="horizontal">
+			<Label class="headerLbl" left="2%"  width="25%" height="Ti.UI.FILL" textid="parked_date_txt"></Label>
+			<Label class="headerLbl" width="25%"  height="Ti.UI.FILL" textAlign="center" textid="total_item_txt"></Label>
+			<Label class="headerLbl" width="25%" height="Ti.UI.FILL" textAlign="right" textid="totol_amount_txt"></Label>
+		</View>
+		<View id="noDataVw" visible="true" width="Ti.UI.FILL" top="0" height="50">
+			<Label class="headerLbl" textAlign="center" height="Ti.UI.FILL" width="Ti.UI.FILL">No orders Available</Label>
+		</View>
+		<TableView id="parkedOrderTable" top="50" ro height="Ti.UI.FILL" onClick="parkedOrderTableClickFunc">
+			<FooterView>
+				<View height="1" backgroundColor="transparent"></View>
+			</FooterView>
+		</TableView>
+	</Window>
+</Alloy>

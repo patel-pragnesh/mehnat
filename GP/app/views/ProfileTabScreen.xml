@@ -1,0 +1,49 @@
+<Alloy>
+	<NavigationWindow  id="profileWindow" name="profileWindow" >
+		<Window id="profileWin" title="Profile" onSingletap="winkeybordFun">
+			<LeftNavButtons  platform="ios">
+				<Button  id="menuBtn"  backgroundColor="none" image="/images/menu.png" onClick="toggleLeftView"></Button>
+			</LeftNavButtons>
+			<RightNavButton  platform="ios">
+				<Button  id="editBtn"  backgroundColor="none" title="SUBMIT" profileEditable="false" onClick="editProfileFun"></Button>
+			</RightNavButton>
+			<ScrollView disableBounce="true" >
+				<View layout="vertical" top="3%">
+					<View id="profilePicVW" touchEnabled="false" height="110" width="110" borderRadius="55" onClick="updateUserImgFun">
+						<ImageView id="profileImgVW" height="Ti.UI.FILL" width="Ti.UI.FILL" defaultImage="/images/user_img.png"></ImageView>
+					</View>
+					<Label id="editPicLbl" top="5" textid="edit_pic_txt" visible="false" onClick="updateUserImgFun"></Label>
+				</View>
+				<View top="25%" bottom="2%" height="Ti.UI.FILL" width="85%" >
+					<Label class="profilelbl" top="0" left="0" height="8%"  textid="full_name_txt"></Label>
+					<TextField name="tf"  id="fullnametf" onFocus="focusFunc" editable="false" class="profiletf" borderColor="#C9C7D2" borderRadius="10" left="0" onReturn="returnmobFun"  top="8%" hinttextid="full_name_txt" maxLength="50"></TextField>
+					<Label class="profilelbl" top="18%" left="0" height="8%" textid="email_txt"></Label>
+					<TextField id="emailtf" name="tf" editable="false" onFocus="focusFunc" class="profiletf" borderRadius="10" color="bfbfbf"  left="0" hinttextid="email_txt" top="26%" borderColor="#C9C7D2" hintTextColor="#C9C7D2"></TextField>
+					<Label class="profilelbl" top="36%" left="0" height="8%" textid="mob_no_txt"></Label>
+					<TextField id="mobnotf" name="tf" editable="false" onFocus="focusFunc" class="profiletf" borderRadius="10" left="0" keyboardType ="Titanium.UI.KEYBOARD_TYPE_PHONE_PAD" onReturn="returnaddress"  top="44%" hinttextid="mob_no_txt"  borderColor="#C9C7D2"  hintTextColor="#C9C7D2" maxLength="12" onChange="formateMobNoFun"></TextField>
+					<Label class="profilelbl" top="54%" left="0" height="8%" textid="gender_txt"></Label>
+					<View left="0" height="10%" width="48%" top="62%" >
+						<View width="50%" left="0">
+							<Button id="maleBtn" touchEnabled="false" left="0" color="black" onClick="maleBtnselectionFun" image="/images/radio_btn_check.png" backgroundImage="none" titleid="male_txt"></Button>
+						</View>
+						<View width="50%" left="50%">
+							<Button id="femaleBtn" touchEnabled="false" left="0" color="black" onClick="femaleBtnselectionFun"  image="/images/radio_btn.png" backgroundImage="none" titleid="female_txt"></Button>
+						</View>
+					</View>
+					<Label class="profilelbl" top="72%" left="0" height="8%"  textid="address_txt"></Label>
+					<View borderColor="#C9C7D2" color="#bfbfbf" top="80%" borderRadius="10" >
+						<TextArea id="addresstf" name="tf" onFocus="focusFunc" editable="false" class="profiletf" left="10" right="10" top="10" height="Ti.UI.FILL" width="Ti.UI.FILL"  paddingLeft="15"></TextArea>
+					</View>
+					<Label class="profilelbl" top="0" left="52%" height="8%"  textid="role_txt"></Label>
+					<TextField id="roletf" name="tf" editable="false" class="profiletf" borderRadius="10" color="bfbfbf" left="52%" top="8%" hinttextid="role_txt" paddingLeft="15" borderColor="#C9C7D2" hintTextColor="#C9C7D2" ></TextField>
+					<Label class="profilelbl" top="18%" left="52%" height="8%"  textid="zip_code_txt"></Label>
+					<TextField id="zipcodetf" onFocus="focusFunc" name="tf" editable="false" class="profiletf" borderRadius="10" onReturn="returncity" onChange="checkZipCodeFunc" left="52%" hinttextid="zip_code_txt" top="26%" borderColor="#C9C7D2" hintTextColor="#C9C7D2"></TextField>
+					<Label class="profilelbl" top="36%" left="52%" height="8%"  textid="city_txt"></Label>
+					<TextField id="citytf" name="tf" onFocus="focusFunc" editable="false" class="profiletf" borderRadius="10" onReturn="returnstate" left="52%"  hinttextid="city_txt" top="44%"  borderColor="#C9C7D2"  hintTextColor="#C9C7D2" ></TextField>
+					<Label class="profilelbl" top="54%" left="52%" height="8%"   textid="state_txt"></Label>
+					<TextField id="statetf" name="tf" onFocus="focusFunc" editable="false" class="profiletf" borderRadius="10" onReturn="returnblurstate"  left="52%" hinttextid="state_txt" top="62%"  borderColor="#C9C7D2"  hintTextColor="#C9C7D2"></TextField>
+				</View>
+			</ScrollView>
+		</Window>
+	</NavigationWindow>
+</Alloy>

@@ -1,0 +1,37 @@
+
+".container": {}
+"#dateLbl":{
+	font:{
+		fontSize: 16,
+		fontFamily: "Montserrat-Regular"
+	},
+	color: "#000"
+}
+
+"#balancLbl":{
+	font:{
+		fontSize: 13
+	},
+	color: "#000"
+}
+"#balancTF":{
+	padding:{
+		left: 15
+	},
+	editable:false
+	
+}
+".tf": {
+		font:{
+		fontSize: 18
+	},
+}
+"#hintLbl": {
+		font:{
+		fontSize: 18
+	},
+}
+"#noteTF": {
+		returnKeyType: Ti.UI.RETURNKEY_DEFAULT,
+		suppressReturn:false,
+}

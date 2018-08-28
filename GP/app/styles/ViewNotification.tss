@@ -1,0 +1,10 @@
+
+".container" : {
+  
+}
+"#notificationTable":{
+	tableSeparatorInsets:{
+		left:0,
+		right:0
+	}
+}

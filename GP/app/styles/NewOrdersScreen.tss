@@ -1,0 +1,204 @@
+
+".container": {
+	landscapeSplit: 0.39,
+	navBarHidden: true
+}
+
+"#customerPic": {
+	//width: 72,
+	//height: 72,
+	//borderRadius: 36,
+	left: 20,
+	defaultImage: "/images/user_img.png"
+}
+
+"#customerName": {
+	top: 15,
+	height: 14,
+	font: {
+		fontSize: 16,
+		fontFamily: "Montserrat-Regular",
+	},
+	
+}
+
+"#pickupDate": {
+	top: 36,
+	height: 12,
+	font: {
+		fontSize: 12,
+		fontFamily: "Montserrat-Light"
+	},
+	
+}
+
+"#totalAmount": {
+	top: 53,
+	height: 12,
+	font: {
+		fontSize: 12,
+		fontFamily: "Montserrat-Light"
+	},
+	
+}
+
+"#tokenNo": {
+	top: 70,
+	height: 12,
+	font: {
+		fontSize: 12,
+		fontFamily: "Montserrat-Light"
+	},
+	color: "#c32032"
+}
+"#orderId": {
+	top: 87,
+	height: 12,
+	font: {
+		fontSize: 12,
+		fontFamily: "Montserrat-Light"
+	},
+	bottom: 15,
+	color: "#c32032"
+}
+
+"#statusImg": {
+	right: 20
+}
+
+"#timer": {
+	right: 20
+}
+
+".orderListLabels": {
+	left: 110,
+	color : '#3A322E'
+}
+
+"#order_no_txt_lbl":{
+	font:{
+		fontSize: 16,
+		fontFamily: "Montserrat-Bold"
+	},
+	color :"#000"
+}
+"#order_no_value_lbl":{
+	font:{
+		fontSize: 16,
+		fontFamily: "Montserrat-Bold"
+	},
+	color :"#c32032"
+}
+"#date_tim_lbl":{
+	font:{
+		fontSize: 16,
+		fontFamily: "Montserrat-Bold"
+	},
+	color :"#000"
+}
+
+"#staticGrandTotalLbl":{
+	font:{
+		fontSize: 24,
+		fontFamily: "Montserrat-Bold"
+	},
+	color :"#c32032"
+}
+"#grandTotalLbl":{
+	font:{
+		fontSize: 24,
+		fontFamily: "Montserrat-Bold"
+	},
+	color :"#c32032"
+}
+".totalClassLbl":{
+	font:{
+		fontSize: 16,
+		fontFamily: "Montserrat-Regular"
+	},  
+
+	color: "black"
+}
+
+".headerClassLbl":{
+	font:{
+		fontSize: 16,
+		fontFamily: "Montserrat-Bold"
+	},
+
+	color: "black"
+}
+
+"#orderListTable":{
+	tableSeparatorInsets:{
+		left: 0,
+		right: 0
+	}
+}
+
+"#newOrdersListView":{
+	listSeparatorInsets:{
+		left: 20,
+		right: 0
+	}
+}
+
+".btmBtnClassLbl":{
+	font:{
+		fontSize: 22,
+		fontFamily: "Montserrat-Regular"
+	},
+
+	color: "black"
+}
+
+"#timeLbl":{
+	font:{
+		fontSize: 20,
+		fontFamily: "Montserrat-Regular"
+	},
+}
+"#orderReadyLbl":{
+	font:{
+		fontSize: 20,
+		fontFamily: "Montserrat-Regular"
+	},
+}
+"#isReadyLbl":{
+	font:{
+		fontSize: 16,
+		fontFamily: "Montserrat-Regular"
+	},
+}
+"#scheduledLbl":{
+	font:{
+		fontSize: 16,
+		fontFamily: "Montserrat-Regular"
+	},
+}
+"#progress" : {
+	margin:4,
+	backgroundColor:'#fff',
+	progressColor:'#000',
+	progressBackgroundColor:'#bfbfbf',
+	progressWidth: 5,
+	showText: true,
+	color: '#000',
+	font: {
+		fontSize: 16,
+	}
+}
+"#token_no_txt_lbl":{
+	font:{
+		fontSize: 16,
+		fontFamily: "Montserrat-Bold"
+	},
+	color :"#000"
+}
+"#token_no_value_lbl":{
+	font:{
+		fontSize: 16,
+		fontFamily: "Montserrat-Bold"
+	},
+	color :"#c32032"
+}

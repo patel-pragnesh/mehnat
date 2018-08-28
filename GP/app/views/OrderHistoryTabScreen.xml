@@ -1,0 +1,109 @@
+<Alloy>
+	<SplitWindow class="container" >
+		<!-- First window is the masterView -->
+		<NavigationWindow borderColor="#ACACAC" left="-1"  bottom="-1">
+			<Window  id="leftWindow" title="Orders" >
+				<LeftNavButtons  platform="ios">
+					<Button  id="menuBtn"  backgroundColor="none" image="/images/menu.png" onClick="toggleLeftView"></Button>
+				</LeftNavButtons>
+				<RightNavButton  platform="ios">
+					<Button  id="filterBtn"  backgroundColor="none" image="/images/filter.png" onClick="OpenFilterView"></Button>
+				</RightNavButton>
+				
+				<ListView backgroundColor="transparent" zIndex="1" defaultItemTemplate="template" id="orderHistoryListView" onItemclick="orderSelected">
+					<SearchBar id="listitemSearch" top="0" onCancel="searchCancel" onFocus="disableFilterIconOnSearch" onChange="enableDisableFilterIconOnSearch"></SearchBar>
+					<Templates>
+						<ItemTemplate name="template">
+							<ImageView bindId="customerPic" id="customerPic" />
+							<Label bindId="customerName" id="customerName"  class="orderListLabels" />
+							<Label bindId="pickupDate" id="pickupDate"  class="orderListLabels" />
+							<Label bindId="totalAmount" id="totalAmount"  class="orderListLabels" />
+							<Label bindId="orderId" id="orderId"  class="orderListLabels" />
+							<ImageView bindId="statusImg" id="statusImg" />
+							<ImageView bindId="timer" id="timer" />
+						</ItemTemplate>   
+					</Templates>
+					<ListSection id="orderHistoryList"></ListSection>
+				</ListView>
+				<Label id="noLbl" visible="false" zIndex="2" color="#000000">No data found</Label>
+				<!-- <SearchBar id="orderSearch" height="7%" showCancel="false" barColor="#C9C9D0" top="0"></SearchBar>
+				<TableView id="neworderListTable" top="7%"  width="100%" onClick="ordersTableClickFun">
+				<FooterView>
+				<View height="1" backgroundColor="transparent"></View>
+				</FooterView>
+				</TableView> -->
+			</Window>
+		</NavigationWindow>
+		<!-- Second window is the detailView -->
+		<NavigationWindow id="navwin">
+			<Window id="win" title="Order Details" >
+				<View id="mainView">
+					<View  height="44" top="0" backgroundColor="#ECECF3" >
+						<View  layout="horizontal" width="Ti.UI.SIZE" left="10" height="Ti.UI.SIZE">
+							<Label id="order_no_txt_lbl" >Order Id</Label>
+							<Label id="order_no_value_lbl" left="10">#</Label>
+							<Label id="token_no_txt_lbl" >/ Token no. </Label>
+							<Label id="token_no_value_lbl" left="10"></Label>
+						</View>
+						<View right="10" visible="true" width="Ti.UI.SIZE" height="Ti.UI.SIZE" layout="horizontal">
+							<ImageView image="/images/calender.png"></ImageView>
+							<Label id="date_tim_lbl" left="10"></Label>
+						</View>
+					</View>
+					<View height="44" top="44" backgroundColor="#ECECF3" left="-1" right="-1" borderColor="#ACACAC">
+						<Label class="headerClassLbl" left="0.2%" width="10%" textAlign="center" >#</Label>
+						<Label class="headerClassLbl" left="10.5%" width="50%" textid="item_names"></Label>
+						<Label class="headerClassLbl" left="57.5%" width="15%" textAlign="center" textid="quantity_txt"></Label>
+						<Label class="headerClassLbl" left="72.5%" width="10%" textAlign="right" textid="each_txt"></Label>
+						<Label class="headerClassLbl" left="82.5%" width="15%" textAlign="right" textid="total_txt"></Label>
+					</View>
+					<TableView id="orderListTable" top="88" zIndex="2" backgroundColor="white" bottom="70" width="100%" onClick="orderDetailTableClickFun">
+						<FooterView id="bottomSection">
+							<View height="Ti.UI.SIZE"  backgroundColor="white" layout="vertical">
+								<View height="1" top="0" backgroundColor="#DFDEE4"></View>
+								<View top="5">
+								<View height="Ti.UI.SIZE" top="0" right="2.5%" width="Ti.UI.SIZE" layout="horizontal">
+									<View height="Ti.UI.SIZE" width="Ti.UI.SIZE" top="10">
+											<Label class="totalClassLbl" textAlign="right" height="30"   right="0" top="0" textid="new_order_sub_total_txt"></Label>
+											<Label class="totalClassLbl"  textAlign="right" height="30"  right="0" top="30" textid="new_order_discount_txt"></Label>
+											<Label id="layaltypt" class="totalClassLbl" textAlign="right" height="30"  right="0" top="60" textid="new_order_lpyalty_pt_txt"></Label>
+											<Label id="layaltyvalLbl" class="totalClassLbl" textAlign="right" height="30"  right="0" top="90" textid="new_order_lpyalty_value_txt"></Label>
+											<Label id="txtstaticLbl" class="totalClassLbl" textAlign="right"  right="0" top="120" height="30" textid="new_order_tax_txt"></Label>
+											<Label id="staticGrandTotalLbl" class="finalTotalClassLbl" textAlign="right" height="45" right="0" top="150" textid="total_dolar_txt">Total:</Label>
+										</View>
+										<View height="Ti.UI.SIZE" left="20" width="Ti.UI.SIZE" top="10">
+											<Label id="subTotalLbl" class="totalClassLbl" height="30"  right="0" textAlign="right" top="0"></Label>
+											<Label id="discountLbl" class="totalClassLbl" height="30"  right="0" textAlign="right" top="30"></Label>
+											<Label id="loyaltyPtVal" class="totalClassLbl" height="30"  right="0" textAlign="right" top="60"></Label>
+											<Label id="loyaltyVal" class="totalClassLbl" height="30"  right="0" textAlign="right" top="90"></Label>
+											<Label id="taxLbl" class="totalClassLbl" right="0" height="30" textAlign="right" top="120"></Label>
+											<Label id="grandTotalLbl" class="finalTotalClassLbl" right="0" height="45" textAlign="right" top="150"></Label>
+										</View>
+								</View> 
+									<!-- <View backgroundColor="#ACACAC" height="200" width="1"></View> -->
+									<View  borderColor="#ECEBF3" left="2.5%" top="10"  width="45%" height="Ti.UI.SIZE" layout="vertical">
+										<Label id="paymentDetailLbl" backgroundColor="#ECEBF3" textAlign="center" width="Ti.UI.FILL" height="35" >Payment Summary</Label>
+										<View id="paymentDetailVW"  height="Ti.UI.SIZE" layout="vertical"></View>
+									</View>
+								</View>
+							</View>
+						</FooterView>
+					</TableView>
+					<View bottom="10%" visible="false" height="20%">
+						<View height="1" top="0" backgroundColor="#DFDEE4"></View>
+					</View>
+					
+					<View id="refundVw" bottom="0" height="70" visible="false" backgroundColor="#ECEBF3">
+						<Button id="refundBtn"  visible="true"  width="35%" class="btmBtnClassLbl" height="65%" color="white" backgroundImage="none" backgroundColor="#c32032"  titleid="refund_txt" onClick="refundFunc"></Button>
+					</View>
+					<View id="declineReasonVw" bottom="0" height="70" visible="false" backgroundColor="#ECEBF3">
+						<View layout="vertical" height="Ti.UI.SIZE" left="0" right="0">
+							<Label id="orderStatusLbl" left="5" >Order Status</Label>
+							<Label id="reasonLbl" left="5" ></Label>
+						</View>
+					</View>
+				</View>
+			</Window>
+		</NavigationWindow>
+	</SplitWindow>
+</Alloy>

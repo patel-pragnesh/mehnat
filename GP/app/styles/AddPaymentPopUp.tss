@@ -1,0 +1,32 @@
+
+".container" : {
+  
+}
+"#canclebtn": {
+	font:{
+		fontSize: 28,
+		fontFamily: "Montserrat-Light",
+		
+	},
+	right: 10,
+	color:"fff",
+	width: 150
+}
+".btn":{
+	font: {
+		fontSize: 32,
+		fontFamily: "Montserrat-Light",
+		
+	}
+}
+"#calculateTF": {
+	font:{
+		fontSize: 18,
+		fontFamily: "Montserrat-Regular"
+	},
+	padding:{
+		left:10,
+		
+	}, 
+	
+}

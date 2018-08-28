@@ -1,0 +1,31 @@
+
+".container" : {}
+
+
+".btn":{
+	font: {
+		fontSize: 32,
+		fontFamily: "Montserrat-Light",
+		
+	}
+}
+"#pinNoTF": {
+	font:{
+		fontSize: 28,
+		fontFamily: "Montserrat-Light",
+		
+	},
+	paddingLeft: 10,
+	
+}
+
+"#canclebtn": {
+	font:{
+		fontSize: 28,
+		fontFamily: "Montserrat-Light",
+		
+	},
+	right: 10,
+	color:"fff",
+	width: 150
+}
