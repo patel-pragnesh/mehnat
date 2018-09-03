@@ -25,234 +25,6 @@ var selectedCategoryJson = {};
 var discount = 0;
 var tax = 0;
 var loyalty_id = "";
-var data = {
-	"menu_id" : 73,
-	"quantity" : 1,
-	"menu_name" : "cream icecream",
-	"menu_image" : "https://www.cdnsolutionsgroup.com/gongcha_st/public/uploads/menu_pics/toppings-milk-foam-300x214.jpg",
-	"category_id" : 37,
-	"category_name" : "CreamSlushes",
-	"itemCustomizedPrice" : 0,
-	"serving_id" : 10,
-	"serving_name" : "Medium",
-	"serving_price" : 5,
-	"toggle" : false,
-	"loyalty_id" : "",
-	"customizationOpt" : [{
-		"id" : 0,
-		"modifier_group_id" : 0,
-		"modifier_group_name" : "Cup Size",
-		"selection_time" : "Single",
-		"is_required" : "1",
-		"option" : [{
-			"id" : 956,
-			"serving_id" : 10,
-			"modifier_group_id" : 0,
-			"price" : 5,
-			"modifier_price" : 5,
-			"serving_name" : "Medium",
-			"quantity" : 1,
-			"modifier_name" : "Medium",
-			"modifier_prefix_name" : "",
-			"modifier_apply_counter" : 1,
-			"selection_time" : "Single",
-			"selected" : true,
-			"count" : 0,
-			"enabled" : true
-		}]
-	}, {
-		"id" : 799,
-		"modifier_group_id" : 799,
-		"modifier_group_name" : "new coffee series",
-		"selection_time" : "Single",
-		"is_required" : "0",
-		"option" : [{
-			"id" : 180,
-			"modifier_id" : 180,
-			"modifier_name" : "capecheno cofee series",
-			"modifier_group_id" : 58,
-			"modifier_sort" : 0,
-			"modifier_apply_counter" : 1,
-			"modify_with" : "158,159,162",
-			"count" : 0,
-			"modifier_price" : 12,
-			"modifier_prefix_name" : "",
-			"quantity" : 1,
-			"selected" : true,
-			"enabled" : true,
-			"modifier_serving" : [{
-				"serving_id" : 10,
-				"serving_name" : "Medium",
-				"menu_price" : 12,
-				"price" : 12,
-				"prefixData" : []
-			}, {
-				"serving_id" : 11,
-				"serving_name" : "Large",
-				"menu_price" : 6,
-				"price" : 6,
-				"prefixData" : []
-			}, {
-				"serving_id" : 13,
-				"serving_name" : "Jug",
-				"menu_price" : 0,
-				"price" : 0,
-				"prefixData" : []
-			}],
-			"modifier_prefix_id" : ""
-		}, {
-			"id" : 180,
-			"modifier_id" : 180,
-			"modifier_name" : "testing series",
-			"modifier_group_id" : 58,
-			"modifier_sort" : 0,
-			"modifier_apply_counter" : 1,
-			"modify_with" : "158,159,162",
-			"count" : 0,
-			"modifier_price" : 12,
-			"modifier_prefix_name" : "",
-			"quantity" : 1,
-			"selected" : true,
-			"enabled" : true,
-			"modifier_serving" : [{
-				"serving_id" : 10,
-				"serving_name" : "Medium",
-				"menu_price" : 12,
-				"price" : 12,
-				"prefixData" : []
-			}, {
-				"serving_id" : 11,
-				"serving_name" : "Large",
-				"menu_price" : 6,
-				"price" : 6,
-				"prefixData" : []
-			}, {
-				"serving_id" : 13,
-				"serving_name" : "Jug",
-				"menu_price" : 0,
-				"price" : 0,
-				"prefixData" : []
-			}],
-			"modifier_prefix_id" : ""
-		}, {
-			"id" : 180,
-			"modifier_id" : 180,
-			"modifier_name" : "testing3 series",
-			"modifier_group_id" : 58,
-			"modifier_sort" : 0,
-			"modifier_apply_counter" : 1,
-			"modify_with" : "158,159,162",
-			"count" : 0,
-			"modifier_price" : 12,
-			"modifier_prefix_name" : "",
-			"quantity" : 1,
-			"selected" : true,
-			"enabled" : true,
-			"modifier_serving" : [{
-				"serving_id" : 10,
-				"serving_name" : "Medium",
-				"menu_price" : 12,
-				"price" : 12,
-				"prefixData" : []
-			}, {
-				"serving_id" : 11,
-				"serving_name" : "Large",
-				"menu_price" : 6,
-				"price" : 6,
-				"prefixData" : []
-			}, {
-				"serving_id" : 13,
-				"serving_name" : "Jug",
-				"menu_price" : 0,
-				"price" : 0,
-				"prefixData" : []
-			}],
-			"modifier_prefix_id" : ""
-		}]
-	}],
-	"modifier_group" : [{
-		"id" : 0,
-		"selection_time" : "Single",
-		"modifier_group_name" : "Cup Size",
-		"is_required" : "1",
-		"modifiers" : [{
-			"id" : 956,
-			"serving_id" : 10,
-			"modifier_group_id" : 0,
-			"price" : 5,
-			"modifier_price" : 5,
-			"serving_name" : "Medium",
-			"quantity" : 1,
-			"modifier_name" : "Medium",
-			"modifier_prefix_name" : "",
-			"modifier_apply_counter" : 1,
-			"selection_time" : "Single",
-			"selected" : true,
-			"count" : 0,
-			"enabled" : true
-		}, {
-			"id" : 957,
-			"serving_id" : 11,
-			"modifier_group_id" : 0,
-			"price" : 12,
-			"modifier_price" : 12,
-			"serving_name" : "Large",
-			"quantity" : 1,
-			"modifier_name" : "Large",
-			"modifier_prefix_name" : "",
-			"modifier_apply_counter" : 1,
-			"selection_time" : "Single",
-			"selected" : false,
-			"count" : 0,
-			"enabled" : true
-		}]
-	}, {
-		"id" : 799,
-		"modifier_group_id" : 58,
-		"is_required" : "0",
-		"modifier_group_name" : "new coffee series",
-		"selection_time" : "Single",
-		"selected" : false,
-		"enabled" : true,
-		"showItem" : true,
-		"modifiers" : [{
-			"id" : 180,
-			"modifier_id" : 180,
-			"modifier_name" : "capecheno cofee series",
-			"modifier_group_id" : 58,
-			"modifier_sort" : 0,
-			"modifier_apply_counter" : 1,
-			"modify_with" : "158,159,162",
-			"count" : 0,
-			"modifier_price" : 12,
-			"modifier_prefix_name" : "",
-			"quantity" : 1,
-			"selected" : true,
-			"enabled" : true,
-			"modifier_serving" : [{
-				"serving_id" : 10,
-				"serving_name" : "Medium",
-				"menu_price" : 12,
-				"price" : 12,
-				"prefixData" : []
-			}, {
-				"serving_id" : 11,
-				"serving_name" : "Large",
-				"menu_price" : 6,
-				"price" : 6,
-				"prefixData" : []
-			}, {
-				"serving_id" : 13,
-				"serving_name" : "Jug",
-				"menu_price" : 0,
-				"price" : 0,
-				"prefixData" : []
-			}],
-			"modifier_prefix_id" : ""
-		}]
-	}],
-	"id" : 15363
-};
 
 function setXMLObjectLayoutDynamically() {
 	$.subTotalLbl.textData = 0;
@@ -2563,7 +2335,7 @@ Alloy.Globals.processSync = function(from,navigateTo) {
 		}
 		Ti.API.info('obj ' + JSON.stringify(obj));
 		Communicator.post(DOMAIN_URL + SERVICE_GET_INITIAL_DATA, processSyncCallback, obj);
-		Ti.API.info('URL ' + DOMAIN_URL + SERVICE_GET_INITIAL_DATA + last_updated_date);
+		Ti.API.info('URL ' + DOMAIN_URL + SERVICE_GET_INITIAL_DATA );
 	} else {
 		show_last_sync();
 		renderData();
@@ -2581,12 +2353,10 @@ function processSyncCallback(e) {
 		try {
 			Ti.API.info('response came ');
 			var response = JSON.parse(e.response);
-			//Ti.API.info('navigateTo3 = '+navigateToTab);
 			if (response != null) {
 
 				if (response.response_code == '1') {
 					Ti.App.Properties.setString("last_updated_date", response.last_updated_date);
-					//	Ti.API.info('************response.last_updated_date = ' + response.last_updated_date);
 					Ti.App.Properties.setString("view_date", response.view_date);
 					Alloy.Globals.syncLbl.visible = false;
 					Alloy.Globals.DbManager.saveAndUpdate_AllData(response.result);
@@ -2889,68 +2659,68 @@ Alloy.Globals.scheduledNotification = function(orderData,scheduleObj,msg) {
 	}
 	
 };
+
 Ti.App.iOS.addEventListener('notification', function(e) {
-	
-try {
-	var name = "";
-	var id = "";
-	// Process custom data
-	id = e.userInfo.order_id;
-	name = e.userInfo.fullname.trim();
-	if (e.userInfo && "url" in e.userInfo) {
-		// id = e.userInfo.order_id;
-		// name = e.userInfo.fullname;
-		//httpGetRequest(e.userInfo.url);
-	}
-	Ti.API.info('e = ' + JSON.stringify(e));
-	if (Alloy.Globals.isLogin) {
-		Titanium.UI.iOS.setAppBadge(0);
 
-		dialog = Ti.UI.createAlertDialog({
-			cancel : 1,
-			buttonNames : ["Show", "Cancel"],
-			
-			message : "Order " + id + " for " + name + " will get pick up in 5 mins. Make sure it is ready",
-			title : "Gongcha POS"
-		});
-		if(e.userInfo.type == "pickUp"){
-			dialog.message =  "Order #" + id + " for " + name + " will get pick up in 5 mins. Make sure it is ready";
-		}else{
-			dialog.message =  "Order #"+ id +" is scheduled to pick up in 30 minutes, please review and update status to preparing"
+	try {
+		var name = "";
+		var id = "";
+		// Process custom data
+		id = e.userInfo.order_id;
+		name = e.userInfo.fullname.trim();
+		if (e.userInfo && "url" in e.userInfo) {
+			// id = e.userInfo.order_id;
+			// name = e.userInfo.fullname;
+			//httpGetRequest(e.userInfo.url);
 		}
-		dialog.addEventListener('click', function(k) {
-			if (k.index === k.source.cancel) {
-				Ti.API.info('The cancel button was clicked');
+		Ti.API.info('e = ' + JSON.stringify(e));
+		if (Alloy.Globals.isLogin) {
+			Titanium.UI.iOS.setAppBadge(0);
+
+			dialog = Ti.UI.createAlertDialog({
+				cancel : 1,
+				buttonNames : ["Show", "Hide"],
+				message : "Order " + id + " for " + name + " will get pick up in 5 mins. Make sure it is ready",
+				title : "Gongcha POS"
+			});
+			if (e.userInfo.type == "pickUp") {
+				dialog.message = "Order #" + id + " for " + name + " will get pick up in 5 mins. Make sure it is ready";
 			} else {
-if(e.userInfo.type == "pickUp"){
-	Alloy.Globals.openSelectedTabFromSlideMenu(2);
-}else{
-	Alloy.Globals.openSelectedTabFromSlideMenu(2);
-	Alloy.Globals.fetchOrders("schedule",id);
-}
-				
-
+				dialog.message = "Order #" + id + " is scheduled to pick up in 30 minutes, please review and update status to preparing"
 			}
-		});
-		dialog.show();
-	}
-	// Reset the badge value
-	if (e.badge > 0) {
-		Ti.App.iOS.scheduleLocalNotification({
-			date : new Date(new Date().getTime()),
-			badge : -1
-		});
-	}
-	
-} catch(e) {
-	Ti.API.info("In catch = " + e.message);
+			dialog.addEventListener('click', function(k) {
+				if (k.index === k.source.cancel) {
+					Ti.API.info('The cancel button was clicked');
+				} else {
+					if (e.userInfo.type == "pickUp") {
+						Alloy.Globals.openSelectedTabFromSlideMenu(2);
+					} else {
+						Alloy.Globals.openSelectedTabFromSlideMenu(2);
+						Alloy.Globals.fetchOrders("schedule", id);
+					}
 
-}
+				}
+			});
+			dialog.show();
+		}
+		// Reset the badge value
+		if (e.badge > 0) {
+			Ti.App.iOS.scheduleLocalNotification({
+				date : new Date(new Date().getTime()),
+				badge : -1
+			});
+		}
 
-	});
-	Ti.App.iOS.addEventListener('remotenotificationaction', function(e) {
+	} catch(e) {
+		Ti.API.info("In catch = " + e.message);
+
+	}
+
+}); 
+
+Ti.App.iOS.addEventListener('remotenotificationaction', function(e) {
     // Switch for categories
-    alert(e);
+   // alert(e);
 });
 Alloy.Globals.getSpecificParkedOrderDetail = function(id) {
 	$.orderListTable.setData([]);

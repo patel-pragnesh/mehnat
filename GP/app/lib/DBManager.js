@@ -9,14 +9,9 @@ exports.saveAndUpdate_AllData = function(resultData) {
 	try {
 
 		db = Ti.Database.open('GongchaPOS_DB');
-		//	Ti.API.info('GongchaPOS_DB db open');
-		//	Ti.API.info(JSON.stringify(resultData));
 		if (resultData.hasOwnProperty("category")) {
-			//	Ti.API.info('*category* '+JSON.stringify(resultData.category));
 			for (var i = 0; i < resultData.category.length; i++) {
-
 				var selectedData = db.execute('SELECT id FROM ospos_cat where id=' + resultData.category[i].id);
-
 				var cat_id = parseInt(resultData.category[i].id);
 				var category_name = resultData.category[i].category_name;
 				var category_description = resultData.category[i].category_description;
@@ -29,19 +24,15 @@ exports.saveAndUpdate_AllData = function(resultData) {
 
 				if (selectedData.getRowCount() == 0) {
 					db.execute('INSERT INTO ospos_cat(id,category_name,category_description,category_image, category_sort, status, is_deleted,created_at,updated_at) VALUES (?,?,?,?,?,?,?,?,?)', cat_id, category_name, category_description, category_image, category_sort, status, is_deleted, created_at, updated_at);
-
 				} else {
 					db.execute('UPDATE ospos_cat SET category_name=?,category_description=?,category_image=?,category_sort=?,status=?, is_deleted=?,created_at=?,updated_at=?  WHERE id=' + cat_id, category_name, category_description, category_image, category_sort, status, is_deleted, created_at, updated_at);
-
 				}
 			}
 		}
 		if (resultData.hasOwnProperty("menus")) {
-			Ti.API.info('*menus* ' + JSON.stringify(resultData.menus));
+
 			for (var i = 0; i < resultData.menus.length; i++) {
-
 				var menuData = db.execute('SELECT id FROM ospos_menus where id=' + resultData.menus[i].id);
-
 				var menu_id = parseInt(resultData.menus[i].id);
 				var sku_code = resultData.menus[i].sku_code;
 				var menu_name = resultData.menus[i].menu_name;
@@ -72,7 +63,7 @@ exports.saveAndUpdate_AllData = function(resultData) {
 			}
 		}
 		if (resultData.hasOwnProperty("menu_serving_price")) {
-			//	Ti.API.info('*menu_serving_price* '+JSON.stringify(resultData.menu_serving_price));
+
 			for (var i = 0; i < resultData.menu_serving_price.length; i++) {
 
 				var menu_serving_price_Data = db.execute('SELECT id FROM ospos_menu_serving where id=' + resultData.menu_serving_price[i].id);
@@ -192,7 +183,7 @@ exports.saveAndUpdate_AllData = function(resultData) {
 				var modify_with = resultData.modifiers[i].modify_with;
 				var count = 0;
 				var selected = false;
-				var status =  resultData.modifiers[i].status;
+				var status = resultData.modifiers[i].status;
 				var is_deleted = resultData.modifiers[i].is_deleted;
 				var created_at = resultData.modifiers[i].created_at;
 				var updated_at = resultData.modifiers[i].updated_at;
@@ -320,6 +311,7 @@ exports.saveAndUpdate_AllData = function(resultData) {
 				var sales_Data = db.execute('SELECT id FROM ospos_sales where id=' + resultData.sales[i].id);
 
 				var id = resultData.sales[i].id;
+				var custom_order_id = resultData.sales[i].custom_order_id;
 				var fullname = resultData.sales[i].fullname;
 				var profile_pic = resultData.sales[i].profile_pic;
 				var pickup_date = resultData.sales[i].pickup_date;
@@ -354,10 +346,11 @@ exports.saveAndUpdate_AllData = function(resultData) {
 				var order_token = resultData.sales[i].order_token;
 				var givex_code = resultData.sales[i].givex_code;
 				var givex_num = resultData.sales[i].givex_num;
+				var is_offline = "0";
 				if (sales_Data.getRowCount() == 0) {
-					db.execute('INSERT INTO ospos_sales(id,fullname,profile_pic,pickup_date,customer_id,employee_id,store_id,comment,invoice_number,discount_type,dis_value,subtotal,tax,tax_value, timer,accepted_at, status, accept_time ,counter_duration,isSchedule,order_type,order_status, created_at,updated_at,order_total_price,payment_method,discount_total_price,is_refund,loyality_value,loyality_point,pickup_type,trans_num,order_token,givex_code,givex_num) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', id, fullname, profile_pic, pickup_date, customer_id, employee_id, store_id, comment, invoice_number, discount_type, dis_value, subtotal, tax, tax_value, timer, accepted_at, status, accept_time, counter_duration, isSchedule, order_type, order_status, created_at, updated_at, order_total_price, payment_method, discount_total_price, is_refund, loyality_value, loyality_point, pickup_type, trans_num, order_token, givex_code, givex_num);
+					db.execute('INSERT INTO ospos_sales(id,fullname,profile_pic,pickup_date,customer_id,employee_id,store_id,comment,invoice_number,discount_type,dis_value,subtotal,tax,tax_value, timer,accepted_at, status, accept_time ,counter_duration,isSchedule,order_type,order_status, created_at,updated_at,order_total_price,payment_method,discount_total_price,is_refund,loyality_value,loyality_point,pickup_type,trans_num,order_token,givex_code,givex_num,is_offline,custom_order_id) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', id, fullname, profile_pic, pickup_date, customer_id, employee_id, store_id, comment, invoice_number, discount_type, dis_value, subtotal, tax, tax_value, timer, accepted_at, status, accept_time, counter_duration, isSchedule, order_type, order_status, created_at, updated_at, order_total_price, payment_method, discount_total_price, is_refund, loyality_value, loyality_point, pickup_type, trans_num, order_token, givex_code, givex_num, is_offline, custom_order_id);
 				} else {
-					db.execute('UPDATE ospos_sales SET fullname=?,profile_pic=?,pickup_date=?,customer_id=?,employee_id=?,store_id=?,comment=?,invoice_number=?,discount_type=?,dis_value=?,subtotal=?,tax=?,tax_value=?,timer=?,accepted_at=?,status=?,accept_time=?,counter_duration=?,isSchedule=?, order_type=?,order_status=?,created_at=?,updated_at=?,order_total_price=?,payment_method=?,discount_total_price=?,is_refund=?,loyality_value=?,loyality_point=?,pickup_type=?,trans_num=?,order_token=?,givex_code=?,givex_num=? WHERE id=' + id, fullname, profile_pic, pickup_date, customer_id, employee_id, store_id, comment, invoice_number, discount_type, dis_value, subtotal, tax, tax_value, timer, accepted_at, status, accept_time, counter_duration, isSchedule, order_type, order_status, created_at, updated_at, order_total_price, payment_method, discount_total_price, is_refund, loyality_value, loyality_point, pickup_type, trans_num, order_token, givex_code, givex_num);
+					db.execute('UPDATE ospos_sales SET fullname=?,profile_pic=?,pickup_date=?,customer_id=?,employee_id=?,store_id=?,comment=?,invoice_number=?,discount_type=?,dis_value=?,subtotal=?,tax=?,tax_value=?,timer=?,accepted_at=?,status=?,accept_time=?,counter_duration=?,isSchedule=?, order_type=?,order_status=?,created_at=?,updated_at=?,order_total_price=?,payment_method=?,discount_total_price=?,is_refund=?,loyality_value=?,loyality_point=?,pickup_type=?,trans_num=?,order_token=?,givex_code=?,givex_num=?,is_offline=?,custom_order_id=? WHERE id=' + id, fullname, profile_pic, pickup_date, customer_id, employee_id, store_id, comment, invoice_number, discount_type, dis_value, subtotal, tax, tax_value, timer, accepted_at, status, accept_time, counter_duration, isSchedule, order_type, order_status, created_at, updated_at, order_total_price, payment_method, discount_total_price, is_refund, loyality_value, loyality_point, pickup_type, trans_num, order_token, givex_code, givex_num, is_offline, custom_order_id);
 				}
 
 			}
@@ -366,11 +359,10 @@ exports.saveAndUpdate_AllData = function(resultData) {
 		if (resultData.hasOwnProperty("sales_items")) {
 			Ti.API.info('*sales_items*' + JSON.stringify(resultData.sales_items));
 			for (var i = 0; i < resultData.sales_items.length; i++) {
-
 				var sales_items_Data = db.execute('SELECT id FROM ospos_sales_items where id=' + resultData.sales_items[i].id);
-
 				var sale_id = parseInt(resultData.sales_items[i].sale_id);
 				var id = resultData.sales_items[i].id;
+				var custom_order_id = resultData.sales_items[i].custom_order_id;
 				var category_id = resultData.sales_items[i].category_id;
 				var menu_id = resultData.sales_items[i].menu_id;
 				var category_name = resultData.sales_items[i].category_name;
@@ -383,7 +375,6 @@ exports.saveAndUpdate_AllData = function(resultData) {
 				var order_details = "" + JSON.stringify(resultData.sales_items[i].order_details);
 				var created_at = resultData.sales_items[i].created_at;
 				var updated_at = resultData.sales_items[i].updated_at;
-
 				var discount_type = resultData.sales_items[i].discount_type;
 				var apply_option = resultData.sales_items[i].apply_option;
 				var discount_rate = resultData.sales_items[i].discount_rate;
@@ -391,21 +382,17 @@ exports.saveAndUpdate_AllData = function(resultData) {
 				var discount_title = resultData.sales_items[i].discount_title;
 				var discount_price = resultData.sales_items[i].discount_price;
 				var item_coustomized_price = resultData.sales_items[i].item_coustomized_price;
+				var is_offline = "0";
 				if (sales_items_Data.getRowCount() == 0) {
-
-					db.execute('INSERT INTO ospos_sales_items(sale_id,id,category_id,menu_id,category_name,menu_name,menu_discount,serving_id,serving_name,serving_price,quantity_purchased,order_details,created_at,updated_at,discount_type,apply_option,discount_rate,discount_id,discount_title,discount_price,item_coustomized_price) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', sale_id, id, category_id, menu_id, category_name, menu_name, menu_discount, serving_id, serving_name, serving_price, quantity_purchased, order_details, created_at, updated_at, discount_type, apply_option, discount_rate, discount_id, discount_title, discount_price, item_coustomized_price);
+					db.execute('INSERT INTO ospos_sales_items(sale_id,id,category_id,menu_id,category_name,menu_name,menu_discount,serving_id,serving_name,serving_price,quantity_purchased,order_details,created_at,updated_at,discount_type,apply_option,discount_rate,discount_id,discount_title,discount_price,item_coustomized_price,is_offline,custom_order_id) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', sale_id, id, category_id, menu_id, category_name, menu_name, menu_discount, serving_id, serving_name, serving_price, quantity_purchased, order_details, created_at, updated_at, discount_type, apply_option, discount_rate, discount_id, discount_title, discount_price, item_coustomized_price, is_offline, custom_order_id);
 				} else {
-					db.execute('UPDATE ospos_sales_items SET sale_id=?,category_id=?,menu_id=?,category_name=?,menu_name=?,menu_discount=?,serving_id=?,serving_name=?,serving_price=?,quantity_purchased=?,order_details=?,created_at=?,updated_at=?,discount_type=?,apply_option=?,discount_rate=?,discount_id=?,discount_title=?,discount_price=?,item_coustomized_price=? WHERE id=' + id, sale_id, category_id, menu_id, category_name, menu_name, menu_discount, serving_id, serving_name, serving_price, quantity_purchased, order_details, created_at, updated_at, discount_type, apply_option, discount_rate, discount_id, discount_title, discount_price, item_coustomized_price);
+					db.execute('UPDATE ospos_sales_items SET sale_id=?,category_id=?,menu_id=?,category_name=?,menu_name=?,menu_discount=?,serving_id=?,serving_name=?,serving_price=?,quantity_purchased=?,order_details=?,created_at=?,updated_at=?,discount_type=?,apply_option=?,discount_rate=?,discount_id=?,discount_title=?,discount_price=?,item_coustomized_price=?,is_offline=?,custom_order_id=? WHERE id=' + id, sale_id, category_id, menu_id, category_name, menu_name, menu_discount, serving_id, serving_name, serving_price, quantity_purchased, order_details, created_at, updated_at, discount_type, apply_option, discount_rate, discount_id, discount_title, discount_price, item_coustomized_price, is_offline, custom_order_id);
 				}
 			}
 		}
-
 		if (resultData.hasOwnProperty("discount")) {
-			//Ti.API.info('*sales_items*' + JSON.stringify(resultData.sales_items));
 			for (var i = 0; i < resultData.discount.length; i++) {
-
 				var discount_Data = db.execute('SELECT id FROM ospos_discount where id=' + resultData.discount[i].id);
-
 				var id = parseInt(resultData.discount[i].id);
 				var title = resultData.discount[i].title;
 				var category_id = resultData.discount[i].category_id;
@@ -428,9 +415,7 @@ exports.saveAndUpdate_AllData = function(resultData) {
 				var is_deleted = resultData.discount[i].is_deleted;
 				var created_at = resultData.discount[i].created_at;
 				var updated_at = resultData.discount[i].updated_at;
-
 				if (discount_Data.getRowCount() == 0) {
-
 					db.execute('INSERT INTO ospos_discount(id,title,category_id,menu_id,quantity,serving_sizes_id,discount_type,discount_rate,start_date,end_date,start_time,end_time,apply_option,coupon_code,combine_discount,discount_repeat,discount_start,discount_end,status,is_deleted,created_at,updated_at) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', id, title, category_id, menu_id, quantity, serving_sizes_id, discount_type, discount_rate, start_date, end_date, start_time, end_time, apply_option, coupon_code, combine_discount, discount_repeat, discount_start, discount_end, status, is_deleted, created_at, updated_at);
 				} else {
 					db.execute('UPDATE ospos_discount SET title=?,category_id=?,menu_id=?,quantity=?,serving_sizes_id=?,discount_type=?,discount_rate=?,start_date=?,end_date=?,start_time=?,end_time=?,apply_option=?,coupon_code=?,combine_discount=?,discount_repeat=?,discount_start=?,discount_end=?,status=?,is_deleted=?,created_at=?,updated_at=? WHERE id=' + id, title, category_id, menu_id, quantity, serving_sizes_id, discount_type, discount_rate, start_date, end_date, start_time, end_time, apply_option, coupon_code, combine_discount, discount_repeat, discount_start, discount_end, status, is_deleted, created_at, updated_at);
@@ -439,7 +424,7 @@ exports.saveAndUpdate_AllData = function(resultData) {
 		}
 
 		if (resultData.hasOwnProperty("till_management")) {
-			Ti.API.info('*till_management*' + JSON.stringify(resultData.till_management));
+
 			for (var i = 0; i < resultData.till_management.length; i++) {
 
 				var till_management_Data = db.execute('SELECT id FROM ospos_tillmanagement where id=' + resultData.till_management[i].id);
@@ -469,7 +454,7 @@ exports.saveAndUpdate_AllData = function(resultData) {
 			}
 		}
 		if (resultData.hasOwnProperty("register_sync")) {
-			Ti.API.info('*register_sync*' + JSON.stringify(resultData.register_sync));
+			//Ti.API.info('*register_sync*' + JSON.stringify(resultData.register_sync));
 			for (var i = 0; i < resultData.register_sync.length; i++) {
 
 				var date = resultData.register_sync[i].updated_date;
@@ -594,6 +579,7 @@ exports.saveAndUpdate_AllData = function(resultData) {
 				var split_Data = db.execute('SELECT id FROM ospos_split_orders where id=' + resultData.split_orders[i].id);
 				var id = resultData.split_orders[i].id;
 				var sale_id = resultData.split_orders[i].sale_id;
+				var custom_order_id = resultData.split_orders[i].custom_order_id;
 				var amount = resultData.split_orders[i].amount;
 				var payment_method = resultData.split_orders[i].payment_method;
 				var trans_num = resultData.split_orders[i].trans_num;
@@ -606,9 +592,9 @@ exports.saveAndUpdate_AllData = function(resultData) {
 				var updated_at = resultData.split_orders[i].updated_at;
 
 				if (split_Data.getRowCount() == 0) {
-					db.execute('INSERT INTO ospos_split_orders(id, sale_id, amount, payment_method, is_deleted, created_at, updated_at,is_refund,method,trans_num,givex_code,givex_num) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)', id, sale_id, amount, payment_method, is_deleted, created_at, updated_at, is_refund, method, trans_num, givex_code, givex_num);
+					db.execute('INSERT INTO ospos_split_orders(id, sale_id, amount, payment_method, is_deleted, created_at, updated_at,is_refund,method,trans_num,givex_code,givex_num,custom_order_id) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)', id, sale_id, amount, payment_method, is_deleted, created_at, updated_at, is_refund, method, trans_num, givex_code, givex_num, custom_order_id);
 				} else {
-					db.execute('UPDATE ospos_split_orders SET sale_id=?,amount=?,payment_method=?,is_deleted=?,created_at=?,updated_at=?,is_refund=?,method=?,trans_num=?,givex_code=?,givex_num=? WHERE id=' + id, sale_id, amount, payment_method, is_deleted, created_at, updated_at, is_refund, method, trans_num, givex_code, givex_num);
+					db.execute('UPDATE ospos_split_orders SET sale_id=?,amount=?,payment_method=?,is_deleted=?,created_at=?,updated_at=?,is_refund=?,method=?,trans_num=?,givex_code=?,givex_num=?,custom_order_id=? WHERE id=' + id, sale_id, amount, payment_method, is_deleted, created_at, updated_at, is_refund, method, trans_num, givex_code, givex_num, custom_order_id);
 				}
 			}
 		}
@@ -638,6 +624,7 @@ exports.getPaymentDetailFromDB1 = function(sale_id) {
 			var dataobj = {};
 
 			dataobj.id = resultSet.fieldByName('id');
+			dataobj.custom_order_id = resultSet.fieldByName('custom_order_id');
 			dataobj.sale_id = resultSet.fieldByName('sale_id');
 			dataobj.amount = resultSet.fieldByName('amount');
 			dataobj.payment_method = resultSet.fieldByName('payment_method');
@@ -1011,9 +998,6 @@ exports.Get_Menu_Group_From_DB = function(modifier_group_id, menuId) {
 
 		db = Titanium.Database.open('GongchaPOS_DB');
 		resultSet = db.execute('SELECT * FROM ospos_modifier_group where id=' + modifier_group_id + " ORDER BY modifier_group_sort ");
-
-		// if (resultSet.fieldByName('is_deleted') != "1" && resultSet.fieldByName('status') == "Active") {
-		// Ti.API.info('SELECT FROM ospos_modifier_group ' + modifier_group_id);
 		var dataobj = {};
 		dataobj.id = resultSet.fieldByName('id');
 		dataobj.modifier_group_name = resultSet.fieldByName('modifier_group_name');
@@ -1038,8 +1022,8 @@ exports.Get_Menu_Group_From_DB = function(modifier_group_id, menuId) {
 			modifierobj.quantity = 1;
 			modifierobj.selected = false;
 			modifierobj.enabled = true;
-			Ti.API.info('Status*** '+ modifier_ResultSet.fieldByName('status'));
-			if (modifier_ResultSet.fieldByName('is_deleted') != "1"  && modifier_ResultSet.fieldByName('status') == "Active") {
+			Ti.API.info('Status*** ' + modifier_ResultSet.fieldByName('status'));
+			if (modifier_ResultSet.fieldByName('is_deleted') != "1" && modifier_ResultSet.fieldByName('status') == "Active") {
 
 				var menu_modifier_serving_ResultSet = db.execute('SELECT * FROM ospos_menu_modifier_serving where modifier_group_id=' + resultSet.fieldByName('id') + ' AND modifier_id=' + modifier_ResultSet.fieldByName('id') + ' AND menu_id=' + menuId + ' GROUP BY serving_id');
 				var modifier_serving_array = [];
@@ -1047,7 +1031,7 @@ exports.Get_Menu_Group_From_DB = function(modifier_group_id, menuId) {
 				while (menu_modifier_serving_ResultSet.isValidRow()) {
 					var modifierServingObj = {};
 					var serving_name_data = db.execute('SELECT * FROM ospos_serving where id=' + menu_modifier_serving_ResultSet.fieldByName('serving_id'));
-					// Ti.API.info('SELECT * FROM ospos_serving where id=' + menu_modifier_serving_ResultSet.fieldByName('serving_id'));
+
 					modifierServingObj.serving_id = menu_modifier_serving_ResultSet.fieldByName('serving_id');
 					modifierServingObj.serving_name = serving_name_data.fieldByName('serving_name');
 
@@ -1117,6 +1101,7 @@ exports.Get_Sale_From_DB = function(storeId) {
 			var dataobj = {};
 
 			dataobj.id = resultSet.fieldByName('id');
+			dataobj.custom_order_id = resultSet.fieldByName('custom_order_id');
 			dataobj.fullname = resultSet.fieldByName('fullname');
 			dataobj.profile_pic = resultSet.fieldByName('profile_pic');
 			dataobj.pickup_date = resultSet.fieldByName('pickup_date');
@@ -1151,7 +1136,7 @@ exports.Get_Sale_From_DB = function(storeId) {
 			dataobj.givex_code = resultSet.fieldByName('givex_code');
 			dataobj.givex_num = resultSet.fieldByName('givex_num');
 			dataobj.order_token = resultSet.fieldByName('order_token');
-
+			dataobj.is_offline = resultSet.fieldByName('is_offline');
 			order.push(dataobj);
 
 			resultSet.next();
@@ -1187,6 +1172,7 @@ exports.Get_OrderDetail_From_DB = function(sale_id) {
 
 			dataobj.sale_id = resultSet.fieldByName('sale_id');
 			dataobj.id = resultSet.fieldByName('id');
+			dataobj.custom_order_id = resultSet.fieldByName('custom_order_id');
 			dataobj.category_id = resultSet.fieldByName('category_id');
 			dataobj.menu_id = resultSet.fieldByName('menu_id');
 			dataobj.category_name = resultSet.fieldByName('category_name');
@@ -1206,6 +1192,7 @@ exports.Get_OrderDetail_From_DB = function(sale_id) {
 			dataobj.discount_title = resultSet.fieldByName('discount_title');
 			dataobj.discount_price = resultSet.fieldByName('discount_price');
 			dataobj.item_coustomized_price = resultSet.fieldByName('item_coustomized_price');
+			dataobj.is_offline = resultSet.fieldByName('is_offline');
 			order.push(dataobj);
 
 			resultSet.next();
@@ -1238,6 +1225,7 @@ exports.Get_Sale_Progress_From_DB = function(sale_id) {
 			var dataobj = {};
 
 			dataobj.id = resultSet.fieldByName('id');
+			dataobj.custom_order_id = resultSet.fieldByName('custom_order_id');
 			dataobj.fullname = resultSet.fieldByName('fullname');
 			dataobj.profile_pic = resultSet.fieldByName('profile_pic');
 			dataobj.pickup_date = resultSet.fieldByName('pickup_date');
@@ -1272,7 +1260,7 @@ exports.Get_Sale_Progress_From_DB = function(sale_id) {
 			dataobj.givex_code = resultSet.fieldByName('givex_code');
 			dataobj.givex_num = resultSet.fieldByName('givex_num');
 			dataobj.order_token = resultSet.fieldByName('order_token');
-
+			dataobj.is_offline = resultSet.fieldByName('is_offline');
 			order.push(dataobj);
 
 			resultSet.next();
@@ -1308,6 +1296,7 @@ exports.Get_Sale_From_DB_orderHistory = function() {
 			var dataobj = {};
 
 			dataobj.id = resultSet.fieldByName('id');
+			dataobj.custom_order_id = resultSet.fieldByName('custom_order_id');
 			dataobj.fullname = resultSet.fieldByName('fullname');
 			dataobj.profile_pic = resultSet.fieldByName('profile_pic');
 			dataobj.pickup_date = resultSet.fieldByName('pickup_date');
@@ -1341,7 +1330,7 @@ exports.Get_Sale_From_DB_orderHistory = function() {
 			dataobj.givex_code = resultSet.fieldByName('givex_code');
 			dataobj.givex_num = resultSet.fieldByName('givex_num');
 			dataobj.order_token = resultSet.fieldByName('order_token');
-
+			dataobj.is_offline = resultSet.fieldByName('is_offline');
 			order.push(dataobj);
 
 			resultSet.next();
@@ -1837,6 +1826,7 @@ exports.getSumOfTotalSales = function() {
 			var dataobj = {};
 
 			dataobj.id = resultSet.fieldByName('id');
+			dataobj.custom_order_id = resultSet.fieldByName('custom_order_id');
 			dataobj.fullname = resultSet.fieldByName('fullname');
 			dataobj.profile_pic = resultSet.fieldByName('profile_pic');
 			dataobj.pickup_date = resultSet.fieldByName('pickup_date');
@@ -1871,7 +1861,7 @@ exports.getSumOfTotalSales = function() {
 			dataobj.givex_code = resultSet.fieldByName('givex_code');
 			dataobj.givex_num = resultSet.fieldByName('givex_num');
 			dataobj.order_token = resultSet.fieldByName('order_token');
-
+			dataobj.is_offline = resultSet.fieldByName('is_offline');
 			order.push(dataobj);
 
 			resultSet.next();
@@ -1909,6 +1899,7 @@ exports.getSumCardPaymentOfTotalSales = function() {
 			var dataobj = {};
 
 			dataobj.id = resultSet.fieldByName('id');
+			dataobj.custom_order_id = resultSet.fieldByName('custom_order_id');
 			dataobj.fullname = resultSet.fieldByName('fullname');
 			dataobj.profile_pic = resultSet.fieldByName('profile_pic');
 			dataobj.pickup_date = resultSet.fieldByName('pickup_date');
@@ -1943,7 +1934,7 @@ exports.getSumCardPaymentOfTotalSales = function() {
 			dataobj.givex_code = resultSet.fieldByName('givex_code');
 			dataobj.givex_num = resultSet.fieldByName('givex_num');
 			dataobj.order_token = resultSet.fieldByName('order_token');
-
+			dataobj.is_offline = resultSet.fieldByName('is_offline');
 			order.push(dataobj);
 
 			resultSet.next();
@@ -2131,6 +2122,7 @@ exports.deleteAllTableDetails = function() {
 		db.execute('DELETE FROM ospos_tax_codes');
 		db.execute('DELETE FROM ospos_tillmanagement');
 		db.execute('DELETE FROM ospos_split_orders');
+		Ti.App.Properties.setInt("token_offline", 0);
 	} catch(err) {
 		Ti.API.info('updateospos_printer_tbl ERROR ' + err.message);
 	} finally {
@@ -2154,6 +2146,7 @@ exports.getSumHousingAmountOfTotalSales = function() {
 			var dataobj = {};
 
 			dataobj.id = resultSet.fieldByName('id');
+			dataobj.custom_order_id = resultSet.fieldByName('custom_order_id');
 			dataobj.fullname = resultSet.fieldByName('fullname');
 			dataobj.profile_pic = resultSet.fieldByName('profile_pic');
 			dataobj.pickup_date = resultSet.fieldByName('pickup_date');
@@ -2188,7 +2181,7 @@ exports.getSumHousingAmountOfTotalSales = function() {
 			dataobj.givex_code = resultSet.fieldByName('givex_code');
 			dataobj.givex_num = resultSet.fieldByName('givex_num');
 			dataobj.order_token = resultSet.fieldByName('order_token');
-
+			dataobj.is_offline = resultSet.fieldByName('is_offline');
 			order.push(dataobj);
 
 			resultSet.next();
@@ -2257,6 +2250,7 @@ exports.getPaymentDetailFromDB = function(sale_id) {
 			var dataobj = {};
 
 			dataobj.id = resultSet.fieldByName('id');
+			dataobj.custom_order_id = resultSet.fieldByName('custom_order_id');
 			dataobj.sale_id = resultSet.fieldByName('sale_id');
 			dataobj.amount = resultSet.fieldByName('amount');
 			dataobj.method = resultSet.fieldByName('method');
@@ -2300,6 +2294,7 @@ exports.getTotalSales = function() {
 			var dataobj = {};
 
 			dataobj.id = resultSet.fieldByName('id');
+			dataobj.custom_order_id = resultSet.fieldByName('custom_order_id');
 			dataobj.fullname = resultSet.fieldByName('fullname');
 			dataobj.profile_pic = resultSet.fieldByName('profile_pic');
 			dataobj.pickup_date = resultSet.fieldByName('pickup_date');
@@ -2334,7 +2329,7 @@ exports.getTotalSales = function() {
 			dataobj.givex_code = resultSet.fieldByName('givex_code');
 			dataobj.givex_num = resultSet.fieldByName('givex_num');
 			dataobj.order_token = resultSet.fieldByName('order_token');
-
+			dataobj.is_offline = resultSet.fieldByName('is_offline');
 			order.push(dataobj);
 
 			resultSet.next();
@@ -2365,6 +2360,7 @@ exports.Get_Sale_Later_From_DB = function(storeId) {
 			var dataobj = {};
 
 			dataobj.id = resultSet.fieldByName('id');
+			dataobj.custom_order_id = resultSet.fieldByName('custom_order_id');
 			dataobj.fullname = resultSet.fieldByName('fullname');
 			dataobj.profile_pic = resultSet.fieldByName('profile_pic');
 			dataobj.pickup_date = resultSet.fieldByName('pickup_date');
@@ -2399,7 +2395,7 @@ exports.Get_Sale_Later_From_DB = function(storeId) {
 			dataobj.givex_code = resultSet.fieldByName('givex_code');
 			dataobj.givex_num = resultSet.fieldByName('givex_num');
 			dataobj.order_token = resultSet.fieldByName('order_token');
-
+			dataobj.is_offline = resultSet.fieldByName('is_offline');
 			order.push(dataobj);
 
 			resultSet.next();
@@ -2431,6 +2427,7 @@ exports.Get_Sale_Asap_From_DB = function(storeId) {
 			var dataobj = {};
 
 			dataobj.id = resultSet.fieldByName('id');
+			dataobj.custom_order_id = resultSet.fieldByName('custom_order_id');
 			dataobj.fullname = resultSet.fieldByName('fullname');
 			dataobj.profile_pic = resultSet.fieldByName('profile_pic');
 			dataobj.pickup_date = resultSet.fieldByName('pickup_date');
@@ -2465,6 +2462,7 @@ exports.Get_Sale_Asap_From_DB = function(storeId) {
 			dataobj.givex_code = resultSet.fieldByName('givex_code');
 			dataobj.givex_num = resultSet.fieldByName('givex_num');
 			dataobj.order_token = resultSet.fieldByName('order_token');
+			dataobj.is_offline = resultSet.fieldByName('is_offline');
 
 			order.push(dataobj);
 
@@ -2501,6 +2499,7 @@ exports.getSumGiftCardAmountOfTotalSales = function() {
 			var dataobj = {};
 
 			dataobj.id = resultSet.fieldByName('id');
+			dataobj.custom_order_id = resultSet.fieldByName('custom_order_id');
 			dataobj.fullname = resultSet.fieldByName('fullname');
 			dataobj.profile_pic = resultSet.fieldByName('profile_pic');
 			dataobj.pickup_date = resultSet.fieldByName('pickup_date');
@@ -2535,6 +2534,7 @@ exports.getSumGiftCardAmountOfTotalSales = function() {
 			dataobj.givex_code = resultSet.fieldByName('givex_code');
 			dataobj.givex_num = resultSet.fieldByName('givex_num');
 			dataobj.order_token = resultSet.fieldByName('order_token');
+			dataobj.is_offline = resultSet.fieldByName('is_offline');
 
 			order.push(dataobj);
 
@@ -2550,4 +2550,147 @@ exports.getSumGiftCardAmountOfTotalSales = function() {
 	}
 
 	return order;
+};
+
+exports.insertOfflineOrder = function(res) {
+
+	Ti.API.info("********************************Insert data in to order_offline table****************************");
+	Ti.API.info("RES : " + JSON.stringify(res));
+
+	var resultSet;
+	try {
+
+		db = Titanium.Database.open('GongchaPOS_DB');
+		db.execute('INSERT INTO ospos_offline_order(order_data) VALUES (?)', JSON.stringify(res));
+
+	} catch(err) {
+		Ti.API.info("In catch = " + err.message);
+	} finally {
+		db.close();
+	}
+
+};
+
+exports.getOfflineOrder = function(res) {
+
+	Ti.API.info("********************************Get data in to order_offline table****************************");
+	var offline_order = [];
+	var resultSet;
+	try {
+
+		db = Titanium.Database.open('GongchaPOS_DB');
+		var resultSet = db.execute('SELECT * FROM ospos_offline_order');
+		while (resultSet.isValidRow()) {
+			var offline_data = resultSet.fieldByName('order_data');
+			offline_order.push(JSON.parse(offline_data));
+			resultSet.next();
+		}
+		Ti.API.info("OfflineData :: " + JSON.stringify(offline_order));
+	} catch(err) {
+		Ti.API.info("In catch = " + err.message);
+	} finally {
+		resultSet.close();
+		db.close();
+	}
+
+	return offline_order;
+};
+
+exports.insertOfflineSalesData = function(res) {
+
+	Ti.API.info("********************************Insert data in to order_offline table****************************");
+	Ti.API.info("RES : " + JSON.stringify(res));
+
+	var resultSet;
+	try {
+
+		db = Titanium.Database.open('GongchaPOS_DB');
+		var id = res.id;
+		var custom_order_id = res.custom_order_id;
+		var fullname = res.fullname;
+		var profile_pic = res.profile_pic;
+		var pickup_date = res.pickup_date;
+		var customer_id = res.customer_id;
+		var employee_id = res.employee_id;
+		var store_id = res.store_id;
+		var comment = res.comment;
+		var invoice_number = res.invoice_number;
+		var discount_type = res.discount_type;
+		var dis_value = res.dis_value;
+		var subtotal = res.subtotal;
+		var tax = res.tax;
+		var tax_value = res.tax_value;
+		var timer = res.timer;
+		var accepted_at = res.accepted_at;
+		var status = "1";
+		var accept_time = "";
+		var counter_duration = "";
+		var isSchedule = "1";
+		var order_type = res.order_type;
+		var order_status = res.order_status;
+		var created_at = res.created_at;
+		var updated_at = res.updated_at;
+		var order_total_price = res.order_total_price;
+		var payment_method = res.payment_method;
+		var discount_total_price = res.discount_total_price;
+		var is_refund = res.is_refund;
+		var loyality_value = res.loyality_value;
+		var loyality_point = res.loyality_point;
+		var pickup_type = res.pickup_type;
+		var trans_num = res.trans_num;
+		var order_token = res.order_token;
+		var givex_code = res.givex_code;
+		var givex_num = res.givex_num;
+		var is_offline = "1";
+
+		db.execute('INSERT INTO ospos_sales(id,fullname,profile_pic,pickup_date,customer_id,employee_id,store_id,comment,invoice_number,discount_type,dis_value,subtotal,tax,tax_value, timer,accepted_at, status, accept_time ,counter_duration,isSchedule,order_type,order_status, created_at,updated_at,order_total_price,payment_method,discount_total_price,is_refund,loyality_value,loyality_point,pickup_type,trans_num,order_token,givex_code,givex_num,is_offline,custom_order_id) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', id, fullname, profile_pic, pickup_date, customer_id, employee_id, store_id, comment, invoice_number, discount_type, dis_value, subtotal, tax, tax_value, timer, accepted_at, status, accept_time, counter_duration, isSchedule, order_type, order_status, created_at, updated_at, order_total_price, payment_method, discount_total_price, is_refund, loyality_value, loyality_point, pickup_type, trans_num, order_token, givex_code, givex_num, is_offline, custom_order_id);
+
+	} catch(err) {
+		Ti.API.info("In catch = " + err.message);
+	} finally {
+		db.close();
+	}
+
+};
+
+exports.insertOfflineSalesItemData = function(res) {
+
+	Ti.API.info("********************************Insert data in to order_offline table****************************");
+	Ti.API.info("RES : " + JSON.stringify(res));
+
+	var resultSet;
+	try {
+
+		db = Titanium.Database.open('GongchaPOS_DB');
+		var sale_id = parseInt(res.sale_id);
+		var id = res.id;
+		var custom_order_id = res.custom_order_id;
+		var category_id = res.category_id;
+		var menu_id = res.menu_id;
+		var category_name = res.category_name;
+		var menu_name = res.menu_name;
+		var menu_discount = res.menu_discount;
+		var serving_id = res.serving_id;
+		var serving_name = res.serving_name;
+		var serving_price = res.serving_price;
+		var quantity_purchased = res.quantity_purchased;
+		var order_details = "" + JSON.stringify(res.order_details);
+		var created_at = res.created_at;
+		var updated_at = res.updated_at;
+		var discount_type = res.discount_type;
+		var apply_option = res.apply_option;
+		var discount_rate = res.discount_rate;
+		var discount_id = res.discount_id;
+		var discount_title = res.discount_title;
+		var discount_price = res.discount_price;
+		var item_coustomized_price = res.item_coustomized_price;
+		var is_offline = "1";
+		db.execute('INSERT INTO ospos_sales_items(sale_id,id,category_id,menu_id,category_name,menu_name,menu_discount,serving_id,serving_name,serving_price,quantity_purchased,order_details,created_at,updated_at,discount_type,apply_option,discount_rate,discount_id,discount_title,discount_price,item_coustomized_price,is_offline,custom_order_id) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', sale_id, id, category_id, menu_id, category_name, menu_name, menu_discount, serving_id, serving_name, serving_price, quantity_purchased, order_details, created_at, updated_at, discount_type, apply_option, discount_rate, discount_id, discount_title, discount_price, item_coustomized_price, is_offline, custom_order_id);
+
+	} catch(err) {
+		Ti.API.info("In catch = " + err.message);
+	} finally {
+		db.close();
+	}
+
 };

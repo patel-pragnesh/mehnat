@@ -1210,7 +1210,7 @@ function validateRegisterIsCloseOrOpen() {
 			//if (openedDate.getDate() == new Date().getDate()) {
 				return true;
 			//} else {
-				//Alloy.Globals.Notifier.show("Please close register for present day");
+			//	Alloy.Globals.Notifier.show("Please close register for present day");
 			//}
 		} else {
 			Alloy.Globals.Notifier.show("Please open register");

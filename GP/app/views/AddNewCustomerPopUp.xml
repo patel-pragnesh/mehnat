@@ -19,7 +19,7 @@
 		</ScrollView> -->
 		 <ScrollView  disableBounce="true">
 			<View  width="40%" height="30%" backgroundColor="#fff"   borderRadius="5" layout="vertical">
-				<View width="Ti.UI.FILL" height="17%" backgroundColor="#382E2C">
+				<View width="Ti.UI.FILL" height="19%" backgroundColor="#382E2C">
 					<Label id="addcustomerLbl" textAlign="center" zIndex="1"></Label>
 					<Button image="/images/cross.png" width="70"  zIndex="0"  height="45" right="5" onClick="closewinFun" backgroundImage="none"></Button>
 				</View>

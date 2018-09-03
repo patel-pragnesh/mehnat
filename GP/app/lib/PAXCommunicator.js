@@ -117,6 +117,7 @@ exports.initPaxObj = {
 	"initailizeMethod" : "A00",
 	"transactionMethod" : "T00",
 	"swipeGiftCardMethod" : "A30",
+	"safMODE" : "A54",
 	"giftCardMethod" : "T06",
 	"authorizationMethod" : "A40",
 	"batchCloseMethod" : "B00",
@@ -146,14 +147,15 @@ exports.initPaxObj = {
 	"COLON" : exports.hex2AscII("3a"),
 	"US" : exports.hex2AscII("1f"), //The Unit separator that used to separate certain sub-fields In Extend Data
 	"GS" : exports.hex2AscII("1d"), //The Group separator that used to separate a group filed
-	"RS" : exports.hex2AscII("1e"),//Record Separator.
-	"HREF":"72826970",
-	"equal": "61"
+	"RS" : exports.hex2AscII("1e"), //Record Separator.
+	"HREF" : "72826970",
+	"equal" : "61"
 };
 //Create object for defining initial value for LRC related calculation
 exports.initLRCObj = {
 	"initailizeMethod" : exports.hexEncode("A00"),
 	"transactionMethod" : exports.hexEncode("T00"),
+	"safMODE" : exports.hexEncode("A54"),
 	"swipeGiftCardMethod" : exports.hexEncode("A30"),
 	"giftCardMethod" : exports.hexEncode("T06"),
 	"authorizationMethod" : exports.hexEncode("A40"),
@@ -189,6 +191,12 @@ exports.initLRCObj = {
 	"RS" : "1e",
 
 };
+exports.setSAFMode = function() {
+	var lrc = exports.initLRCObj.safMODE + exports.initLRCObj.FS + exports.hexEncode("1.37") + exports.initLRCObj.FS + exports.hexEncode("3")+ exports.initLRCObj.FS+ exports.initLRCObj.FS+ exports.initLRCObj.FS+ exports.initLRCObj.FS+ exports.initLRCObj.FS+ exports.initLRCObj.FS+ exports.initLRCObj.FS+ exports.initLRCObj.FS+ exports.initLRCObj.FS+ exports.initLRCObj.FS + exports.initLRCObj.ETX;
+	var request = exports.initPaxObj.STX + exports.initPaxObj.safMODE + exports.initPaxObj.FS + 1.37 + exports.initPaxObj.FS + 3 + exports.initPaxObj.FS+ exports.initPaxObj.FS+ exports.initPaxObj.FS+ exports.initPaxObj.FS+ exports.initPaxObj.FS+ exports.initPaxObj.FS+ exports.initPaxObj.FS+ exports.initPaxObj.FS+ exports.initPaxObj.FS+ exports.initPaxObj.FS + exports.initPaxObj.ETX + exports.hex2AscII(exports.getLRC(lrc));
+	return request.toString();
+};
+
 exports.hostLogRequest = function() {
 	var lrc = exports.initLRCObj.hostLogMethod + exports.initLRCObj.FS + exports.initLRCObj.version + exports.initLRCObj.ETX;
 	Ti.API.info('LRC ' + lrc);
@@ -197,10 +205,10 @@ exports.hostLogRequest = function() {
 	return request.toString();
 };
 
-exports.voidTransactionRequestHost = function(amount,hostRef) {
+exports.voidTransactionRequestHost = function(amount, hostRef) {
 	var amount = toFixed(amount) * 100;
 	amount = parseInt(amount.toFixed(2));
-	var HREF = "HREF="+hostRef;
+	var HREF = "HREF=" + hostRef;
 	var lrc = exports.initLRCObj.transactionMethod + exports.initLRCObj.FS + exports.initLRCObj.version + exports.initLRCObj.FS + exports.initLRCObj.voidTransactionType + exports.initLRCObj.FS + exports.initLRCObj.FS + exports.initLRCObj.FS + exports.initLRCObj.traceInformation + exports.initLRCObj.FS + exports.initLRCObj.FS + exports.initLRCObj.FS + exports.initLRCObj.FS + exports.initLRCObj.FS + exports.hexEncode(HREF) + exports.initLRCObj.FS + exports.initLRCObj.ETX;
 	var request = exports.initPaxObj.STX + exports.initPaxObj.transactionMethod + exports.initPaxObj.FS + 1.37 + exports.initPaxObj.FS + exports.initPaxObj.voidTransactionType + exports.initPaxObj.FS + exports.initPaxObj.FS + exports.initPaxObj.FS + exports.initPaxObj.traceInformation + exports.initPaxObj.FS + exports.initPaxObj.FS + exports.initPaxObj.FS + exports.initPaxObj.FS + exports.initPaxObj.FS + HREF + exports.initPaxObj.FS + exports.initPaxObj.ETX + exports.hex2AscII(exports.getLRC(lrc));
 	return request.toString();
@@ -277,8 +285,8 @@ exports.initializeRequest = function() {
 };
 
 exports.swipeGiftCardRequest = function() {
-	var lrc = exports.initLRCObj.swipeGiftCardMethod + exports.initLRCObj.FS + exports.initLRCObj.version + exports.initLRCObj.FS + exports.hexEncode("1") + exports.initLRCObj.FS  + exports.hexEncode("1") + exports.initLRCObj.FS + exports.initLRCObj.FS + exports.initLRCObj.FS + exports.hexEncode("1") + exports.initLRCObj.FS + exports.hexEncode("300") + exports.initLRCObj.FS + exports.hexEncode("0") + exports.initLRCObj.FS + exports.initLRCObj.FS + exports.initLRCObj.FS + exports.initLRCObj.FS + exports.hexEncode("04") + exports.initLRCObj.FS + exports.hexEncode("01") + exports.initLRCObj.ETX;
-	var request = exports.initPaxObj.STX + exports.initPaxObj.swipeGiftCardMethod + exports.initPaxObj.FS + exports.initPaxObj.version + exports.initPaxObj.FS + "1" + exports.initPaxObj.FS +"1"+ exports.initPaxObj.FS + exports.initPaxObj.FS + exports.initPaxObj.FS + "1" + exports.initPaxObj.FS + 300 + exports.initPaxObj.FS + "0" + exports.initPaxObj.FS + exports.initPaxObj.FS + exports.initPaxObj.FS + exports.initPaxObj.FS + "04" + exports.initPaxObj.FS + "01" + exports.initPaxObj.ETX + exports.hex2AscII(exports.getLRC(lrc));
+	var lrc = exports.initLRCObj.swipeGiftCardMethod + exports.initLRCObj.FS + exports.initLRCObj.version + exports.initLRCObj.FS + exports.hexEncode("1") + exports.initLRCObj.FS + exports.hexEncode("1") + exports.initLRCObj.FS + exports.initLRCObj.FS + exports.initLRCObj.FS + exports.hexEncode("1") + exports.initLRCObj.FS + exports.hexEncode("300") + exports.initLRCObj.FS + exports.hexEncode("0") + exports.initLRCObj.FS + exports.initLRCObj.FS + exports.initLRCObj.FS + exports.initLRCObj.FS + exports.hexEncode("04") + exports.initLRCObj.FS + exports.hexEncode("01") + exports.initLRCObj.ETX;
+	var request = exports.initPaxObj.STX + exports.initPaxObj.swipeGiftCardMethod + exports.initPaxObj.FS + exports.initPaxObj.version + exports.initPaxObj.FS + "1" + exports.initPaxObj.FS + "1" + exports.initPaxObj.FS + exports.initPaxObj.FS + exports.initPaxObj.FS + "1" + exports.initPaxObj.FS + 300 + exports.initPaxObj.FS + "0" + exports.initPaxObj.FS + exports.initPaxObj.FS + exports.initPaxObj.FS + exports.initPaxObj.FS + "04" + exports.initPaxObj.FS + "01" + exports.initPaxObj.ETX + exports.hex2AscII(exports.getLRC(lrc));
 	return request.toString();
 };
 

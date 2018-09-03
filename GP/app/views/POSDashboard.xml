@@ -120,12 +120,10 @@
 						<TabbedBar id="tabbedBar"  platform="ios" index="0" onClick="navTabBarClickFun">
 							<Labels>
 								<Label>L("products_txt")</Label>
-								<Label >Loyalty</Label>
-								<Label >Gift</Label>
-								<!-- <Label >L("loyalty_txt")</Label> -->
+								<Label >L("loyalty_txt")</Label>
 							</Labels>
 						</TabbedBar>
-						<View id="notificationCountVW" visible="false" top="0" right="65" height="20" width="20" borderRadius="10" backgroundColor="white">
+						<View id="notificationCountVW" visible="false" top="0" right="0" height="20" width="20" borderRadius="10" backgroundColor="white">
 							<Label id="notificationCountLbl" color="red" color="#c32032">1</Label>
 						</View>
 					</View>

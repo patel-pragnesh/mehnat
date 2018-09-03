@@ -104,7 +104,6 @@ exports.post = function(url, callback, data) {
 							var result = {};
 							result.success = true;
 							result.response = this.responseText;
-							Ti.API.info('E ' + JSON.stringify(result.response));
 							if (JSON.parse(result.response).response_code == 2) {
 								Alloy.Globals.Notifier.show(JSON.parse(result.response).responseMessage);
 								Alloy.Globals.logout();

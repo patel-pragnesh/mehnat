@@ -180,14 +180,6 @@ function addToCartFunc(e) {
 		$.customOrderdialogWin.close();
 		Ti.API.info('getFinalValue : ' + JSON.stringify(obj));
 		var finalValue = JSON.stringify(obj);
-		// var demo ="dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text  testtttttt";
-// 		
-				// var buffer = Ti.createBuffer({
-						// value : finalValue.toString()
-						// //value : obj
-						// //value : demo
-					// });
-					// Alloy.Globals.myPeripheral.writeValueForCharacteristicWithType(buffer.toBlob(), Alloy.Globals.cfdCharacteristic, BLE.CHARACTERISTIC_PROPERTY_WRITE_WITH_RESPONSE);
 				
 	} else {
 		Alloy.Globals.Notifier.show(L("ALERT_SELECT_REQUIRED_OPTIONS"));
@@ -614,17 +606,11 @@ function renderModifierGrid(detail, modifierGroupindex, isInitialize) {
 
 			e.source.vw.backgroundColor = "#c32032";
 			e.source.vw.getChildren()[0].color = "#fff";
-			Ti.API.info(e.source.vw.getChildren()[1].text + "  " + e.source.data.maxCounter);
 			if (e.source.vw.getChildren()[1].text < e.source.data.maxCounter) {
-				// if (e.source.vw.getChildren()[1].text > 1) {
-				// return;
-				// }
 				e.source.vw.getChildren()[1].text = parseInt(e.source.vw.getChildren()[1].text) + 1;
-
 			} else {
 				//Alloy.Globals.Notifier.show(L('validation_count_txt'));
 				if (e.source.data.modifierData.selected == true) {
-
 					e.source.vw.backgroundColor = "#EEEEEE";
 					e.source.vw.getChildren()[0].color = "#000";
 					e.source.vw.getChildren()[1].visible = false;
@@ -642,7 +628,6 @@ function renderModifierGrid(detail, modifierGroupindex, isInitialize) {
 			setTopSelectionLableInMultipleCase(e.source.data.modifierGroupIndex, e.source.data.index);
 
 			setSelectedValue(e.source.data.id, "", e.source.vw.getChildren()[1].text, "Multiple");
-			//Ti.API.info("e.source.data.id  " + e.source.data.id);
 			if (subModifier.length <= 0) {
 				checkModifyWith(e.source.data.modifierGroupData, e.source.data.id, e.source.data.modifierGroupIndex);
 			}
@@ -1070,8 +1055,6 @@ function openSubModifier(view, data, subModifier) {
 			if (groupObj.length > data.modifierGroupIndex + 1) {
 				groupObj[data.modifierGroupIndex].backgroundColor = "#eeeeee";
 				groupObj[data.modifierGroupIndex + 1].backgroundColor = "transparent";
-				//Ti.API.info('groupObj[data.modifierGroupIndex + 1].detail '+ JSON.stringify(groupObj[data.modifierGroupIndex + 1].detail));
-				//Ti.API.info('groupObj[data.modifierGroupIndex + 1].index '+ groupObj[data.modifierGroupIndex + 1].index);
 				renderModifierGrid(groupObj[data.modifierGroupIndex + 1].detail, groupObj[data.modifierGroupIndex + 1].index, false);
 				previousObj = groupObj[data.modifierGroupIndex + 1];
 			}

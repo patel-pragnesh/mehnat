@@ -321,8 +321,8 @@ function removePaymentDetail(index) {
 }
 
 function resetFunc() {
-	// authorizedTransactionRequest();
-	// return;
+	Alloy.Globals.DbManager.getOfflineOrder();
+	return;
 	if (Alloy.Globals.isUpdateAvailable) {
 		Alloy.Globals.Notifier.show(L("update_validation"));
 		return;
@@ -806,10 +806,9 @@ function placedOrderService() {
 	var SERVICE_PLACE_ORDER = Alloy.Globals.Constants.SERVICE_PLACE_ORDER;
 	if (Ti.Network.online) {
 		Alloy.Globals.LoadingScreen.open();
-		var last_updated_date = "";
-
 		var obj = {};
 		obj.customer_id = Alloy.Globals.customer_id;
+		obj.custom_order_id = "";
 		obj.customer_name = Alloy.Globals.name;
 		obj.customer_mobile_no = Alloy.Globals.mobile;
 		obj.customer_email = Alloy.Globals.email;
@@ -820,65 +819,184 @@ function placedOrderService() {
 		obj.store_id = parseInt(Alloy.Globals.store_id);
 		obj.store_name = Alloy.Globals.store_name;
 		if (type == "split") {
-			//obj.payment_method = JSON.stringify(createFinalSplitArray());
 			obj.payment_method = JSON.stringify(splitPaymentArray);
-
 		} else {
 			obj.payment_method = JSON.stringify(quickPaymentArray);
 		}
-
-		//if (checkPaymentMethod("housing_management")) {
-		//obj.order_status = "incompleted";
-		//} else {
 		obj.order_status = "completed";
-		//}
 		obj.order_total_price = args.order[0].total;
 		obj.order_details = JSON.stringify(args.order);
 		obj.user_id = Alloy.Globals.employee_id;
-
 		Ti.API.info('obj ' + JSON.stringify(obj));
 		Communicator.post(DOMAIN_URL + SERVICE_PLACE_ORDER, placedOrderServiceCallback, obj);
 		Ti.API.info('URL ' + DOMAIN_URL + SERVICE_PLACE_ORDER);
 	} else {
-		Alloy.Globals.Notifier.show(L("internat_connection_message"));
+		//Below condition justify, you can only place order in offline mode when transaction method is cash or credit card. otherwise
+		if (isPaymentMethodCashAndCreditCardOnly()) {
+		} else {
+			Alloy.Globals.Notifier.show(L("internat_connection_message"));
+		}
 	}
 }
 
-// var dummyResponse = [{
-//   "method": "T01",
-//   "version": "T01",
-//   "resultCode": "000000",
-//   "resultMessage": "OK",
-//   "authCode": "009538",
-//   "referenceNumber": "821113547784",
-//   "ECRreferenceNumber": "3243",
-//   "cardLastFourNumber": "4111",
-//   "entryMode": "Scan",
-//   "expireDate": "1222",
-//   "cardType": "02",
-//   "cardHolder": "UAT USA/Test Card 07      ",
-//   "transactionNumber": "0141",
-//   "hostReferenceNumber": "1094218923",
-//   "AID": "A0000000041010",
-//   "TC": "39C4234C309BAB83",
-//   "appName": "MasterCard"
-// }]
-// var msrRes=[{
-//   "method": "T01",
-//   "version": "T01",
-//   "resultCode": "000000",
-//   "resultMessage": "OK",
-//   "authCode": "",
-//   "referenceNumber": "",
-//   "ECRreferenceNumber": "3243",
-//   "cardLastFourNumber": "0016",
-//   "entryMode": "Manual",
-//   "expireDate": "1225",
-//   "cardType": "Visa",
-//   "cardHolder": "",
-//   "transactionNumber": "0148",
-//   "hostReferenceNumber": "1094222794"
-// }];
+/*
+ * Getting response of placedOrderServiceCallback in the callback function and perform all database related stuff
+ */
+
+function placedOrderServiceCallback(e) {
+	Ti.API.info('Response : ' + JSON.stringify(e));
+	if (e.success) {
+		try {
+			var response = JSON.parse(e.response);
+			Ti.API.info('Response : ' + JSON.stringify(response));
+			if (response != null) {
+				if (response.response_code == '1') {
+
+					Ti.API.info('insuccess');
+					Alloy.Globals.LoadingScreen.close();
+					Alloy.Globals.Notifier.show(response.msg);
+					Alloy.Globals.setVariableAfterPlacedOrder(response);
+					splitPaymentArray = [];
+					quickPaymentArray = [];
+
+				} else {
+					Alloy.Globals.LoadingScreen.close();
+					Alloy.Globals.Notifier.show(response.msg);
+				}
+			} else {
+				Alloy.Globals.Notifier.show(Alloy.Globals.Constants.MSG_NO_DATA);
+				Alloy.Globals.LoadingScreen.close();
+			}
+		} catch(e) {
+			Alloy.Globals.LoadingScreen.close();
+			Ti.API.info('Error CheckOutScreen : ' + e.message);
+			tracker.addException({
+				description : "CheckOutScreen: " + e.message,
+				fatal : false
+			});
+
+		}
+	} else {
+		Alloy.Globals.LoadingScreen.close();
+		Alloy.Globals.Notifier.show(Alloy.Globals.Constants.MSG_STATUS_CODE);
+		if (e.message == "The request timed out.") {
+			placeOrderOffline();
+		}
+
+	}
+
+}
+
+function placeOrderOffline() {
+	var custom_order_id = Math.floor(Math.random() * 50000);
+
+	//Below code for create reverse sync data and inster in ospos_offline table
+
+	var obj = {};
+	obj.customer_id = Alloy.Globals.customer_id;
+	obj.custom_order_id = custom_order_id;
+	obj.customer_name = Alloy.Globals.name;
+	obj.customer_mobile_no = Alloy.Globals.mobile;
+	obj.customer_email = Alloy.Globals.email;
+	obj.customer_address = "NA";
+	obj.order_type = "pos";
+	obj.employee_id = parseInt(Alloy.Globals.employee_id);
+	obj.employee_name = Alloy.Globals.fullname;
+	obj.store_id = parseInt(Alloy.Globals.store_id);
+	obj.store_name = Alloy.Globals.store_name;
+	if (type == "split") {
+		obj.payment_method = JSON.stringify(splitPaymentArray);
+	} else {
+		obj.payment_method = JSON.stringify(quickPaymentArray);
+	}
+	obj.order_status = "completed";
+	obj.order_total_price = args.order[0].total;
+	obj.order_details = JSON.stringify(args.order);
+	obj.user_id = Alloy.Globals.employee_id;
+	Ti.API.info('obj ' + JSON.stringify(obj));
+
+	Alloy.Globals.DbManager.insertOfflineOrder(obj);
+
+	var salesTableObj = {};
+	salesTableObj.id = "";
+	salesTableObj.custom_order_id = custom_order_id;
+	salesTableObj.fullname = Alloy.Globals.name;
+	salesTableObj.profile_pic = "";
+	salesTableObj.pickup_date = "0000-00-00 00:00:00";
+	salesTableObj.customer_id = Alloy.Globals.customer_id;
+	salesTableObj.employee_id = Alloy.Globals.employee_id;
+	salesTableObj.store_id = parseInt(Alloy.Globals.store_id);
+	salesTableObj.comment = "";
+	salesTableObj.invoice_number = "";
+	salesTableObj.discount_type = args.order[0].discount.type;
+	salesTableObj.dis_value = args.order[0].discount.discount;
+	salesTableObj.subtotal = args.order[0].subTotal;
+	salesTableObj.tax = args.order[0].subTotal;
+	salesTableObj.tax_value = args.order[0].taxValue;
+	salesTableObj.timer = "";
+	salesTableObj.accepted_at = "";
+	salesTableObj.status = "1";
+	salesTableObj.accept_time = "";
+	salesTableObj.counter_duration = "";
+	salesTableObj.isSchedule = "1";
+	salesTableObj.order_type = "pos";
+	salesTableObj.order_status = "completed";
+	salesTableObj.created_at = Alloy.Globals.DateTimeUtils.createdDate(new Date());
+	salesTableObj.updated_at = Alloy.Globals.DateTimeUtils.createdDate(new Date());
+	salesTableObj.order_total_price = args.order[0].total;
+	if (type == "split") {
+		salesTableObj.payment_method = "split";
+	} else {
+		salesTableObj.payment_method = paymentMethod;
+	}
+	salesTableObj.discount_total_price = args.order[0].discount_total_price;
+	salesTableObj.is_refund = 0;
+	salesTableObj.loyality_value = args.order[0].loyality_value;
+	salesTableObj.loyality_point = args.order[0].loyality_point;
+	salesTableObj.pickup_type = "";
+	salesTableObj.trans_num = "";
+	salesTableObj.order_token = "of_" + (Ti.App.Properties.getInt("token_offline") + 1);
+	salesTableObj.givex_code = "";
+	salesTableObj.givex_num = "";
+	salesTableObj.is_offline = "1";
+	
+	Alloy.Globals.DbManager.insertOfflineSalesData(obj);
+
+	var salesItemsObj = {};
+	salesItemsObj.id = "";
+	salesItemsObj.sale_id = custom_order_id;
+	salesItemsObj.category_id = args.order[0].category_id;
+	salesItemsObj.menu_id = args.order[0].menu_id;
+	salesItemsObj.category_name = args.order[0].category_name;
+	salesItemsObj.menu_name = args.order[0].menu_name;
+	salesItemsObj.menu_discount = "";
+	salesItemsObj.serving_id = args.order[0].serving_id;
+	salesItemsObj.serving_name = args.order[0].serving_name;
+	salesItemsObj.serving_price = args.order[0].serving_price;
+	salesItemsObj.quantity_purchased = args.order[0].quantity;
+	salesItemsObj.created_at = Alloy.Globals.DateTimeUtils.createdDate(new Date());
+	salesItemsObj.updated_at = Alloy.Globals.DateTimeUtils.createdDate(new Date());
+	salesItemsObj.order_details = JSON.stringify(args.order[0].customizationOpt);
+	salesItemsObj.discount_type = args.order[0].discount_type;
+	salesItemsObj.apply_option = args.order[0].apply_option;
+	salesItemsObj.discount_rate = args.order[0].discount_rate;
+	salesItemsObj.discount_id = args.order[0].discount_id;
+	salesItemsObj.discount_title = args.order[0].discount_title;
+	salesItemsObj.discount_price = args.order[0].discount_price;
+	salesItemsObj.item_coustomized_price = args.order[0].item_coustomized_price;
+	salesItemsObj.is_offline = "1";
+	
+	Alloy.Globals.DbManager.insertOfflineSalesItemData(obj); 
+}
+
+function isPaymentMethodCashAndCreditCardOnly() {
+	for (var i = 0; i < splitPaymentArray.length; i++) {
+		if (splitPaymentArray[i].paymentMethod == "cash" || splitPaymentArray[i].paymentMethod == "credit_card") {
+			return true;
+		}
+	};
+	return false;
+}
 
 Alloy.Globals.setVariableAfterPlacedOrder = function(response) {
 	var customerName = Alloy.Globals.name;
@@ -1067,73 +1185,12 @@ function showChangeDue() {
 
 }
 
-/*
- * Getting response of placedOrderServiceCallback in the callback function and perform all database related stuff
- */
-
-function placedOrderServiceCallback(e) {
-	Ti.API.info('Response : ' + JSON.stringify(e));
-	if (e.success) {
-		try {
-			var response = JSON.parse(e.response);
-			Ti.API.info('Response : ' + JSON.stringify(response));
-			if (response != null) {
-				if (response.response_code == '1') {
-
-					Ti.API.info('insuccess');
-					Alloy.Globals.LoadingScreen.close();
-					Alloy.Globals.Notifier.show(response.msg);
-					Alloy.Globals.setVariableAfterPlacedOrder(response);
-					splitPaymentArray = [];
-					quickPaymentArray = [];
-
-				} else {
-					Alloy.Globals.LoadingScreen.close();
-					Alloy.Globals.Notifier.show(response.msg);
-				}
-			} else {
-				Alloy.Globals.Notifier.show(Alloy.Globals.Constants.MSG_NO_DATA);
-				Alloy.Globals.LoadingScreen.close();
-			}
-		} catch(e) {
-			Alloy.Globals.LoadingScreen.close();
-			Ti.API.info('Error CheckOutScreen : ' + e.message);
-			tracker.addException({
-				description : "CheckOutScreen: " + e.message,
-				fatal : false
-			});
-
-		}
-	} else {
-		Alloy.Globals.LoadingScreen.close();
-		Alloy.Globals.Notifier.show(Alloy.Globals.Constants.MSG_STATUS_CODE);
-
-	}
-
-}
-
-var res = {
-	"method" : "T01",
-	"version" : "T01",
-	"resultCode" : "000000",
-	"resultMessage" : "OK",
-	"authCode" : "000000",
-	"referenceNumber" : "822513854150",
-	"ECRreferenceNumber" : "3243",
-	"cardLastFourNumber" : "9997",
-	"entryMode" : "Manual",
-	"expireDate" : "1225",
-	"cardType" : "OTHER",
-	"cardHolder" : "",
-	"transactionNumber" : "07",
-	"hostReferenceNumber" : "1097392914"
-};
-
 function doneFunc() {
 
 	//swipeEMVRequest();
 	//var logInData = Ti.App.Properties.getObject("loginResponse");
 	//Alloy.Globals.PrintReceipt.printMSRReceiptFun(logInData.result[0].store_name, logInData.result[0].store_address,logInData.result[0].phone_number,new Date(), getTime(new Date()),res);
+	//placeOrderOffline();
 	//return;
 
 	if (role_permission.indexOf("place_order") != -1) {
@@ -1317,21 +1374,20 @@ var btnObj;
 function authorizedTransactionRequest(amt, btn) {
 	btnObj = btn;
 
-	if (Ti.Network.online) {
-		Alloy.Globals.LoadingScreen.open();
-		var request = Alloy.Globals.PaxCommunicator.createAuthTransactionRequest(amt.toFixed(2));
-		Ti.API.info('request ' + request);
-		var base64 = Ti.Utils.base64encode(request);
-		var paxURL = "http://" + Ti.App.Properties.getString("pax_ip") + ":10009/?" + base64;
-		Alloy.Globals.PaxCommunicator.get(paxURL, authorizedTransactionRequestCallback);
-		Ti.API.info('Transaction URL ' + paxURL);
-	} else {
-		Alloy.Globals.Notifier.show(L("internat_connection_message"));
-	}
+	//	if (Ti.Network.online) {
+	Alloy.Globals.LoadingScreen.open();
+	var request = Alloy.Globals.PaxCommunicator.createAuthTransactionRequest(amt.toFixed(2));
+	Ti.API.info('request ' + request);
+	var base64 = Ti.Utils.base64encode(request);
+	var paxURL = "http://" + Ti.App.Properties.getString("pax_ip") + ":10009/?" + base64;
+	Alloy.Globals.PaxCommunicator.get(paxURL, authorizedTransactionRequestCallback);
+	Ti.API.info('Transaction URL ' + paxURL);
+	//} else {
+	//Alloy.Globals.Notifier.show(L("internat_connection_message"));
+	//}
 }
 
 function authorizedTransactionRequestCallback(e) {
-	Ti.API.info('E ' + JSON.stringify(e));
 	if (e.success) {
 		try {
 			var response = e.response;
@@ -2069,7 +2125,7 @@ function swipeEMVRequest(btn) {
 	btnObj = btn;
 	if (Ti.Network.online) {
 		Alloy.Globals.LoadingScreen.open();
-		var request = Alloy.Globals.PaxCommunicator.swipeGiftCardRequest();
+		var request = Alloy.Globals.PaxCommunicator.setSAFMode();
 		Ti.API.info('request ' + request);
 		var base64 = Ti.Utils.base64encode(request);
 		var paxURL = "http://" + Ti.App.Properties.getString("pax_ip") + ":10009/?" + base64;
@@ -2083,6 +2139,7 @@ function swipeEMVRequest(btn) {
 
 function swipeEMVRequestCallback(e) {
 	Alloy.Globals.LoadingScreen.close();
+	Ti.API.info('Response : ' + JSON.stringify(e));
 	if (e.success) {
 		try {
 			var response = e.response;
@@ -2109,7 +2166,7 @@ function swipeEMVRequestCallback(e) {
 	} else {
 		Alloy.Globals.Notifier.show(Alloy.Globals.Constants.MSG_STATUS_CODE);
 	}
-	
+
 }
 
 /*
@@ -2149,7 +2206,7 @@ function reverseSyncServiceCallback(e) {
 				Ti.API.info('response.action_success = ' + response.response_code);
 
 				if (response.response_code == '1') {
-
+					Ti.App.Properties.setInt("token_offline", 0);
 				} else {
 					Alloy.Globals.Notifier.show(response.responseMessage);
 				}
